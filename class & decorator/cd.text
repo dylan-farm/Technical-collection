@@ -1,0 +1,169 @@
+####创建 enhanceWeight 为班纳增强体重
+  ```javascript
+  function enhanceWeight(target, key, descriptor) {
+    const method = descriptor.value;
+    let variationWeight = 1000;
+    descriptor.value = (...args) => {
+      args[0] += variationWeight || 0;
+      return method.apply(target, args);
+    }
+    return descriptor;
+  }
+
+
+  class Banner {
+    constructor(weight = 70, height = 175, power = 100, colour = '') {
+      this.init(weight, height, power, colour);
+    }
+    @enhanceWeight
+    init(weight, height, power, colour) {
+      this.weight = weight;
+      this.height = height;
+      this.power = power;
+      this.colour = colour || 'white';
+    }
+    toString() {
+      return `${this.colour == 'green' ? '无敌浩克' : '班纳'} ==> 体重:${this.weight}kg，身高：${this.height}cm,力量：${this.power}kg,肤色：${this.colour}`;   
+    }
+  }
+  var MrGreen = new Banner();
+  console.log(`输出： ${MrGreen}`);
+  // 输出：班纳 ==> 体重:1070kg，身高：175cm,力量：100kg,肤色：white
+  ```
+####创建 enhanceHeight 为班纳增强身高
+  ```javascript
+  function enhanceHeight(target, key, descriptor) {
+    const method = descriptor.value;
+    let variationHeight = 200;
+    descriptor.value = (...args) => {
+      args[1] += variationHeight || 0;
+      return method.apply(target, args);
+    }
+    return descriptor;
+  }
+
+
+  class Banner {
+    constructor(weight = 70, height = 175, power = 100, colour = '') {
+      this.init(weight, height, power, colour);
+    }
+    @enhanceHeight
+    init(weight, height, power, colour) {
+      this.weight = weight;
+      this.height = height;
+      this.power = power;
+      this.colour = colour || 'white';
+    }
+    toString() {
+      return `${this.colour == 'green' ? '无敌浩克' : '班纳'} ==> 体重:${this.weight}kg，身高：${this.height}cm,力量：${this.power}kg,肤色：${this.colour}`;   
+    }
+  }
+  var MrGreen = new Banner();
+  console.log(`输出： ${MrGreen}`);
+  // 输出：班纳 ==> 体重:70kg，身高：375cm,力量：100kg,肤色：white
+  ```
+####创建 enhancePower 为班纳增强力量
+  ```javascript
+  function enhancePower(target, key, descriptor) {
+    const method = descriptor.value;
+    let variationPower = 9999999999900;
+    descriptor.value = (...args) => {
+      args[2] += variationPower || 0;
+      return method.apply(target, args);
+    }
+    return descriptor;
+  }
+
+
+  class Banner {
+    constructor(weight = 70, height = 175, power = 100, colour = '') {
+      this.init(weight, height, power, colour);
+    }
+    @enhancePower
+    init(weight, height, power, colour) {
+      this.weight = weight;
+      this.height = height;
+      this.power = power;
+      this.colour = colour || 'white';
+    }
+    toString() {
+      return `${this.colour == 'green' ? '无敌浩克' : '班纳'} ==> 体重:${this.weight}kg，身高：${this.height}cm,力量：${this.power}kg,肤色：${this.colour}`;
+    }
+  }
+  var MrGreen = new Banner();
+  console.log(`输出： ${MrGreen}`);
+  // 输出：班纳 ==> 体重:70kg，身高：175cm,10000000000000kg,肤色：white
+  ```
+####创建 changeColour 为班纳改变肤色
+  ```javascript
+  function changeColour(target, key, descriptor) {
+    const method = descriptor.value;
+    let variationColour = 'green';
+    descriptor.value = (...args) => {
+      args[3] = variationColour || '';
+      return method.apply(target, args);
+    }
+    return descriptor;
+  }
+
+
+  class Banner {
+    constructor(weight = 70, height = 175, power = 100, colour = '') {
+      this.init(weight, height, power, colour);
+    }
+    @enhancePower
+    init(weight, height, power, colour) {
+      this.weight = weight;
+      this.height = height;
+      this.power = power;
+      this.colour = colour || 'white';
+    }
+    toString() {
+      return `${this.colour == 'green' ? '无敌浩克' : '班纳'} ==> 体重:${this.weight}kg，身高：${this.height}cm,力量：${this.power}kg,肤色：${this.colour}`;
+    }
+  }
+  var MrGreen = new Banner();
+  console.log(`输出： ${MrGreen}`);
+  // 输出：无敌浩克 ==> 体重:70kg，身高：175cm,100kg,肤色：green
+  ```
+####创建 variation 班纳终极进化 ==> 无敌浩克（完整版）
+
+  ```javascript
+    function variation(target, key, descriptor) {
+      const method = descriptor.value;
+      let variationWeight = 1000;
+      let variationHeight = 1000;
+      let variationPower = 9999999999900;
+      let variationColour = 'green';
+
+      descriptor.value = (...args) => {
+        args[0] += variationWeight || 0;
+        args[1] += variationHeight || 0;
+        args[2] += variationPower || 0;
+        args[3] = variationColour || '';
+        return method.apply(target, args);
+      }
+      
+      return descriptor;
+    }
+
+
+    class Banner {
+      constructor(weight = 70, height = 175, power = 100, colour = '') {
+        this.init(weight, height, power, colour);
+      }
+      @variation
+      init(weight, height, power, colour) {
+        this.weight = weight;
+        this.height = height;
+        this.power = power;
+        this.colour = colour || 'white';
+      }
+      toString() {
+        return `${this.colour == 'green' ? '无敌浩克' : '班纳'} ==> 体重:${this.weight}kg，身高：${this.height}cm,力量：${this.power}kg,肤色：${this.colour}`;
+      }
+    }
+    var MrGreen = new Banner();
+    console.log(`输出： ${MrGreen}`);
+    // 输出：无敌浩克 ==> 体重:1070kg，身高：1175cm,力量：10000000000000kg,肤色：green
+  ```
