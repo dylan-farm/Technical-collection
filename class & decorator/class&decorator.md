@@ -20,7 +20,7 @@
 
 ## Class
 ES6 的class可以看作只是一个语法糖，它的绝大部分功能，ES5 都可以做到，**完全可以看作构造函数的另一种写法**，新的class写法只是让对象原型的写法更加清晰、更像面向对象编程的语法而已。
-####划重点
+#### 划重点
 * <span id="1">Class的方法 & 实例对象</span>
   * Class的所有方法都定义在类的prototype属性上面，所以在类的实例上面调用方法，其实就是调用原型上的方法。
   * 类的实例对象与 ES5 一样，实例的属性除非显式定义在其本身（即定义在this对象上），否则都是定义在原型上（即定义在class上）。
@@ -194,7 +194,7 @@ ES6 的class可以看作只是一个语法糖，它的绝大部分功能，ES5 �
     }
   ```
 
-####<span id="6">了解一下</span>
+#### <span id="6">了解一下</span>
 * 类和模块的内部，默认是严格模式，也就是写在类或模块中的代码，就只有严格模式可用，ES6 实际上把整个语言升级到了严格模式。
 * constructor方法是类的默认方法，通过new命令生成对象实例时，自动调用该方法。一个类必须有constructor方法，如果没有显式定义，一个空的constructor方法会被默认添加。constructor方法默认返回实例对象（即this），完全可以指定返回另外一个对象。
 * Class表达式
@@ -363,7 +363,7 @@ Decorator即「修饰模式」，在「不侵入原有代码」的情况下，�
 
 所谓「额外的功能」一般都比较独立，不和原有逻辑耦合，只是做一层包装。你也可以把它看成「包装模式」。
 
-####划重点
+#### 划重点
 * <span id="7">修饰Class</span>, 修饰器对类的行为的改变，是代码编译时发生的，而不是在运行时。这意味着，修饰器能在编译阶段运行代码。也就是说，修饰器本质就是编译时执行的函数。
   ```javascript
   function readable(isReadable, isWritable) {
@@ -466,7 +466,7 @@ React 和 MobX 是一对强力组合。React 通过提供机制把应用状态�
 
 ![无敌浩克](banna.jpeg)
 
-####创建 Banner
+#### 创建 Banner
   ```javascript
   class Banner {
   constructor(weight = 70, height = 175, power = 100, colour = '') {
@@ -483,7 +483,7 @@ React 和 MobX 是一对强力组合。React 通过提供机制把应用状态�
     }
   }
   ```
-####创建 variation ( 伽马射线 ==> 变异 ) 班纳 ==> 无敌浩克
+#### 创建 variation ( 伽马射线 ==> 变异 ) 班纳 ==> 无敌浩克
   ```javascript
   function variation(type, value) {
 
@@ -530,7 +530,7 @@ React 和 MobX 是一对强力组合。React 通过提供机制把应用状态�
   console.log(`输出： ${MrGreen}`);
   // 输出：班纳 ==> 体重:1070kg，身高：175cm,力量：100kg,肤色：white
   ```
-####班纳增强身高
+#### 班纳增强身高
   ```javascript
   class Banner {
     constructor(weight = 70, height = 175, power = 100, colour = '') {
@@ -552,7 +552,7 @@ React 和 MobX 是一对强力组合。React 通过提供机制把应用状态�
   console.log(`输出： ${MrGreen}`);
   // 输出：班纳 ==> 体重:1070kg，身高：375cm,力量：100kg,肤色：white
   ```
-####班纳增强力量
+#### 班纳增强力量
   ```javascript
   class Banner {
     constructor(weight = 70, height = 175, power = 100, colour = '') {
@@ -575,7 +575,7 @@ React 和 MobX 是一对强力组合。React 通过提供机制把应用状态�
   console.log(`输出： ${MrGreen}`);
   // 输出：班纳 ==> 体重:1070kg，身高：375cm,10000000000000kg,肤色：white
   ```
-####班纳改变肤色, 完成 终极进化 ==> 无敌浩克（完整版）
+#### 班纳改变肤色, 完成 终极进化 ==> 无敌浩克（完整版）
   ```javascript
   class Banner {
     constructor(weight = 70, height = 175, power = 100, colour = '') {
