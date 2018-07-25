@@ -5,7 +5,7 @@
 
 **Github系列：**
 
-1. [class & decorator](./class&decorator/class&decorator.md)
+1. [class&decorator](./class&decorator/class&decorator.md)
 
 **其他社区（博客）系列：**
 
