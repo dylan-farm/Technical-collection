@@ -357,7 +357,7 @@ ES6 的class可以看作只是一个语法糖，它的绝大部分功能，ES5 �
 
 ## Decorator
 
-![锦上添花](chrimas_tree.png)
+![锦上添花](../images/chrimas_tree.png)
 
 Decorator即「修饰模式」，在「不侵入原有代码」的情况下，为代码增加一些「额外的功能」（锦上添花）。
 
@@ -464,7 +464,7 @@ React 和 MobX 是一对强力组合。React 通过提供机制把应用状态�
   ```
 ## <h3 id="22">Decorator应用Demo</h3>
 
-![无敌浩克](banna.jpeg)
+![无敌浩克](../images/banna.jpeg)
 
 #### 创建 Banner
   ```javascript
@@ -600,7 +600,7 @@ React 和 MobX 是一对强力组合。React 通过提供机制把应用状态�
   // 输出：无敌浩克 ( ╰_╯ ) ==> 体重:1070kg，身高：175cm,10000000000000kg,肤色：green
   ```
 
-![无敌浩克](hulk.jpg)
+![无敌浩克](../images/hulk.jpg)
 
 
 
