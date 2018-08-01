@@ -51,7 +51,7 @@ React Fiber 的目标是提高其对动画，布局和手势等领域的适用�
 
   ![](../images/fiber_03.png)
 
-  如果这是一个很大，层级很深的组件，可以想像到，组件在渲染时，调用栈过长，再加上如果在期间进行了各种复杂的操作，就可能导致长时间阻塞主线程，react渲染它需要几十甚至几百毫秒，这样的话react就会一直占用浏览器主线程，任何其他的操作（包括用户的点击，鼠标移动等操作）都无法执行，带来非常不好的用户体验。
+  如果这是一个很大，层级很深的组件，可以想像到，组件在渲染时，调用栈过长，再加上如果在期间进行了各种复杂的操作，就可能导致长时间阻塞主线程，react渲染它需要几十甚至几百毫秒，这样的话react就会一直占用浏览器主线程，任何其他的操作（包括用户的点击，鼠标移动等操作）都无法执行，带来非常不好的用户体验。
 
 
 ### React Fiber的出现
@@ -145,3 +145,9 @@ class ExampleComponent extends React.Component {
   UNSAFE_componentWillReceiveProps(nextProps) {}
 }
 ```
+___
+#### 参考资料：
+ - [React Fiber架构](https://zhuanlan.zhihu.com/p/37095662)
+ - [React Fiber Architecture](https://github.com/acdlite/react-fiber-architecture)
+ - [React系列——React Fiber 架构介绍资料汇总（翻译+中文资料）](https://segmentfault.com/a/1190000012834204)
+ - [InterviewMap——React周期分析](https://yuchengkai.cn/docs/zh/frontend/react.html)
