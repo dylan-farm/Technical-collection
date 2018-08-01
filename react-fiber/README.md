@@ -1,4 +1,4 @@
-###React Fiber 架构理解
+### React Fiber 架构理解
 
 > 引用原文：[React Fiber Architecture](https://github.com/acdlite/react-fiber-architecture)
 >
@@ -14,7 +14,7 @@ React Fiber 的目标是提高其对动画，布局和手势等领域的适用�
 
 其他主要功能包括在进行更新时暂停，中止或重新使用工作的能力，为不同类型的更新分配优先权的能力和新的并发原语。
 
-###React16之前组件的渲染逻辑
+### React16之前组件的渲染逻辑
 
 **先来看一下react组件渲染时经历的生命周期：**
 
@@ -113,7 +113,7 @@ class ExampleComponent extends React.Component {
 于是整个流程变成这样：（引用大神@司徒正美的图）
 ![](https://pic3.zhimg.com/80/v2-00e64705c849952d58fde002fec930f6_hd.jpg)
 
-###React16 生命周期函数用法建议
+### React16 生命周期函数用法建议
 结合 React Fiber 架构 建议如下使用react生命周期
 ```javascript
 class ExampleComponent extends React.Component {
