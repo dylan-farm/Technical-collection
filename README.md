@@ -1,11 +1,13 @@
 # Technical-collection
-> 日常踩坑总结&技术点调研
+> 日常填坑总结
+> 前沿技术点调研学习总结
 
 ###文章目录
 
 **Github系列：**
 
 1. [class&decorator](./class&decorator/class&decorator.md)
+2. [深入理解React Fiber 架构](./react-fiber/README.md)
 
 **其他社区（博客）系列：**
 
