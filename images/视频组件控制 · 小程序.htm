@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<!-- saved from url=(0095)https://developers.weixin.qq.com/miniprogram/dev/api/api-video.html#wxcreatevideocontextvideoid -->
+<html lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>视频组件控制 · 小程序</title>
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        <meta name="description" content="微信小程序文档">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://developers.weixin.qq.com/miniprogram/assets/images/apple-touch-icon-precomposed-152.png?t=18081317">
+        <link rel="shortcut icon" href="https://developers.weixin.qq.com/miniprogram/assets/images/favicon.ico?t=18081317" type="image/x-icon">
+
+        <link rel="stylesheet" href="./视频组件控制 · 小程序_files/style.css">
+        
+        
+        
+        
+        
+        
+    <link rel="prev" href="https://developers.weixin.qq.com/miniprogram/dev/api/media-video.html"><link rel="next" href="https://developers.weixin.qq.com/miniprogram/dev/api/api-camera.html"></head>
+    <body>
+        
+<div class="book with-summary with-header">
+    <div class="head">
+        <div class="head_box">
+            <h1 class="logo"><a href="javascript:;" title="_(&#39;微信公众平台 小程序&#39;)"></a></h1>
+            <div class="header_ctrls">
+                <ul class="top_nav">
+    <li class="top_nav_item dropdown" id="js_selected_introduction">
+        <a class="top_nav_item_title" href="javascript:;" id="js_selected_title_introduction">介绍</a>
+        <ul class="dropdown_menu">
+            <li class="dropdown_menu_item">
+                <a class="top_nav_link" href="https://developers.weixin.qq.com/miniprogram/introduction/index.html?t=18081317">小程序介绍</a>
+            </li>
+            <li class="dropdown_menu_item">
+                <a class="top_nav_link" href="https://developers.weixin.qq.com/minigame/introduction/index.html?t=18081317">小游戏介绍</a>
+            </li>
+        </ul>
+    </li>
+    <li class="top_nav_item" id="js_selected_design">
+        <a class="top_nav_item_title top_nav_link" href="https://developers.weixin.qq.com/miniprogram/design/index.html?t=18081317">设计</a>
+    </li>
+    <li class="top_nav_item dropdown selected" id="js_selected_dev">
+        <a class="top_nav_item_title" href="javascript:;" id="js_selected_title_dev">小程序开发</a>
+        <ul class="dropdown_menu">
+            <li class="dropdown_menu_item">
+                <a class="top_nav_link" href="https://developers.weixin.qq.com/miniprogram/dev/index.html?t=18081317">小程序开发</a>
+            </li>
+            <li class="dropdown_menu_item">
+                <a class="top_nav_link" href="https://developers.weixin.qq.com/minigame/dev/index.html?t=18081317">小游戏开发</a>
+            </li>
+        </ul>
+    </li>
+    <li class="top_nav_item" id="js_selected_product">
+        <a class="top_nav_item_title top_nav_link" href="https://developers.weixin.qq.com/miniprogram/product/index.html?t=18081317">运营</a>
+    </li>
+    <li class="top_nav_item dropdown" id="js_selected_analysis">
+        <a class="top_nav_item_title" href="javascript:;" id="js_selected_title_analysis">数据</a>
+        <ul class="dropdown_menu">
+            <li class="dropdown_menu_item">
+                <a class="top_nav_link" href="https://developers.weixin.qq.com/miniprogram/analysis/index.html?t=18081317">小程序数据</a>
+            </li>
+            <li class="dropdown_menu_item">
+                <a class="top_nav_link" href="https://developers.weixin.qq.com/minigame/analysis/index.html?t=18081317">小游戏数据</a>
+            </li>
+        </ul>
+    </li>
+    <li class="top_nav_item" id="js_selected_bbs">
+        <a class="top_nav_item_title" href="https://developers.weixin.qq.com/">社区</a>
+    </li>
+</ul>
+                
+<ul class="lang-tabs">
+    <li class="lang-tab lang-zh lang-tab_current">
+        <a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-video.html?t=18081317" class="lang-tab__nav">中文</a><span class="split-line">/</span>
+    </li>
+    <li class="lang-tab lang-en "> <!-- 禁用态加class: lang-tab_disabled -->
+        <a href="https://developers.weixin.qq.com/miniprogram/en/dev/api/api-video.html?t=18081317" class="lang-tab__nav">EN</a>
+    </li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="sub_nav_box">
+        <div class="sub_nav_inner">
+            <div class="book-summary-opr" id="js-book-summary-opr">
+                <a class="book-summary-btn"></a>
+            </div>
+            <div class="top_sub_nav">
+    <div class="top_title_wap">
+        <span class="icon_title icon_dev"></span>
+        <p class="s_title_1">微信小程序开发文档</p>
+    </div>
+
+    <ul class="top_sub_list">
+        <li class="sub_nav_item" data-level="1.1" data-path="../"><a href="https://developers.weixin.qq.com/miniprogram/dev/">简易教程</a></li>
+        <li class="sub_nav_item" data-level="1.2" data-path="../framework/MINA.html"><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/MINA.html">框架</a></li>
+        <li class="sub_nav_item" data-level="1.3" data-path="../component/"><a href="https://developers.weixin.qq.com/miniprogram/dev/component/">组件</a></li>
+        <li class="sub_nav_item selected" data-level="1.4" data-path="."><a href="https://developers.weixin.qq.com/miniprogram/dev/api/">API</a></li>
+        <li class="sub_nav_item" data-level="1.5" data-path="../devtools/devtools.html"><a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/devtools.html">工具</a></li>
+        <li class="sub_nav_item" data-level="1.6" data-path="../qcloud/qcloud.html"><a href="https://developers.weixin.qq.com/miniprogram/dev/qcloud/qcloud.html">腾讯云支持</a></li>
+    </ul>
+</div>
+
+            <div id="book-search-input" role="search">
+                <form>
+                    <label for="search-input" class="search-icon" id="js-search-icon"></label>
+                    <input type="text" id="search-input" name="search-input" placeholder="搜索">
+                    <button type="reset" class="clear-input-btn"></button>
+                </form>
+            </div>
+            
+<ul class="lang-tabs">
+    <li class="lang-tab lang-zh lang-tab_current">
+        <a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-video.html?t=18081317" class="lang-tab__nav">中文</a><span class="split-line">/</span>
+    </li>
+    <li class="lang-tab lang-en "> <!-- 禁用态加class: lang-tab_disabled -->
+        <a href="https://developers.weixin.qq.com/miniprogram/en/dev/api/api-video.html?t=18081317" class="lang-tab__nav">EN</a>
+    </li>
+</ul>
+
+        </div>
+    </div>
+
+    <div class="book-summary">
+        <div class="book-summary-home" id="js-summary-home">
+            <a>
+                <span class="icon_home_s icon_dev"></span>
+                <span class="s_title_2">开发文档首页</span>
+            </a>
+        </div>
+        <nav role="navigation">
+            
+
+<ul class="summary">
+    
+
+        
+        
+        
+        
+        
+        
+        
+        
+            
+    <li class="chapter open" data-level="1.4.1" data-path="./api-network.html" data-name="网络"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-network.html">网络</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.1.1" data-path="./network-request.html" data-name="发起请求"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/network-request.html">发起请求</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.1.1.1" data-path="./network-request.html" data-name="wx.request"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/network-request.html#wxrequestobject">wx.request</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.1.2" data-path="./network-file.html" data-name="上传、下载"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/network-file.html">上传、下载</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.1.2.1" data-path="./network-file.html" data-name="wx.uploadFile"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/network-file.html#wxuploadfileobject">wx.uploadFile</a></li>
+    <li class="chapter" data-level="1.4.1.2.2" data-path="./network-file.html" data-name="wx.downloadFile"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/network-file.html#wxdownloadfileobject">wx.downloadFile</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.1.3" data-path="./network-socket.html" data-name="WebSocket"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/network-socket.html">WebSocket</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.1.3.1" data-path="./network-socket.html" data-name="wx.connectSocket"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/network-socket.html#wxconnectsocketobject">wx.connectSocket</a></li>
+    <li class="chapter" data-level="1.4.1.3.2" data-path="./network-socket.html" data-name="wx.onSocketOpen"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/network-socket.html#wxonsocketopencallback">wx.onSocketOpen</a></li>
+    <li class="chapter" data-level="1.4.1.3.3" data-path="./network-socket.html" data-name="wx.onSocketError"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/network-socket.html#wxonsocketerrorcallback">wx.onSocketError</a></li>
+    <li class="chapter" data-level="1.4.1.3.4" data-path="./network-socket.html" data-name="wx.sendSocketMessage"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/network-socket.html#wxsendsocketmessageobject">wx.sendSocketMessage</a></li>
+    <li class="chapter" data-level="1.4.1.3.5" data-path="./network-socket.html" data-name="wx.onSocketMessage"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/network-socket.html#wxonsocketmessagecallback">wx.onSocketMessage</a></li>
+    <li class="chapter" data-level="1.4.1.3.6" data-path="./network-socket.html" data-name="wx.closeSocket"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/network-socket.html#wxclosesocket">wx.closeSocket</a></li>
+    <li class="chapter" data-level="1.4.1.3.7" data-path="./network-socket.html" data-name="wx.onSocketClose"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/network-socket.html#wxonsocketclosecallback">wx.onSocketClose</a></li>
+    <li class="chapter" data-level="1.4.1.3.8" data-path="./socket-task.html" data-name="SocketTask"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/socket-task.html">SocketTask</a></li>
+        </ul></li>
+        </ul></li>
+    <li class="chapter open" data-level="1.4.2" data-path="./media-picture.html" data-name="媒体"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media-picture.html">媒体</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.2.1" data-path="./media-picture.html" data-name="图片"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media-picture.html">图片</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.2.1.1" data-path="./media-picture.html" data-name="wx.chooseImage"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media-picture.html#wxchooseimageobject">wx.chooseImage</a></li>
+    <li class="chapter" data-level="1.4.2.1.2" data-path="./media-picture.html" data-name="wx.previewImage"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media-picture.html#wxpreviewimageobject">wx.previewImage</a></li>
+    <li class="chapter" data-level="1.4.2.1.3" data-path="./media-picture.html" data-name="wx.getImageInfo"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media-picture.html#wxgetimageinfoobject">wx.getImageInfo</a></li>
+    <li class="chapter" data-level="1.4.2.1.4" data-path="./media-picture.html" data-name="wx.saveImageToPhotosAlbum"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media-picture.html#wxsaveimagetophotosalbumobject">wx.saveImageToPhotosAlbum</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.2.2" data-path="./media-record.html" data-name="录音"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media-record.html">录音</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.2.2.1" data-path="./media-record.html" data-name="wx.startRecord"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media-record.html#wxstartrecordobject">wx.startRecord</a></li>
+    <li class="chapter" data-level="1.4.2.2.2" data-path="./media-record.html" data-name="wx.stopRecord"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media-record.html#wxstoprecord">wx.stopRecord</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.2.3" data-path="./getRecorderManager.html" data-name="录音管理"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/getRecorderManager.html">录音管理</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.2.3.1" data-path="./getRecorderManager.html" data-name="wx.getRecorderManager"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/getRecorderManager.html">wx.getRecorderManager</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.2.4" data-path="./media-voice.html" data-name="音频播放控制"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media-voice.html">音频播放控制</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.2.4.1" data-path="./media-voice.html" data-name="wx.playVoice"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media-voice.html#wxplayvoiceobject">wx.playVoice</a></li>
+    <li class="chapter" data-level="1.4.2.4.2" data-path="./media-voice.html" data-name="wx.pauseVoice"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media-voice.html#wxpausevoice">wx.pauseVoice</a></li>
+    <li class="chapter" data-level="1.4.2.4.3" data-path="./media-voice.html" data-name="wx.stopVoice"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media-voice.html#wxstopvoice">wx.stopVoice</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.2.5" data-path="./media-background-audio.html" data-name="音乐播放控制"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media-background-audio.html">音乐播放控制</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.2.5.1" data-path="./media-background-audio.html" data-name="wx.getBackgroundAudioPlayerState"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media-background-audio.html#wxgetbackgroundaudioplayerstateobject">wx.getBackgroundAudioPlayerState</a></li>
+    <li class="chapter" data-level="1.4.2.5.2" data-path="./media-background-audio.html" data-name="wx.playBackgroundAudio"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media-background-audio.html#wxplaybackgroundaudioobject">wx.playBackgroundAudio</a></li>
+    <li class="chapter" data-level="1.4.2.5.3" data-path="./media-background-audio.html" data-name="wx.pauseBackgroundAudio"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media-background-audio.html#wxpausebackgroundaudio">wx.pauseBackgroundAudio</a></li>
+    <li class="chapter" data-level="1.4.2.5.4" data-path="./media-background-audio.html" data-name="wx.seekBackgroundAudio"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media-background-audio.html#wxseekbackgroundaudioobject">wx.seekBackgroundAudio</a></li>
+    <li class="chapter" data-level="1.4.2.5.5" data-path="./media-background-audio.html" data-name="wx.stopBackgroundAudio"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media-background-audio.html#wxstopbackgroundaudio">wx.stopBackgroundAudio</a></li>
+    <li class="chapter" data-level="1.4.2.5.6" data-path="./media-background-audio.html" data-name="wx.onBackgroundAudioPlay"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media-background-audio.html#wxonbackgroundaudioplaycallback">wx.onBackgroundAudioPlay</a></li>
+    <li class="chapter" data-level="1.4.2.5.7" data-path="./media-background-audio.html" data-name="wx.onBackgroundAudioPause"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media-background-audio.html#wxonbackgroundaudiopausecallback">wx.onBackgroundAudioPause</a></li>
+    <li class="chapter" data-level="1.4.2.5.8" data-path="./media-background-audio.html" data-name="wx.onBackgroundAudioStop"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media-background-audio.html#wxonbackgroundaudiostopcallback">wx.onBackgroundAudioStop</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.2.6" data-path="./getBackgroundAudioManager.html" data-name="背景音频播放管理"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/getBackgroundAudioManager.html">背景音频播放管理</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.2.6.1" data-path="./getBackgroundAudioManager.html" data-name="wx.getBackgroundAudioManager"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/getBackgroundAudioManager.html">wx.getBackgroundAudioManager</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.2.7" data-path="./api-audio.html" data-name="音频组件控制"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-audio.html">音频组件控制</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.2.7.1" data-path="./api-audio.html" data-name="wx.createAudioContext"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-audio.html#wxcreateaudiocontextaudioid">wx.createAudioContext</a></li>
+    <li class="chapter" data-level="1.4.2.7.2" data-path="./createInnerAudioContext.html" data-name="wx.createInnerAudioContext"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/createInnerAudioContext.html">wx.createInnerAudioContext</a></li>
+    <li class="chapter" data-level="1.4.2.7.3" data-path="./getAvailableAudioSources.html" data-name="wx.getAvailableAudioSources"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/getAvailableAudioSources.html">wx.getAvailableAudioSources</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.2.8" data-path="./media-video.html" data-name="视频"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media-video.html">视频</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.2.8.1" data-path="./media-video.html" data-name="wx.chooseVideo"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media-video.html#wxchoosevideoobject">wx.chooseVideo</a></li>
+    <li class="chapter" data-level="1.4.2.8.2" data-path="./media-video.html" data-name="wx.saveVideoToPhotosAlbum"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media-video.html#wxsavevideotophotosalbumobject">wx.saveVideoToPhotosAlbum</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.2.9" data-path="./api-video.html" data-name="视频组件控制"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-video.html">视频组件控制</a>
+        <ul class="articles">
+    <li class="chapter active" data-level="1.4.2.9.1" data-path="./api-video.html" data-name="wx.createVideoContext"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-video.html#wxcreatevideocontextvideoid">wx.createVideoContext</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.2.10" data-path="./api-camera.html" data-name="相机组件控制"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-camera.html">相机组件控制</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.2.10.1" data-path="./api-camera.html" data-name="wx.createCameraContext"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-camera.html">wx.createCameraContext</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.2.11" data-path="./api-live-player.html" data-name="实时音视频"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-live-player.html">实时音视频</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.2.11.1" data-path="./api-live-player.html" data-name="wx.createLivePlayerContext"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-live-player.html">wx.createLivePlayerContext</a></li>
+    <li class="chapter" data-level="1.4.2.11.2" data-path="./api-live-pusher.html" data-name="wx.createLivePusherContext"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-live-pusher.html">wx.createLivePusherContext</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.2.12" data-path="./media-fontFace.html" data-name="动态加载字体"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media-fontFace.html">动态加载字体</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.2.12.1" data-path="./media-fontFace.html" data-name="wx.loadFontFace"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media-fontFace.html">wx.loadFontFace</a></li>
+        </ul></li>
+        </ul></li>
+    <li class="chapter open" data-level="1.4.3" data-path="./file.html" data-name="文件"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file.html">文件</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.3.1" data-path="./file.html" data-name="wx.saveFile"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file.html#wxsavefileobject">wx.saveFile</a></li>
+    <li class="chapter" data-level="1.4.3.2" data-path="./getFileInfo.html" data-name="wx.getFileInfo"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/getFileInfo.html">wx.getFileInfo</a></li>
+    <li class="chapter" data-level="1.4.3.3" data-path="./file.html" data-name="wx.getSavedFileList"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file.html#wxgetsavedfilelistobject">wx.getSavedFileList</a></li>
+    <li class="chapter" data-level="1.4.3.4" data-path="./file.html" data-name="wx.getSavedFileInfo"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file.html#wxgetsavedfileinfoobject">wx.getSavedFileInfo</a></li>
+    <li class="chapter" data-level="1.4.3.5" data-path="./file.html" data-name="wx.removeSavedFile"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file.html#wxremovesavedfileobject">wx.removeSavedFile</a></li>
+    <li class="chapter" data-level="1.4.3.6" data-path="./file.html" data-name="wx.openDocument"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file.html#wxopendocumentobject">wx.openDocument</a></li>
+    <li class="chapter" data-level="1.4.3.7" data-path="./file/FileSystemManager.html" data-name="文件管理器"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.html">文件管理器</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.3.7.1" data-path="./file/FileSystemManager.html" data-name="FileSystemManager"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.html">FileSystemManager</a></li>
+    <li class="chapter" data-level="1.4.3.7.2" data-path="./file/wx.getFileSystemManager.html" data-name="wx.getFileSystemManager"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/wx.getFileSystemManager.html">wx.getFileSystemManager</a></li>
+    <li class="chapter" data-level="1.4.3.7.3" data-path="./file/FileSystemManager.appendFile.html" data-name="FileSystemManager.appendFile"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.appendFile.html">FileSystemManager.appendFile</a></li>
+    <li class="chapter" data-level="1.4.3.7.4" data-path="./file/FileSystemManager.access.html" data-name="FileSystemManager.access"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.access.html">FileSystemManager.access</a></li>
+    <li class="chapter" data-level="1.4.3.7.5" data-path="./file/FileSystemManager.accessSync.html" data-name="FileSystemManager.accessSync"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.accessSync.html">FileSystemManager.accessSync</a></li>
+    <li class="chapter" data-level="1.4.3.7.6" data-path="./file/FileSystemManager.appendFileSync.html" data-name="FileSystemManager.appendFileSync"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.appendFileSync.html">FileSystemManager.appendFileSync</a></li>
+    <li class="chapter" data-level="1.4.3.7.7" data-path="./file/FileSystemManager.copyFile.html" data-name="FileSystemManager.copyFile"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.copyFile.html">FileSystemManager.copyFile</a></li>
+    <li class="chapter" data-level="1.4.3.7.8" data-path="./file/FileSystemManager.copyFileSync.html" data-name="FileSystemManager.copyFileSync"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.copyFileSync.html">FileSystemManager.copyFileSync</a></li>
+    <li class="chapter" data-level="1.4.3.7.9" data-path="./file/FileSystemManager.getSavedFileList.html" data-name="FileSystemManager.getSavedFileList"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.getSavedFileList.html">FileSystemManager.getSavedFileList</a></li>
+    <li class="chapter" data-level="1.4.3.7.10" data-path="./file/FileSystemManager.getFileInfo.html" data-name="FileSystemManager.getFileInfo"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.getFileInfo.html">FileSystemManager.getFileInfo</a></li>
+    <li class="chapter" data-level="1.4.3.7.11" data-path="./file/FileSystemManager.mkdir.html" data-name="FileSystemManager.mkdir"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.mkdir.html">FileSystemManager.mkdir</a></li>
+    <li class="chapter" data-level="1.4.3.7.12" data-path="./file/FileSystemManager.mkdirSync.html" data-name="FileSystemManager.mkdirSync"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.mkdirSync.html">FileSystemManager.mkdirSync</a></li>
+    <li class="chapter" data-level="1.4.3.7.13" data-path="./file/FileSystemManager.removeSavedFile.html" data-name="FileSystemManager.removeSavedFile"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.removeSavedFile.html">FileSystemManager.removeSavedFile</a></li>
+    <li class="chapter" data-level="1.4.3.7.14" data-path="./file/FileSystemManager.readFileSync.html" data-name="FileSystemManager.readFileSync"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.readFileSync.html">FileSystemManager.readFileSync</a></li>
+    <li class="chapter" data-level="1.4.3.7.15" data-path="./file/FileSystemManager.renameSync.html" data-name="FileSystemManager.renameSync"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.renameSync.html">FileSystemManager.renameSync</a></li>
+    <li class="chapter" data-level="1.4.3.7.16" data-path="./file/FileSystemManager.rmdirSync.html" data-name="FileSystemManager.rmdirSync"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.rmdirSync.html">FileSystemManager.rmdirSync</a></li>
+    <li class="chapter" data-level="1.4.3.7.17" data-path="./file/FileSystemManager.readdir.html" data-name="FileSystemManager.readdir"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.readdir.html">FileSystemManager.readdir</a></li>
+    <li class="chapter" data-level="1.4.3.7.18" data-path="./file/FileSystemManager.rename.html" data-name="FileSystemManager.rename"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.rename.html">FileSystemManager.rename</a></li>
+    <li class="chapter" data-level="1.4.3.7.19" data-path="./file/FileSystemManager.readFile.html" data-name="FileSystemManager.readFile"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.readFile.html">FileSystemManager.readFile</a></li>
+    <li class="chapter" data-level="1.4.3.7.20" data-path="./file/FileSystemManager.rmdir.html" data-name="FileSystemManager.rmdir"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.rmdir.html">FileSystemManager.rmdir</a></li>
+    <li class="chapter" data-level="1.4.3.7.21" data-path="./file/FileSystemManager.readdirSync.html" data-name="FileSystemManager.readdirSync"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.readdirSync.html">FileSystemManager.readdirSync</a></li>
+    <li class="chapter" data-level="1.4.3.7.22" data-path="./file/FileSystemManager.saveFile.html" data-name="FileSystemManager.saveFile"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.saveFile.html">FileSystemManager.saveFile</a></li>
+    <li class="chapter" data-level="1.4.3.7.23" data-path="./file/FileSystemManager.saveFileSync.html" data-name="FileSystemManager.saveFileSync"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.saveFileSync.html">FileSystemManager.saveFileSync</a></li>
+    <li class="chapter" data-level="1.4.3.7.24" data-path="./file/FileSystemManager.stat.html" data-name="FileSystemManager.stat"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.stat.html">FileSystemManager.stat</a></li>
+    <li class="chapter" data-level="1.4.3.7.25" data-path="./file/FileSystemManager.statSync.html" data-name="FileSystemManager.statSync"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.statSync.html">FileSystemManager.statSync</a></li>
+    <li class="chapter" data-level="1.4.3.7.26" data-path="./file/Stats.html" data-name="Stats"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/Stats.html">Stats</a></li>
+    <li class="chapter" data-level="1.4.3.7.27" data-path="./file/Stats.isDirectory.html" data-name="Stats.isDirectory"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/Stats.isDirectory.html">Stats.isDirectory</a></li>
+    <li class="chapter" data-level="1.4.3.7.28" data-path="./file/Stats.isFile.html" data-name="Stats.isFile"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/Stats.isFile.html">Stats.isFile</a></li>
+    <li class="chapter" data-level="1.4.3.7.29" data-path="./file/FileSystemManager.unlink.html" data-name="FileSystemManager.unlink"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.unlink.html">FileSystemManager.unlink</a></li>
+    <li class="chapter" data-level="1.4.3.7.30" data-path="./file/FileSystemManager.unzip.html" data-name="FileSystemManager.unzip"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.unzip.html">FileSystemManager.unzip</a></li>
+    <li class="chapter" data-level="1.4.3.7.31" data-path="./file/FileSystemManager.unlinkSync.html" data-name="FileSystemManager.unlinkSync"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.unlinkSync.html">FileSystemManager.unlinkSync</a></li>
+    <li class="chapter" data-level="1.4.3.7.32" data-path="./file/FileSystemManager.writeFile.html" data-name="FileSystemManager.writeFile"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.writeFile.html">FileSystemManager.writeFile</a></li>
+    <li class="chapter" data-level="1.4.3.7.33" data-path="./file/FileSystemManager.writeFileSync.html" data-name="FileSystemManager.writeFileSync"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.writeFileSync.html">FileSystemManager.writeFileSync</a></li>
+        </ul></li>
+        </ul></li>
+    <li class="chapter open" data-level="1.4.4" data-path="./data.html" data-name="数据缓存"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/data.html">数据缓存</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.4.1" data-path="./data.html" data-name="wx.setStorage"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/data.html#wxsetstorageobject">wx.setStorage</a></li>
+    <li class="chapter" data-level="1.4.4.2" data-path="./data.html" data-name="wx.setStorageSync"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/data.html#wxsetstoragesynckeydata">wx.setStorageSync</a></li>
+    <li class="chapter" data-level="1.4.4.3" data-path="./data.html" data-name="wx.getStorage"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/data.html#wxgetstorageobject">wx.getStorage</a></li>
+    <li class="chapter" data-level="1.4.4.4" data-path="./data.html" data-name="wx.getStorageSync"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/data.html#wxgetstoragesynckey">wx.getStorageSync</a></li>
+    <li class="chapter" data-level="1.4.4.5" data-path="./data.html" data-name="wx.getStorageInfo"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/data.html#wxgetstorageinfoobject">wx.getStorageInfo</a></li>
+    <li class="chapter" data-level="1.4.4.6" data-path="./data.html" data-name="wx.getStorageInfoSync"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/data.html#wxgetstorageinfosync">wx.getStorageInfoSync</a></li>
+    <li class="chapter" data-level="1.4.4.7" data-path="./data.html" data-name="wx.removeStorage"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/data.html#wxremovestorageobject">wx.removeStorage</a></li>
+    <li class="chapter" data-level="1.4.4.8" data-path="./data.html" data-name="wx.removeStorageSync"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/data.html#wxremovestoragesynckey">wx.removeStorageSync</a></li>
+    <li class="chapter" data-level="1.4.4.9" data-path="./data.html" data-name="wx.clearStorage"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/data.html#wxclearstorage">wx.clearStorage</a></li>
+    <li class="chapter" data-level="1.4.4.10" data-path="./data.html" data-name="wx.clearStorageSync"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/data.html#wxclearstoragesync">wx.clearStorageSync</a></li>
+        </ul></li>
+    <li class="chapter open" data-level="1.4.5" data-path="./location.html" data-name="位置"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/location.html">位置</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.5.1" data-path="./location.html" data-name="获取位置"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/location.html">获取位置</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.5.1.1" data-path="./location.html" data-name="wx.getLocation"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/location.html#wxgetlocationobject">wx.getLocation</a></li>
+    <li class="chapter" data-level="1.4.5.1.2" data-path="./location.html" data-name="wx.chooseLocation"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/location.html#wxchooselocationobject">wx.chooseLocation</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.5.2" data-path="./location.html" data-name="查看位置"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/location.html#wxopenlocationobject">查看位置</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.5.2.1" data-path="./location.html" data-name="wx.openLocation"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/location.html#wxopenlocationobject">wx.openLocation</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.5.3" data-path="./api-map.html" data-name="地图组件控制"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-map.html">地图组件控制</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.5.3.1" data-path="./api-map.html" data-name="wx.createMapContext"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-map.html#wxcreatemapcontextmapid">wx.createMapContext</a></li>
+        </ul></li>
+        </ul></li>
+    <li class="chapter open" data-level="1.4.6" data-path="./systeminfo.html" data-name="设备"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/systeminfo.html">设备</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.6.1" data-path="./systeminfo.html" data-name="系统信息"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/systeminfo.html">系统信息</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.6.1.1" data-path="./systeminfo.html" data-name="wx.getSystemInfo"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/systeminfo.html#wxgetsysteminfoobject">wx.getSystemInfo</a></li>
+    <li class="chapter" data-level="1.4.6.1.2" data-path="./systeminfo.html" data-name="wx.getSystemInfoSync"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/systeminfo.html#wxgetsysteminfosync">wx.getSystemInfoSync</a></li>
+    <li class="chapter" data-level="1.4.6.1.3" data-path="./api-caniuse.html" data-name="wx.canIUse"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-caniuse.html">wx.canIUse</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.6.2" data-path="./memory.html" data-name="内存"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/memory.html">内存</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.6.2.1" data-path="./memory.html" data-name="wx.onMemoryWarning"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/memory.html">wx.onMemoryWarning</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.6.3" data-path="./device.html" data-name="网络状态"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/device.html">网络状态</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.6.3.1" data-path="./device.html" data-name="wx.getNetworkType"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/device.html#wxgetnetworktypeobject">wx.getNetworkType</a></li>
+    <li class="chapter" data-level="1.4.6.3.2" data-path="./device.html" data-name="wx.onNetworkStatusChange"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/device.html#wxonnetworkstatuschangecallback">wx.onNetworkStatusChange</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.6.4" data-path="./accelerometer.html" data-name="加速度计"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/accelerometer.html">加速度计</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.6.4.1" data-path="./accelerometer.html" data-name="wx.onAccelerometerChange"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/accelerometer.html#wxonaccelerometerchangecallback">wx.onAccelerometerChange</a></li>
+    <li class="chapter" data-level="1.4.6.4.2" data-path="./accelerometer.html" data-name="wx.startAccelerometer"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/accelerometer.html#wxstartaccelerometerobject">wx.startAccelerometer</a></li>
+    <li class="chapter" data-level="1.4.6.4.3" data-path="./accelerometer.html" data-name="wx.stopAccelerometer"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/accelerometer.html#wxstopaccelerometerobject">wx.stopAccelerometer</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.6.5" data-path="./compass.html" data-name="罗盘"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/compass.html">罗盘</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.6.5.1" data-path="./compass.html" data-name="wx.onCompassChange"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/compass.html#wxoncompasschangecallback">wx.onCompassChange</a></li>
+    <li class="chapter" data-level="1.4.6.5.2" data-path="./compass.html" data-name="wx.startCompass"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/compass.html#wxstartcompassobject">wx.startCompass</a></li>
+    <li class="chapter" data-level="1.4.6.5.3" data-path="./compass.html" data-name="wx.stopCompass"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/compass.html#wxstopcompassobject">wx.stopCompass</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.6.6" data-path="./phonecall.html" data-name="拨打电话"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/phonecall.html">拨打电话</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.6.6.1" data-path="./phonecall.html" data-name="wx.makePhoneCall"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/phonecall.html#wxmakephonecallobject">wx.makePhoneCall</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.6.7" data-path="./scancode.html" data-name="扫码"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/scancode.html">扫码</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.6.7.1" data-path="./scancode.html" data-name="wx.scanCode"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/scancode.html#wxscancodeobject">wx.scanCode</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.6.8" data-path="./clipboard.html" data-name="剪贴板"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/clipboard.html">剪贴板</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.6.8.1" data-path="./clipboard.html" data-name="wx.setClipboardData"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/clipboard.html#wxsetclipboarddataobject">wx.setClipboardData</a></li>
+    <li class="chapter" data-level="1.4.6.8.2" data-path="./clipboard.html" data-name="wx.getClipboardData"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/clipboard.html#wxgetclipboarddataobject">wx.getClipboardData</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.6.9" data-path="./bluetooth.html" data-name="蓝牙"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/bluetooth.html">蓝牙</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.6.9.1" data-path="./bluetooth.html" data-name="wx.openBluetoothAdapter"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/bluetooth.html#wxopenbluetoothadapterobject">wx.openBluetoothAdapter</a></li>
+    <li class="chapter" data-level="1.4.6.9.2" data-path="./bluetooth.html" data-name="wx.closeBluetoothAdapter"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/bluetooth.html#wxclosebluetoothadapterobject">wx.closeBluetoothAdapter</a></li>
+    <li class="chapter" data-level="1.4.6.9.3" data-path="./bluetooth.html" data-name="wx.getBluetoothAdapterState"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/bluetooth.html#wxgetbluetoothadapterstateobject">wx.getBluetoothAdapterState</a></li>
+    <li class="chapter" data-level="1.4.6.9.4" data-path="./bluetooth.html" data-name="wx.onBluetoothAdapterStateChange"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/bluetooth.html#wxonbluetoothadapterstatechangecallback">wx.onBluetoothAdapterStateChange</a></li>
+    <li class="chapter" data-level="1.4.6.9.5" data-path="./bluetooth.html" data-name="wx.startBluetoothDevicesDiscovery"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/bluetooth.html#wxstartbluetoothdevicesdiscoveryobject">wx.startBluetoothDevicesDiscovery</a></li>
+    <li class="chapter" data-level="1.4.6.9.6" data-path="./bluetooth.html" data-name="wx.stopBluetoothDevicesDiscovery"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/bluetooth.html#wxstopbluetoothdevicesdiscoveryobject">wx.stopBluetoothDevicesDiscovery</a></li>
+    <li class="chapter" data-level="1.4.6.9.7" data-path="./bluetooth.html" data-name="wx.getBluetoothDevices"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/bluetooth.html#wxgetbluetoothdevicesobject">wx.getBluetoothDevices</a></li>
+    <li class="chapter" data-level="1.4.6.9.8" data-path="./bluetooth.html" data-name="wx.getConnectedBluetoothDevices"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/bluetooth.html#wxgetconnectedbluetoothdevicesobject">wx.getConnectedBluetoothDevices</a></li>
+    <li class="chapter" data-level="1.4.6.9.9" data-path="./bluetooth.html" data-name="wx.onBluetoothDeviceFound"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/bluetooth.html#wxonbluetoothdevicefoundcallback">wx.onBluetoothDeviceFound</a></li>
+    <li class="chapter" data-level="1.4.6.9.10" data-path="./bluetooth.html" data-name="wx.createBLEConnection"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/bluetooth.html#wxcreatebleconnectionobject">wx.createBLEConnection</a></li>
+    <li class="chapter" data-level="1.4.6.9.11" data-path="./bluetooth.html" data-name="wx.closeBLEConnection"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/bluetooth.html#wxclosebleconnectionobject">wx.closeBLEConnection</a></li>
+    <li class="chapter" data-level="1.4.6.9.12" data-path="./bluetooth.html" data-name="wx.getBLEDeviceServices"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/bluetooth.html#wxgetbledeviceservicesobject">wx.getBLEDeviceServices</a></li>
+    <li class="chapter" data-level="1.4.6.9.13" data-path="./bluetooth.html" data-name="wx.getBLEDeviceCharacteristics"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/bluetooth.html#wxgetbledevicecharacteristicsobject">wx.getBLEDeviceCharacteristics</a></li>
+    <li class="chapter" data-level="1.4.6.9.14" data-path="./bluetooth.html" data-name="wx.readBLECharacteristicValue"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/bluetooth.html#wxreadblecharacteristicvalueobject">wx.readBLECharacteristicValue</a></li>
+    <li class="chapter" data-level="1.4.6.9.15" data-path="./bluetooth.html" data-name="wx.writeBLECharacteristicValue"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/bluetooth.html#wxwriteblecharacteristicvalueobject">wx.writeBLECharacteristicValue</a></li>
+    <li class="chapter" data-level="1.4.6.9.16" data-path="./bluetooth.html" data-name="wx.notifyBLECharacteristicValueChange"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/bluetooth.html#wxnotifyblecharacteristicvaluechangeobject">wx.notifyBLECharacteristicValueChange</a></li>
+    <li class="chapter" data-level="1.4.6.9.17" data-path="./bluetooth.html" data-name="wx.onBLEConnectionStateChange"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/bluetooth.html#wxonbleconnectionstatechangecallback">wx.onBLEConnectionStateChange</a></li>
+    <li class="chapter" data-level="1.4.6.9.18" data-path="./bluetooth.html" data-name="wx.onBLECharacteristicValueChange"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/bluetooth.html#wxonblecharacteristicvaluechangecallback">wx.onBLECharacteristicValueChange</a></li>
+    <li class="chapter" data-level="1.4.6.9.19" data-path="./bluetooth.html" data-name="错误码"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/bluetooth.html#%E8%93%9D%E7%89%99%E9%94%99%E8%AF%AF%E7%A0%81errcode%E5%88%97%E8%A1%A8">错误码</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.6.10" data-path="./iBeacon.html" data-name="iBeacon"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/iBeacon.html">iBeacon</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.6.10.1" data-path="./iBeacon.html" data-name="wx.startBeaconDiscovery"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/iBeacon.html#wxstartbeacondiscoveryobject">wx.startBeaconDiscovery</a></li>
+    <li class="chapter" data-level="1.4.6.10.2" data-path="./iBeacon.html" data-name="wx.stopBeaconDiscovery"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/iBeacon.html#wxstopbeacondiscoveryobject">wx.stopBeaconDiscovery</a></li>
+    <li class="chapter" data-level="1.4.6.10.3" data-path="./iBeacon.html" data-name="wx.getBeacons"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/iBeacon.html#wxgetbeaconsobject">wx.getBeacons</a></li>
+    <li class="chapter" data-level="1.4.6.10.4" data-path="./iBeacon.html" data-name="wx.onBeaconUpdate"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/iBeacon.html#wxonbeaconupdatecallback">wx.onBeaconUpdate</a></li>
+    <li class="chapter" data-level="1.4.6.10.5" data-path="./iBeacon.html" data-name="wx.onBeaconServiceChange"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/iBeacon.html#wxonbeaconservicechangecallback">wx.onBeaconServiceChange</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.6.11" data-path="./device.html" data-name="屏幕亮度"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/device.html#wxsetscreenbrightnessobject">屏幕亮度</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.6.11.1" data-path="./device.html" data-name="wx.setScreenBrightness"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/device.html#wxsetscreenbrightnessobject">wx.setScreenBrightness</a></li>
+    <li class="chapter" data-level="1.4.6.11.2" data-path="./device.html" data-name="wx.getScreenBrightness"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/device.html#wxgetscreenbrightnessobject">wx.getScreenBrightness</a></li>
+    <li class="chapter" data-level="1.4.6.11.3" data-path="./setKeepScreenOn.html" data-name="wx.setKeepScreenOn"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/setKeepScreenOn.html">wx.setKeepScreenOn</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.6.12" data-path="./onUserCaptureScreen.html" data-name="用户截屏事件"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/onUserCaptureScreen.html">用户截屏事件</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.6.12.1" data-path="./onUserCaptureScreen.html" data-name="wx.onUserCaptureScreen"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/onUserCaptureScreen.html">wx.onUserCaptureScreen</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.6.13" data-path="./device.html" data-name="振动"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/device.html#wxvibratelongobject">振动</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.6.13.1" data-path="./device.html" data-name="wx.vibrateLong"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/device.html#wxvibratelongobject">wx.vibrateLong</a></li>
+    <li class="chapter" data-level="1.4.6.13.2" data-path="./device.html" data-name="wx.vibrateShort"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/device.html#wxvibrateshortobject">wx.vibrateShort</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.6.14" data-path="./phone-contact.html" data-name="手机联系人"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/phone-contact.html">手机联系人</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.6.14.1" data-path="./phone-contact.html" data-name="wx.addPhoneContact"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/phone-contact.html#wxaddphonecontactobject">wx.addPhoneContact</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.6.15" data-path="./nfc.html" data-name="NFC"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/nfc.html">NFC</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.6.15.1" data-path="./nfc.html" data-name="wx.getHCEState"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/nfc.html#wxgethcestateobject">wx.getHCEState</a></li>
+    <li class="chapter" data-level="1.4.6.15.2" data-path="./nfc.html" data-name="wx.startHCE"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/nfc.html#wxstarthceobject">wx.startHCE</a></li>
+    <li class="chapter" data-level="1.4.6.15.3" data-path="./nfc.html" data-name="wx.stopHCE"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/nfc.html#wxstophceobject">wx.stopHCE</a></li>
+    <li class="chapter" data-level="1.4.6.15.4" data-path="./nfc.html" data-name="wx.onHCEMessage"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/nfc.html#wxonhcemessagecallback">wx.onHCEMessage</a></li>
+    <li class="chapter" data-level="1.4.6.15.5" data-path="./nfc.html" data-name="wx.sendHCEMessage"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/nfc.html#wxsendhcemessageobject">wx.sendHCEMessage</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.6.16" data-path="./wifi.html" data-name="Wi-Fi"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wifi.html">Wi-Fi</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.6.16.1" data-path="./wifi.html" data-name="wx.startWifi"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wifi.html#wxstartwifiobject">wx.startWifi</a></li>
+    <li class="chapter" data-level="1.4.6.16.2" data-path="./wifi.html" data-name="wx.stopWifi"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wifi.html#wxstopwifiobject">wx.stopWifi</a></li>
+    <li class="chapter" data-level="1.4.6.16.3" data-path="./wifi.html" data-name="wx.connectWifi"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wifi.html#wxconnectwifiobject">wx.connectWifi</a></li>
+    <li class="chapter" data-level="1.4.6.16.4" data-path="./wifi.html" data-name="wx.getWifiList"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wifi.html#wxgetwifilistobject">wx.getWifiList</a></li>
+    <li class="chapter" data-level="1.4.6.16.5" data-path="./wifi.html" data-name="wx.onGetWifiList"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wifi.html#wxongetwifilistcallback">wx.onGetWifiList</a></li>
+    <li class="chapter" data-level="1.4.6.16.6" data-path="./wifi.html" data-name="wx.setWifiList"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wifi.html#wxsetwifilistobject">wx.setWifiList</a></li>
+    <li class="chapter" data-level="1.4.6.16.7" data-path="./wifi.html" data-name="wx.onWifiConnected"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wifi.html#wxonwificonnectedcallback">wx.onWifiConnected</a></li>
+    <li class="chapter" data-level="1.4.6.16.8" data-path="./wifi.html" data-name="wx.getConnectedWifi"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wifi.html#wxgetconnectedwifiobject">wx.getConnectedWifi</a></li>
+        </ul></li>
+        </ul></li>
+    <li class="chapter open" data-level="1.4.7" data-path="./api-react.html" data-name="界面"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-react.html">界面</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.7.1" data-path="./api-react.html" data-name="交互反馈"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-react.html">交互反馈</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.7.1.1" data-path="./api-react.html" data-name="wx.showToast"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-react.html#wxshowtoastobject">wx.showToast</a></li>
+    <li class="chapter" data-level="1.4.7.1.2" data-path="./api-react.html" data-name="wx.showLoading"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-react.html#wxshowloadingobject">wx.showLoading</a></li>
+    <li class="chapter" data-level="1.4.7.1.3" data-path="./api-react.html" data-name="wx.hideToast"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-react.html#wxhidetoast">wx.hideToast</a></li>
+    <li class="chapter" data-level="1.4.7.1.4" data-path="./api-react.html" data-name="wx.hideLoading"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-react.html#wxhideloading">wx.hideLoading</a></li>
+    <li class="chapter" data-level="1.4.7.1.5" data-path="./api-react.html" data-name="wx.showModal"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-react.html#wxshowmodalobject">wx.showModal</a></li>
+    <li class="chapter" data-level="1.4.7.1.6" data-path="./api-react.html" data-name="wx.showActionSheet"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-react.html#wxshowactionsheetobject">wx.showActionSheet</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.7.2" data-path="./ui.html" data-name="设置导航条"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui.html">设置导航条</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.7.2.1" data-path="./ui.html" data-name="wx.setNavigationBarTitle"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui.html#wxsetnavigationbartitleobject">wx.setNavigationBarTitle</a></li>
+    <li class="chapter" data-level="1.4.7.2.2" data-path="./ui.html" data-name="wx.showNavigationBarLoading"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui.html#wxshownavigationbarloading">wx.showNavigationBarLoading</a></li>
+    <li class="chapter" data-level="1.4.7.2.3" data-path="./ui.html" data-name="wx.hideNavigationBarLoading"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui.html#wxhidenavigationbarloading">wx.hideNavigationBarLoading</a></li>
+    <li class="chapter" data-level="1.4.7.2.4" data-path="./setNavigationBarColor.html" data-name="wx.setNavigationBarColor"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/setNavigationBarColor.html">wx.setNavigationBarColor</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.7.3" data-path="./ui-tabbar.html" data-name="设置tabBar"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui-tabbar.html">设置tabBar</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.7.3.1" data-path="./ui-tabbar.html" data-name="wx.setTabBarBadge"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui-tabbar.html#wxsettabbarbadgeobject">wx.setTabBarBadge</a></li>
+    <li class="chapter" data-level="1.4.7.3.2" data-path="./ui-tabbar.html" data-name="wx.removeTabBarBadge"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui-tabbar.html#wxremovetabbarbadgeobject">wx.removeTabBarBadge</a></li>
+    <li class="chapter" data-level="1.4.7.3.3" data-path="./ui-tabbar.html" data-name="wx.showTabBarRedDot"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui-tabbar.html#wxshowtabbarreddotobject">wx.showTabBarRedDot</a></li>
+    <li class="chapter" data-level="1.4.7.3.4" data-path="./ui-tabbar.html" data-name="wx.hideTabBarRedDot"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui-tabbar.html#wxhidetabbarreddotobject">wx.hideTabBarRedDot</a></li>
+    <li class="chapter" data-level="1.4.7.3.5" data-path="./ui-tabbar.html" data-name="wx.setTabBarStyle"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui-tabbar.html#wxsettabbarstyleobject">wx.setTabBarStyle</a></li>
+    <li class="chapter" data-level="1.4.7.3.6" data-path="./ui-tabbar.html" data-name="wx.setTabBarItem"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui-tabbar.html#wxsettabbaritemobject">wx.setTabBarItem</a></li>
+    <li class="chapter" data-level="1.4.7.3.7" data-path="./ui-tabbar.html" data-name="wx.showTabBar"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui-tabbar.html#wxshowtabbarobject">wx.showTabBar</a></li>
+    <li class="chapter" data-level="1.4.7.3.8" data-path="./ui-tabbar.html" data-name="wx.hideTabBar"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui-tabbar.html#wxhidetabbarobject">wx.hideTabBar</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.7.4" data-path="./ui-background.html" data-name="设置窗口背景"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui-background.html">设置窗口背景</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.7.4.1" data-path="./ui-background.html" data-name="wx.setBackgroundColor"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui-background.html#wxsetbackgroundcolor">wx.setBackgroundColor</a></li>
+    <li class="chapter" data-level="1.4.7.4.2" data-path="./ui-background.html" data-name="wx.setBackgroundTextStyle"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui-background.html#wxsetbackgroundtextstyle">wx.setBackgroundTextStyle</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.7.5" data-path="./ui-topbar.html" data-name="设置置顶信息"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui-topbar.html#wxsettopbartextobject">设置置顶信息</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.7.5.1" data-path="./ui-topbar.html" data-name="wx.setTopBarText"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui-topbar.html#wxsettopbartextobject">wx.setTopBarText</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.7.6" data-path="./ui-navigate.html" data-name="导航"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui-navigate.html">导航</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.7.6.1" data-path="./ui-navigate.html" data-name="wx.navigateTo"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui-navigate.html#wxnavigatetoobject">wx.navigateTo</a></li>
+    <li class="chapter" data-level="1.4.7.6.2" data-path="./ui-navigate.html" data-name="wx.redirectTo"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui-navigate.html#wxredirecttoobject">wx.redirectTo</a></li>
+    <li class="chapter" data-level="1.4.7.6.3" data-path="./ui-navigate.html" data-name="wx.switchTab"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui-navigate.html#wxswitchtabobject">wx.switchTab</a></li>
+    <li class="chapter" data-level="1.4.7.6.4" data-path="./ui-navigate.html" data-name="wx.navigateBack"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui-navigate.html#wxnavigatebackobject">wx.navigateBack</a></li>
+    <li class="chapter" data-level="1.4.7.6.5" data-path="./ui-navigate.html" data-name="wx.reLaunch"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui-navigate.html#wxrelaunchobject">wx.reLaunch</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.7.7" data-path="./api-animation.html" data-name="动画"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-animation.html">动画</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.7.7.1" data-path="./api-animation.html" data-name="wx.createAnimation"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-animation.html#wxcreateanimationobject">wx.createAnimation</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.7.8" data-path="./scroll.html" data-name="位置"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/scroll.html">位置</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.7.8.1" data-path="./scroll.html" data-name="wx.pageScrollTo"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/scroll.html">wx.pageScrollTo</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.7.9" data-path="./canvas/reference.html" data-name="绘图"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/reference.html">绘图</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.7.9.1" data-path="./canvas/intro.html" data-name="intro"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/intro.html">intro</a></li>
+    <li class="chapter" data-level="1.4.7.9.2" data-path="./canvas/coordinates.html" data-name="coordinates"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/coordinates.html">coordinates</a></li>
+    <li class="chapter" data-level="1.4.7.9.3" data-path="./canvas/gradient.html" data-name="gradient"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/gradient.html">gradient</a></li>
+    <li class="chapter" data-level="1.4.7.9.4" data-path="./canvas/reference.html" data-name="reference"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/reference.html">reference</a></li>
+    <li class="chapter" data-level="1.4.7.9.5" data-path="./canvas/color.html" data-name="color"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/color.html">color</a></li>
+    <li class="chapter" data-level="1.4.7.9.6" data-path="./canvas/create-canvas-context.html" data-name="wx.createCanvasContext"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/create-canvas-context.html">wx.createCanvasContext</a></li>
+    <li class="chapter" data-level="1.4.7.9.7" data-path="./canvas/create-context.html" data-name="wx.createContext"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/create-context.html">wx.createContext</a></li>
+    <li class="chapter" data-level="1.4.7.9.8" data-path="./canvas/draw-canvas.html" data-name="wx.drawCanvas"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/draw-canvas.html">wx.drawCanvas</a></li>
+    <li class="chapter" data-level="1.4.7.9.9" data-path="./canvas/temp-file.html" data-name="wx.canvasToTempFilePath"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/temp-file.html">wx.canvasToTempFilePath</a></li>
+    <li class="chapter" data-level="1.4.7.9.10" data-path="./canvas/get-image-data.html" data-name="wx.canvasGetImageData"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/get-image-data.html">wx.canvasGetImageData</a></li>
+    <li class="chapter" data-level="1.4.7.9.11" data-path="./canvas/put-image-data.html" data-name="wx.canvasPutImageData"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/put-image-data.html">wx.canvasPutImageData</a></li>
+    <li class="chapter" data-level="1.4.7.9.12" data-path="./canvas/set-fill-style.html" data-name="setFillStyle"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/set-fill-style.html">setFillStyle</a></li>
+    <li class="chapter" data-level="1.4.7.9.13" data-path="./canvas/set-stroke-style.html" data-name="setStrokeStyle"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/set-stroke-style.html">setStrokeStyle</a></li>
+    <li class="chapter" data-level="1.4.7.9.14" data-path="./canvas/set-shadow.html" data-name="setShadow"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/set-shadow.html">setShadow</a></li>
+    <li class="chapter" data-level="1.4.7.9.15" data-path="./canvas/create-linear-gradient.html" data-name="createLinearGradient"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/create-linear-gradient.html">createLinearGradient</a></li>
+    <li class="chapter" data-level="1.4.7.9.16" data-path="./canvas/create-circular-gradient.html" data-name="createCircularGradient"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/create-circular-gradient.html">createCircularGradient</a></li>
+    <li class="chapter" data-level="1.4.7.9.17" data-path="./canvas/add-color-stop.html" data-name="addColorStop"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/add-color-stop.html">addColorStop</a></li>
+    <li class="chapter" data-level="1.4.7.9.18" data-path="./canvas/set-line-width.html" data-name="setLineWidth"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/set-line-width.html">setLineWidth</a></li>
+    <li class="chapter" data-level="1.4.7.9.19" data-path="./canvas/set-line-cap.html" data-name="setLineCap"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/set-line-cap.html">setLineCap</a></li>
+    <li class="chapter" data-level="1.4.7.9.20" data-path="./canvas/set-line-join.html" data-name="setLineJoin"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/set-line-join.html">setLineJoin</a></li>
+    <li class="chapter" data-level="1.4.7.9.21" data-path="./canvas/set-line-dash.html" data-name="setLineDash"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/set-line-dash.html">setLineDash</a></li>
+    <li class="chapter" data-level="1.4.7.9.22" data-path="./canvas/set-miter-limit.html" data-name="setMiterLimit"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/set-miter-limit.html">setMiterLimit</a></li>
+    <li class="chapter" data-level="1.4.7.9.23" data-path="./canvas/rect.html" data-name="rect"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/rect.html">rect</a></li>
+    <li class="chapter" data-level="1.4.7.9.24" data-path="./canvas/fill-rect.html" data-name="fillRect"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/fill-rect.html">fillRect</a></li>
+    <li class="chapter" data-level="1.4.7.9.25" data-path="./canvas/stroke-rect.html" data-name="strokeRect"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/stroke-rect.html">strokeRect</a></li>
+    <li class="chapter" data-level="1.4.7.9.26" data-path="./canvas/clear-rect.html" data-name="clearRect"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/clear-rect.html">clearRect</a></li>
+    <li class="chapter" data-level="1.4.7.9.27" data-path="./canvas/fill.html" data-name="fill"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/fill.html">fill</a></li>
+    <li class="chapter" data-level="1.4.7.9.28" data-path="./canvas/stroke.html" data-name="stroke"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/stroke.html">stroke</a></li>
+    <li class="chapter" data-level="1.4.7.9.29" data-path="./canvas/begin-path.html" data-name="beginPath"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/begin-path.html">beginPath</a></li>
+    <li class="chapter" data-level="1.4.7.9.30" data-path="./canvas/close-path.html" data-name="closePath"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/close-path.html">closePath</a></li>
+    <li class="chapter" data-level="1.4.7.9.31" data-path="./canvas/move-to.html" data-name="moveTo"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/move-to.html">moveTo</a></li>
+    <li class="chapter" data-level="1.4.7.9.32" data-path="./canvas/line-to.html" data-name="lineTo"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/line-to.html">lineTo</a></li>
+    <li class="chapter" data-level="1.4.7.9.33" data-path="./canvas/arc.html" data-name="arc"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/arc.html">arc</a></li>
+    <li class="chapter" data-level="1.4.7.9.34" data-path="./canvas/bezier-curve-to.html" data-name="bezierCurveTo"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/bezier-curve-to.html">bezierCurveTo</a></li>
+    <li class="chapter" data-level="1.4.7.9.35" data-path="./canvas/quadratic-curve-to.html" data-name="quadraticCurveTo"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/quadratic-curve-to.html">quadraticCurveTo</a></li>
+    <li class="chapter" data-level="1.4.7.9.36" data-path="./canvas/scale.html" data-name="scale"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/scale.html">scale</a></li>
+    <li class="chapter" data-level="1.4.7.9.37" data-path="./canvas/rotate.html" data-name="rotate"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/rotate.html">rotate</a></li>
+    <li class="chapter" data-level="1.4.7.9.38" data-path="./canvas/translate.html" data-name="translate"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/translate.html">translate</a></li>
+    <li class="chapter" data-level="1.4.7.9.39" data-path="./canvas/clip.html" data-name="clip"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/clip.html">clip</a></li>
+    <li class="chapter" data-level="1.4.7.9.40" data-path="./canvas/set-font-size.html" data-name="setFontSize"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/set-font-size.html">setFontSize</a></li>
+    <li class="chapter" data-level="1.4.7.9.41" data-path="./canvas/fill-text.html" data-name="fillText"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/fill-text.html">fillText</a></li>
+    <li class="chapter" data-level="1.4.7.9.42" data-path="./canvas/set-text-align.html" data-name="setTextAlign"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/set-text-align.html">setTextAlign</a></li>
+    <li class="chapter" data-level="1.4.7.9.43" data-path="./canvas/set-text-baseline.html" data-name="setTextBaseline"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/set-text-baseline.html">setTextBaseline</a></li>
+    <li class="chapter" data-level="1.4.7.9.44" data-path="./canvas/draw-image.html" data-name="drawImage"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/draw-image.html">drawImage</a></li>
+    <li class="chapter" data-level="1.4.7.9.45" data-path="./canvas/set-global-alpha.html" data-name="setGlobalAlpha"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/set-global-alpha.html">setGlobalAlpha</a></li>
+    <li class="chapter" data-level="1.4.7.9.46" data-path="./canvas/save-restore.html" data-name="save"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/save-restore.html">save</a></li>
+    <li class="chapter" data-level="1.4.7.9.47" data-path="./canvas/save-restore.html" data-name="restore"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/save-restore.html#restore">restore</a></li>
+    <li class="chapter" data-level="1.4.7.9.48" data-path="./canvas/draw.html" data-name="draw"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/draw.html">draw</a></li>
+    <li class="chapter" data-level="1.4.7.9.49" data-path="./canvas/get-actions.html" data-name="getActions"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/get-actions.html">getActions</a></li>
+    <li class="chapter" data-level="1.4.7.9.50" data-path="./canvas/clear-actions.html" data-name="clearActions"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/clear-actions.html">clearActions</a></li>
+    <li class="chapter" data-level="1.4.7.9.51" data-path="./canvas/measure-text.html" data-name="measureText"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/measure-text.html">measureText</a></li>
+    <li class="chapter" data-level="1.4.7.9.52" data-path="./canvas/global-composite-operation.html" data-name="globalCompositeOperation"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/global-composite-operation.html">globalCompositeOperation</a></li>
+    <li class="chapter" data-level="1.4.7.9.53" data-path="./canvas/arc-to.html" data-name="arcTo"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/arc-to.html">arcTo</a></li>
+    <li class="chapter" data-level="1.4.7.9.54" data-path="./canvas/stroke-text.html" data-name="strokeText"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/stroke-text.html">strokeText</a></li>
+    <li class="chapter" data-level="1.4.7.9.55" data-path="./canvas/line-dash-offset.html" data-name="lineDashOffset"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/line-dash-offset.html">lineDashOffset</a></li>
+    <li class="chapter" data-level="1.4.7.9.56" data-path="./canvas/create-pattern.html" data-name="createPattern"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/create-pattern.html">createPattern</a></li>
+    <li class="chapter" data-level="1.4.7.9.57" data-path="./canvas/set-shadow.html" data-name="shadowBlur"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/set-shadow.html#canvascontextshadowblur">shadowBlur</a></li>
+    <li class="chapter" data-level="1.4.7.9.58" data-path="./canvas/set-shadow.html" data-name="shadowColor"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/set-shadow.html#canvascontextshadowcolor">shadowColor</a></li>
+    <li class="chapter" data-level="1.4.7.9.59" data-path="./canvas/set-shadow.html" data-name="shadowOffsetX"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/set-shadow.html#canvascontextshadowoffsetx">shadowOffsetX</a></li>
+    <li class="chapter" data-level="1.4.7.9.60" data-path="./canvas/set-shadow.html" data-name="shadowOffsetY"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/set-shadow.html#canvascontextshadowoffsety">shadowOffsetY</a></li>
+    <li class="chapter" data-level="1.4.7.9.61" data-path="./canvas/font.html" data-name="font"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/font.html">font</a></li>
+    <li class="chapter" data-level="1.4.7.9.62" data-path="./canvas/transform.html" data-name="transform"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/transform.html">transform</a></li>
+    <li class="chapter" data-level="1.4.7.9.63" data-path="./canvas/set-transform.html" data-name="setTransform"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/canvas/set-transform.html">setTransform</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.7.10" data-path="./pulldown.html" data-name="下拉刷新"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/pulldown.html">下拉刷新</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.7.10.1" data-path="./pulldown.html" data-name="Page.onPullDownRefresh"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/pulldown.html#pageonpulldownrefresh">Page.onPullDownRefresh</a></li>
+    <li class="chapter" data-level="1.4.7.10.2" data-path="./pulldown.html" data-name="wx.startPullDownRefresh"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/pulldown.html#wxstartpulldownrefresh">wx.startPullDownRefresh</a></li>
+    <li class="chapter" data-level="1.4.7.10.3" data-path="./pulldown.html" data-name="wx.stopPullDownRefresh"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/pulldown.html#wxstoppulldownrefresh">wx.stopPullDownRefresh</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.7.11" data-path="./wxml-nodes-info.html" data-name="WXML节点信息"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wxml-nodes-info.html">WXML节点信息</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.7.11.1" data-path="./wxml-nodes-info.html" data-name="wx.createSelectorQuery"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wxml-nodes-info.html#wxcreateselectorquery">wx.createSelectorQuery</a></li>
+    <li class="chapter" data-level="1.4.7.11.2" data-path="./wxml-nodes-info.html" data-name="selectorQuery.in"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wxml-nodes-info.html#selectorqueryincomponent">selectorQuery.in</a></li>
+    <li class="chapter" data-level="1.4.7.11.3" data-path="./wxml-nodes-info.html" data-name="selectorQuery.select"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wxml-nodes-info.html#selectorqueryselectselector">selectorQuery.select</a></li>
+    <li class="chapter" data-level="1.4.7.11.4" data-path="./wxml-nodes-info.html" data-name="selectorQuery.selectAll"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wxml-nodes-info.html#selectorqueryselectallselector">selectorQuery.selectAll</a></li>
+    <li class="chapter" data-level="1.4.7.11.5" data-path="./wxml-nodes-info.html" data-name="selectorQuery.selectViewport"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wxml-nodes-info.html#selectorqueryselectviewport">selectorQuery.selectViewport</a></li>
+    <li class="chapter" data-level="1.4.7.11.6" data-path="./wxml-nodes-info.html" data-name="nodesRef.boundingClientRect"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wxml-nodes-info.html#nodesrefboundingclientrectcallback">nodesRef.boundingClientRect</a></li>
+    <li class="chapter" data-level="1.4.7.11.7" data-path="./wxml-nodes-info.html" data-name="nodesRef.scrollOffset"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wxml-nodes-info.html#nodesrefscrolloffsetcallback">nodesRef.scrollOffset</a></li>
+    <li class="chapter" data-level="1.4.7.11.8" data-path="./wxml-nodes-info.html" data-name="nodesRef.fields"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wxml-nodes-info.html#nodesreffieldsfieldscallback">nodesRef.fields</a></li>
+    <li class="chapter" data-level="1.4.7.11.9" data-path="./wxml-nodes-info.html" data-name="selectorQuery.exec"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/wxml-nodes-info.html#selectorqueryexeccallback">selectorQuery.exec</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.7.12" data-path="./intersection-observer.html" data-name="WXML节点布局相交状态"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/intersection-observer.html">WXML节点布局相交状态</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.7.12.1" data-path="./intersection-observer.html" data-name="wx.createIntersectionObserver"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/intersection-observer.html#wxcreateintersectionobserverthisoptions">wx.createIntersectionObserver</a></li>
+    <li class="chapter" data-level="1.4.7.12.2" data-path="./intersection-observer.html" data-name="intersectionObserver.relativeTo"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/intersection-observer.html#intersectionobserverrelativetoselectormargins">intersectionObserver.relativeTo</a></li>
+    <li class="chapter" data-level="1.4.7.12.3" data-path="./intersection-observer.html" data-name="intersectionObserver.relativeToViewport"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/intersection-observer.html#intersectionobserverrelativetoviewportmargins">intersectionObserver.relativeToViewport</a></li>
+    <li class="chapter" data-level="1.4.7.12.4" data-path="./intersection-observer.html" data-name="intersectionObserver.observe"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/intersection-observer.html#intersectionobserverobservetargetselectorcallback">intersectionObserver.observe</a></li>
+    <li class="chapter" data-level="1.4.7.12.5" data-path="./intersection-observer.html" data-name="intersectionObserver.disconnect"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/intersection-observer.html#intersectionobserverdisconnect">intersectionObserver.disconnect</a></li>
+        </ul></li>
+        </ul></li>
+    <li class="chapter open" data-level="1.4.8" data-path="./ext-api.html" data-name="第三方平台"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ext-api.html">第三方平台</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.8.1" data-path="./ext-api.html" data-name="wx.getExtConfig"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ext-api.html#wxgetextconfigobject">wx.getExtConfig</a></li>
+    <li class="chapter" data-level="1.4.8.2" data-path="./ext-api.html" data-name="wx.getExtConfigSync"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ext-api.html#wxgetextconfigsync">wx.getExtConfigSync</a></li>
+        </ul></li>
+    <li class="chapter open" data-level="1.4.9" data-path="./api-login.html" data-name="开放接口"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-login.html">开放接口</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.9.1" data-path="./api-login.html" data-name="登录"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-login.html">登录</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.9.1.1" data-path="./api-login.html" data-name="wx.login"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-login.html#wxloginobject">wx.login</a></li>
+    <li class="chapter" data-level="1.4.9.1.2" data-path="./signature.html" data-name="wx.checkSession"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/signature.html#wxchecksessionobject">wx.checkSession</a></li>
+    <li class="chapter" data-level="1.4.9.1.3" data-path="./signature.html" data-name="签名加密"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/signature.html">签名加密</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.9.2" data-path="./authorize-index.html" data-name="授权"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/authorize-index.html">授权</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.9.2.1" data-path="./authorize.html" data-name="wx.authorize"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/authorize.html">wx.authorize</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.9.3" data-path="./open.html" data-name="用户信息"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/open.html">用户信息</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.9.3.1" data-path="./open.html" data-name="wx.getUserInfo"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/open.html#wxgetuserinfoobject">wx.getUserInfo</a></li>
+    <li class="chapter" data-level="1.4.9.3.2" data-path="./getPhoneNumber.html" data-name="getPhoneNumber"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/getPhoneNumber.html">getPhoneNumber</a></li>
+    <li class="chapter" data-level="1.4.9.3.3" data-path="./unionID.html" data-name="UnionID机制说明"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/unionID.html">UnionID机制说明</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.9.4" data-path="./api-pay.html" data-name="微信支付"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-pay.html">微信支付</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.9.4.1" data-path="./api-pay.html" data-name="wx.requestPayment"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-pay.html#wxrequestpaymentobject">wx.requestPayment</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.9.5" data-path="./token.html" data-name="接口调用凭证"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/token.html">接口调用凭证</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.9.5.1" data-path="./token.html" data-name="获取access token"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/token.html#%E8%8E%B7%E5%8F%96-accesstoken">获取access token</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.9.6" data-path="./notice.html" data-name="模板消息"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/notice.html">模板消息</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.9.6.1" data-path="./notice.html" data-name="使用说明"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/notice.html#%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E">使用说明</a></li>
+    <li class="chapter" data-level="1.4.9.6.2" data-path="./notice.html" data-name="模版消息管理"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/notice.html#%E6%A8%A1%E7%89%88%E6%B6%88%E6%81%AF%E7%AE%A1%E7%90%86">模版消息管理</a></li>
+    <li class="chapter" data-level="1.4.9.6.3" data-path="./notice.html" data-name="发送模板消息"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/notice.html#%E5%8F%91%E9%80%81%E6%A8%A1%E6%9D%BF%E6%B6%88%E6%81%AF">发送模板消息</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.9.7" data-path="./custommsg/receive.html" data-name="客服消息"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/custommsg/receive.html">客服消息</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.9.7.1" data-path="./custommsg/receive.html" data-name="接收消息和事件"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/custommsg/receive.html#%E6%8E%A5%E6%94%B6%E6%B6%88%E6%81%AF%E5%92%8C%E4%BA%8B%E4%BB%B6">接收消息和事件</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.9.7.1.1" data-path="./custommsg/receive.html" data-name="文本消息"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/custommsg/receive.html#%E6%96%87%E6%9C%AC%E6%B6%88%E6%81%AF">文本消息</a></li>
+    <li class="chapter" data-level="1.4.9.7.1.2" data-path="./custommsg/receive.html" data-name="图片消息"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/custommsg/receive.html#%E5%9B%BE%E7%89%87%E6%B6%88%E6%81%AF">图片消息</a></li>
+    <li class="chapter" data-level="1.4.9.7.1.3" data-path="./custommsg/receive.html" data-name="小程序卡片消息"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/custommsg/receive.html#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%8D%A1%E7%89%87%E6%B6%88%E6%81%AF">小程序卡片消息</a></li>
+    <li class="chapter" data-level="1.4.9.7.1.4" data-path="./custommsg/receive.html" data-name="进入会话事件"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/custommsg/receive.html#%E8%BF%9B%E5%85%A5%E4%BC%9A%E8%AF%9D%E4%BA%8B%E4%BB%B6">进入会话事件</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.9.7.2" data-path="./custommsg/conversation.html" data-name="发送客服消息"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/custommsg/conversation.html">发送客服消息</a></li>
+    <li class="chapter" data-level="1.4.9.7.3" data-path="./custommsg/trans.html" data-name="转发消息"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/custommsg/trans.html">转发消息</a></li>
+    <li class="chapter" data-level="1.4.9.7.4" data-path="./custommsg/material.html" data-name="临时素材接口"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/custommsg/material.html">临时素材接口</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.9.7.4.1" data-path="./custommsg/material.html" data-name="获取临时素材"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/custommsg/material.html#%E8%8E%B7%E5%8F%96%E4%B8%B4%E6%97%B6%E7%B4%A0%E6%9D%90">获取临时素材</a></li>
+    <li class="chapter" data-level="1.4.9.7.4.2" data-path="./custommsg/material.html" data-name="新增临时素材"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/custommsg/material.html#%E6%96%B0%E5%A2%9E%E4%B8%B4%E6%97%B6%E7%B4%A0%E6%9D%90">新增临时素材</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.9.7.5" data-path="./custommsg/typing.html" data-name="客服输入状态"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/custommsg/typing.html">客服输入状态</a></li>
+    <li class="chapter" data-level="1.4.9.7.6" data-path="./custommsg/callback_help.html" data-name="接入指引"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/custommsg/callback_help.html">接入指引</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.9.8" data-path="./share.html" data-name="转发"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/share.html">转发</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.9.8.1" data-path="./share.html" data-name="Page.onShareAppMessage"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/share.html#pageonshareappmessageobject">Page.onShareAppMessage</a></li>
+    <li class="chapter" data-level="1.4.9.8.2" data-path="./share.html" data-name="wx.showShareMenu"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/share.html#wxshowsharemenuobject">wx.showShareMenu</a></li>
+    <li class="chapter" data-level="1.4.9.8.3" data-path="./share.html" data-name="wx.hideShareMenu"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/share.html#wxhidesharemenuobject">wx.hideShareMenu</a></li>
+    <li class="chapter" data-level="1.4.9.8.4" data-path="./share.html" data-name="wx.updateShareMenu"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/share.html#wxupdatesharemenuobject">wx.updateShareMenu</a></li>
+    <li class="chapter" data-level="1.4.9.8.5" data-path="./share.html" data-name="wx.getShareInfo"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/share.html#wxgetshareinfoobject">wx.getShareInfo</a></li>
+    <li class="chapter" data-level="1.4.9.8.6" data-path="./share.html" data-name="获取更多转发信息"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/share.html#%E8%8E%B7%E5%8F%96%E6%9B%B4%E5%A4%9A%E8%BD%AC%E5%8F%91%E4%BF%A1%E6%81%AF">获取更多转发信息</a></li>
+    <li class="chapter" data-level="1.4.9.8.7" data-path="./share.html" data-name="页面内发起转发"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/share.html#%E9%A1%B5%E9%9D%A2%E5%86%85%E5%8F%91%E8%B5%B7%E8%BD%AC%E5%8F%91">页面内发起转发</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.9.9" data-path="./qrcode.html" data-name="获取二维码"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/qrcode.html">获取二维码</a></li>
+    <li class="chapter" data-level="1.4.9.10" data-path="./address.html" data-name="收货地址"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/address.html">收货地址</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.9.10.1" data-path="./address.html" data-name="wx.chooseAddress"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/address.html#wxchooseaddressobject">wx.chooseAddress</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.9.11" data-path="./card.html" data-name="卡券"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/card.html">卡券</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.9.11.1" data-path="./card.html" data-name="wx.addCard"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/card.html#wxaddcardobject">wx.addCard</a></li>
+    <li class="chapter" data-level="1.4.9.11.2" data-path="./card.html" data-name="wx.openCard"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/card.html#wxopencardobject">wx.openCard</a></li>
+    <li class="chapter" data-level="1.4.9.11.3" data-path="./card.html" data-name="会员卡组件"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/card.html#%E4%BC%9A%E5%91%98%E5%8D%A1%E7%BB%84%E4%BB%B6">会员卡组件</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.9.12" data-path="./setting.html" data-name="设置"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/setting.html">设置</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.9.12.1" data-path="./setting.html" data-name="wx.openSetting"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/setting.html#wxopensettingobject">wx.openSetting</a></li>
+    <li class="chapter" data-level="1.4.9.12.2" data-path="./setting.html" data-name="wx.getSetting"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/setting.html#wxgetsettingobject">wx.getSetting</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.9.13" data-path="./we-run.html" data-name="微信运动"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/we-run.html">微信运动</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.9.13.1" data-path="./we-run.html" data-name="wx.getWeRunData"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/we-run.html#wxgetwerundataobject">wx.getWeRunData</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.9.14" data-path="./account-info.html" data-name="当前帐号信息"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/account-info.html">当前帐号信息</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.9.14.1" data-path="./account-info.html" data-name="wx.getAccountInfoSync"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/account-info.html#wxgetaccountinfosync">wx.getAccountInfoSync</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.9.15" data-path="./navigateToMiniProgram.html" data-name="打开小程序"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/navigateToMiniProgram.html">打开小程序</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.9.15.1" data-path="./navigateToMiniProgram.html" data-name="wx.navigateToMiniProgram"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/navigateToMiniProgram.html">wx.navigateToMiniProgram</a></li>
+    <li class="chapter" data-level="1.4.9.15.2" data-path="./navigateBackMiniProgram.html" data-name="wx.navigateBackMiniProgram"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/navigateBackMiniProgram.html">wx.navigateBackMiniProgram</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.9.16" data-path="./launchApp.html" data-name="打开APP"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/launchApp.html">打开APP</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.9.16.1" data-path="./launchApp.html" data-name="launchApp"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/launchApp.html">launchApp</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.9.17" data-path="./chooseInvoiceTitle.html" data-name="获取发票抬头"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/chooseInvoiceTitle.html">获取发票抬头</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.9.17.1" data-path="./chooseInvoiceTitle.html" data-name="wx.chooseInvoiceTitle"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/chooseInvoiceTitle.html">wx.chooseInvoiceTitle</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.9.18" data-path="./checkIsSupportSoterAuthentication.html" data-name="生物认证"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/checkIsSupportSoterAuthentication.html">生物认证</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.9.18.1" data-path="./checkIsSupportSoterAuthentication.html" data-name="wx.checkIsSupportSoterAuthentication"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/checkIsSupportSoterAuthentication.html">wx.checkIsSupportSoterAuthentication</a></li>
+    <li class="chapter" data-level="1.4.9.18.2" data-path="./startSoterAuthentication.html" data-name="wx.startSoterAuthentication"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/startSoterAuthentication.html">wx.startSoterAuthentication</a></li>
+    <li class="chapter" data-level="1.4.9.18.3" data-path="./checkIsSoterEnrolledInDevice.html" data-name="wx.checkIsSoterEnrolledInDevice"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/checkIsSoterEnrolledInDevice.html">wx.checkIsSoterEnrolledInDevice</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.9.19" data-path="./nearby.html" data-name="附近"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/nearby.html">附近</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.9.19.1" data-path="./nearby.html" data-name="添加地点"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/nearby.html#%E6%B7%BB%E5%8A%A0%E5%9C%B0%E7%82%B9">添加地点</a></li>
+    <li class="chapter" data-level="1.4.9.19.2" data-path="./nearby.html" data-name="查看地点列表"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/nearby.html#%E6%9F%A5%E7%9C%8B%E5%9C%B0%E7%82%B9%E5%88%97%E8%A1%A8">查看地点列表</a></li>
+    <li class="chapter" data-level="1.4.9.19.3" data-path="./nearby.html" data-name="删除地点"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/nearby.html#%E5%88%A0%E9%99%A4%E5%9C%B0%E7%82%B9">删除地点</a></li>
+    <li class="chapter" data-level="1.4.9.19.4" data-path="./nearby.html" data-name="展示/取消展示附近小程序"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/nearby.html#%E5%B1%95%E7%A4%BA%E5%8F%96%E6%B6%88%E5%B1%95%E7%A4%BA%E9%99%84%E8%BF%91%E5%B0%8F%E7%A8%8B%E5%BA%8F">展示/取消展示附近小程序</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.9.20" data-path="./plugin.html" data-name="插件管理"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/plugin.html">插件管理</a></li>
+    <li class="chapter" data-level="1.4.9.21" data-path="./imgSecCheck.html" data-name="内容安全"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/imgSecCheck.html">内容安全</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.9.21.1" data-path="./imgSecCheck.html" data-name="imgSecCheck"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/imgSecCheck.html">imgSecCheck</a></li>
+    <li class="chapter" data-level="1.4.9.21.2" data-path="./msgSecCheck.html" data-name="msgSecCheck"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/msgSecCheck.html">msgSecCheck</a></li>
+        </ul></li>
+        </ul></li>
+    <li class="chapter open" data-level="1.4.10" data-path="./analysis.html" data-name="数据"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/analysis.html">数据</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.10.1" data-path="./analysis.html" data-name="常规分析"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/analysis.html">常规分析</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.10.1.1" data-path="./analysis.html" data-name="概况"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/analysis.html#%E6%A6%82%E5%86%B5">概况</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.10.1.1.1" data-path="./analysis.html" data-name="概况趋势"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/analysis.html#%E6%A6%82%E5%86%B5%E8%B6%8B%E5%8A%BF">概况趋势</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.10.1.2" data-path="./analysis-visit.html" data-name="访问分析"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/analysis-visit.html">访问分析</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.10.1.2.1" data-path="./analysis-visit.html" data-name="访问趋势"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/analysis-visit.html#%E8%AE%BF%E9%97%AE%E8%B6%8B%E5%8A%BF">访问趋势</a></li>
+    <li class="chapter" data-level="1.4.10.1.2.2" data-path="./analysis-visit.html" data-name="访问分布"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/analysis-visit.html#%E8%AE%BF%E9%97%AE%E5%88%86%E5%B8%83">访问分布</a></li>
+    <li class="chapter" data-level="1.4.10.1.2.3" data-path="./analysis-visit.html" data-name="访问留存"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/analysis-visit.html#%E8%AE%BF%E9%97%AE%E7%95%99%E5%AD%98">访问留存</a></li>
+    <li class="chapter" data-level="1.4.10.1.2.4" data-path="./analysis-visit.html" data-name="访问页面"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/analysis-visit.html#%E8%AE%BF%E9%97%AE%E9%A1%B5%E9%9D%A2">访问页面</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.10.1.3" data-path="./analysis-user.html" data-name="用户画像"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/analysis-user.html">用户画像</a></li>
+        </ul></li>
+    <li class="chapter" data-level="1.4.10.2" data-path="./analysis-report.html" data-name="自定义分析"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/analysis-report.html">自定义分析</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.10.2.1" data-path="./analysis-report.html" data-name="自定义数据上报"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/analysis-report.html">自定义数据上报</a></li>
+        </ul></li>
+        </ul></li>
+    <li class="chapter open" data-level="1.4.11" data-path="./getUpdateManager.html" data-name="更新"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/getUpdateManager.html">更新</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.11.1" data-path="./getUpdateManager.html" data-name="wx.getUpdateManager"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/getUpdateManager.html">wx.getUpdateManager</a></li>
+        </ul></li>
+    <li class="chapter open" data-level="1.4.12" data-path="./createWorker.html" data-name="多线程"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/createWorker.html">多线程</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.12.1" data-path="./createWorker.html" data-name="wx.createWorker"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/createWorker.html">wx.createWorker</a></li>
+        </ul></li>
+    <li class="chapter open" data-level="1.4.13" data-path="./monitor-report.html" data-name="监控"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/monitor-report.html">监控</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.13.1" data-path="./monitor-report.html" data-name="监控数据上报"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/monitor-report.html">监控数据上报</a></li>
+        </ul></li>
+    <li class="chapter open" data-level="1.4.14" data-path="./setEnableDebug.html" data-name="调试接口"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/setEnableDebug.html">调试接口</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.14.1" data-path="./setEnableDebug.html" data-name="打开/关闭调试"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/setEnableDebug.html">打开/关闭调试</a></li>
+        </ul></li>
+    <li class="chapter open" data-level="1.4.15" data-path="./getLogManager.html" data-name="日志"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/getLogManager.html">日志</a>
+        <ul class="articles">
+    <li class="chapter" data-level="1.4.15.1" data-path="./getLogManager.html" data-name="wx.getLogManager"><a href="https://developers.weixin.qq.com/miniprogram/dev/api/getLogManager.html">wx.getLogManager</a></li>
+        </ul></li>
+    
+        
+        
+        
+        
+        
+        
+
+    <li class="divider"></li>
+</ul>
+
+
+        </nav>
+    </div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                    <div id="book-search-results">
+                        <div class="search-noresults">
+                            <section class="normal markdown-section">
+                                <h3 id="wxcreatevideocontextvideoid-this">wx.createVideoContext(videoId, this)</h3>
+<p>创建并返回 video 上下文 <code>videoContext</code> 对象。在自定义组件下，第二个参数传入组件实例this，以操作组件内 <code>&lt;video/&gt;</code> 组件</p>
+<h4 id="videocontext">videoContext</h4>
+<p><code>videoContext</code> 通过 videoId 跟一个 video 组件绑定，通过它可以操作一个 video 组件。</p>
+<p><strong>videoContext 对象的方法列表：</strong></p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>参数</th>
+<th>说明</th>
+<th>最低版本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>play</td>
+<td>无</td>
+<td>播放</td>
+<td></td>
+</tr>
+<tr>
+<td>pause</td>
+<td>无</td>
+<td>暂停</td>
+<td></td>
+</tr>
+<tr>
+<td>stop</td>
+<td>无</td>
+<td>停止</td>
+<td><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/compatibility.html" title="基础库 1.7.0 开始支持，低版本需做兼容处理。">1.7.0</a></td>
+</tr>
+<tr>
+<td>seek</td>
+<td>position</td>
+<td>跳转到指定位置，单位 s</td>
+<td></td>
+</tr>
+<tr>
+<td>sendDanmu</td>
+<td>danmu</td>
+<td>发送弹幕，danmu 包含两个属性 text, color。</td>
+<td></td>
+</tr>
+<tr>
+<td>playbackRate</td>
+<td>rate</td>
+<td>设置倍速播放，支持的倍率有 0.5/0.8/1.0/1.25/1.5</td>
+<td><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/compatibility.html" title="基础库 1.4.0 开始支持，低版本需做兼容处理。">1.4.0</a></td>
+</tr>
+<tr>
+<td>requestFullScreen</td>
+<td>无</td>
+<td>进入全屏，可传入{direction}参数（1.7.0起支持），详见video组件文档</td>
+<td><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/compatibility.html" title="基础库 1.4.0 开始支持，低版本需做兼容处理。">1.4.0</a></td>
+</tr>
+<tr>
+<td>exitFullScreen</td>
+<td>无</td>
+<td>退出全屏</td>
+<td><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/compatibility.html" title="基础库 1.4.0 开始支持，低版本需做兼容处理。">1.4.0</a></td>
+</tr>
+<tr>
+<td>showStatusBar</td>
+<td>无</td>
+<td>显示状态栏，仅在iOS全屏下有效</td>
+<td><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/compatibility.html" title="基础库 2.1.0 开始支持，低版本需做兼容处理。">2.1.0</a></td>
+</tr>
+<tr>
+<td>hideStatusBar</td>
+<td>无</td>
+<td>隐藏状态栏，仅在iOS全屏下有效</td>
+<td><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/compatibility.html" title="基础库 2.1.0 开始支持，低版本需做兼容处理。">2.1.0</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>示例代码：</strong></p>
+<p><a href="wechatide://minicode/X5V6Xmmk6xYB" title="在开发者工具中预览效果">在开发者工具中预览效果</a></p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"section tc"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">video</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"myVideo"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&amp;bizid=1023&amp;hy=SH&amp;fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"</span>   <span class="hljs-attr">enable-danmu</span> <span class="hljs-attr">danmu-btn</span> <span class="hljs-attr">controls</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn-area"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">bindblur</span>=<span class="hljs-string">"bindInputBlur"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">bindtap</span>=<span class="hljs-string">"bindSendDanmu"</span>&gt;</span>发送弹幕<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+</code></pre>
+<pre><code class="language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getRandomColor</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">let</span> rgb = []
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span> ; i &lt; <span class="hljs-number">3</span>; ++i){
+    <span class="hljs-keyword">let</span> color = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">256</span>).toString(<span class="hljs-number">16</span>)
+    color = color.length == <span class="hljs-number">1</span> ? <span class="hljs-string">'0'</span> + color : color
+    rgb.push(color)
+  }
+  <span class="hljs-keyword">return</span> <span class="hljs-string">'#'</span> + rgb.join(<span class="hljs-string">''</span>)
+}
+
+Page({
+  <span class="hljs-attr">onReady</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">this</span>.videoContext = wx.createVideoContext(<span class="hljs-string">'myVideo'</span>)
+  },
+  <span class="hljs-attr">inputValue</span>: <span class="hljs-string">''</span>,
+  <span class="hljs-attr">bindInputBlur</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+    <span class="hljs-keyword">this</span>.inputValue = e.detail.value
+  },
+  <span class="hljs-attr">bindSendDanmu</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">this</span>.videoContext.sendDanmu({
+      <span class="hljs-attr">text</span>: <span class="hljs-keyword">this</span>.inputValue,
+      <span class="hljs-attr">color</span>: getRandomColor()
+    })
+  }
+})
+</code></pre>
+
+                            </section>      
+                        </div>
+                        <div class="search-results">
+                            <div class="has-results">
+                                <h1 class="search-results-title">
+                                    <span class="search-results-count"></span> 个结果 "<span class="search-query"></span>"
+                                </h1>
+                                <ul class="search-results-list"></ul>
+                            </div>
+                            <div class="no-results">
+                                <h1 class="search-results-title">
+                                    没有找到相关内容 "<span class="search-query"></span>"
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="foot" id="footer">
+                <ul class="links ft">
+                    <li class="links_item"><a href="https://www.tencent.com/zh-cn/index.html" target="_blank">关于腾讯</a></li>
+                    <li class="links_item"><a href="https://developers.weixin.qq.com/miniprogram/introduction/index.html?t=1484641676" target="_blank">文档中心</a></li>
+                    <li class="links_item"><a href="https://mp.weixin.qq.com/cgi-bin/opshowpage?action=dispelinfo&amp;lang=zh_CN&amp;begin=1&amp;count=9" target="_blank">辟谣中心</a></li>
+                    <li class="links_item"><a href="https://kf.qq.com/product/wx_xcx.html" target="_blank">客服中心</a></li>
+                    <li class="links_item"><a href="mailto:weixinmp@qq.com" target="_blank">联系邮箱</a></li>
+                    <li class="links_item">
+                        <p class="copyright">Copyright © 2012-<span id="s_copyright_year"></span> Tencent. All Rights Reserved.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        
+            
+            <a href="https://developers.weixin.qq.com/miniprogram/dev/api/media-video.html" class="navigation navigation-prev " aria-label="上一页: 视频">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            
+            
+            <a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-camera.html" class="navigation navigation-next " aria-label="下一页: 相机组件控制" style="margin-right: 15px;">
+                <i class="fa fa-angle-right"></i>
+            </a>
+            
+        
+
+    </div>
+    
+    <script>
+        var dom = document.getElementById('js_selected_dev')
+        if (dom) dom.classList.add('selected')
+    </script>
+    
+</div>
+
+        <script src="./视频组件控制 · 小程序_files/gitbook.js"></script>
+        <script src="./视频组件控制 · 小程序_files/theme.js"></script>
+        <script src="./视频组件控制 · 小程序_files/search.js"></script>
+        <script>
+            var gitbook = gitbook || [];
+            gitbook.push(function() {
+                gitbook.page.hasChanged();
+            });
+        </script>
+    
+
+</body></html>

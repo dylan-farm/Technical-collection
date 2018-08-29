@@ -5,9 +5,13 @@
 ###文章目录
 
 **Github系列：**
-
-1. [class&decorator](./class&decorator/class&decorator.md)
-2. [深入理解React Fiber 架构](./react-fiber/README.md)
+#### API篇
+* [class&decorator](./class&decorator/class&decorator.md)
+#### 框架篇
+* [深入理解React Fiber 架构](./react-fiber/README.md)
+#### 技巧篇
+* 深入理解 Javascript 之 JS的深浅拷贝
+#### 算法篇
 
 **其他社区（博客）系列：**
 
