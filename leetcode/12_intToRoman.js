@@ -1,67 +1,67 @@
 // 12 https://leetcode.com/problems/integer-to-roman/description/
 
-var intToRoman = function (num) {
+var intToRoman = function(num) {
   var obj = [
     {
       value: 1000,
-      symbol: "M",
+      symbol: "M"
     },
     {
       value: 900,
-      symbol: "CM",
+      symbol: "CM"
     },
     {
       value: 500,
-      symbol: "D",
+      symbol: "D"
     },
     {
       value: 400,
-      symbol: "CD",
+      symbol: "CD"
     },
     {
       value: 100,
-      symbol: "C",
+      symbol: "C"
     },
     {
       value: 90,
-      symbol: "XC",
+      symbol: "XC"
     },
     {
       value: 50,
-      symbol: "L",
+      symbol: "L"
     },
     {
       value: 40,
-      symbol: "XL",
+      symbol: "XL"
     },
     {
       value: 10,
-      symbol: "X",
+      symbol: "X"
     },
     {
       value: 9,
-      symbol: "IX",
+      symbol: "IX"
     },
     {
       value: 5,
-      symbol: "V",
+      symbol: "V"
     },
     {
       value: 4,
-      symbol: "IV",
+      symbol: "IV"
     },
     {
       value: 1,
-      symbol: "I",
+      symbol: "I"
     }
-  ]
-  var strs = ''
+  ];
+  var strs = "";
   for (var i = 0; i < obj.length; i++) {
-    var item = obj[i]
+    var item = obj[i];
     while (num >= item.value) {
       num -= item.value;
       strs += item.symbol;
     }
   }
-  return strs
+  return strs;
 };
