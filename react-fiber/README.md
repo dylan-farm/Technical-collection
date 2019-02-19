@@ -65,9 +65,48 @@ React Fiber 就是为了解决上面的问题而生。
 
 对于如何区别优先级，React 有自己的一套逻辑。对于动画这种实时性很高的东西，也就是 16 ms 必须渲染一次保证不卡顿的情况下，React 会每 16 ms（以内） 暂停一下更新，返回来继续渲染动画。
 
-对于异步渲染，现在渲染有两个阶段：`reconciliation` 和 `commit` 。前者过程是可以打断的，后者不能暂停，会一直更新界面直到完成。
+### React Fiber 架构
+#### 调度拆分为小任务
+浏览器本身也不断进化中，随着页面由简单的展示转向WebAPP，它需要一些新能力来承载更多节点的展示与更新。
+下面是一些自救措施：
+* requestAnimationFrame
+* requestIdleCallback
+* web worker
+* IntersectionObserver
 
-下面是两个阶段涉及到的生命周期：
+react官方采用的是 [requestIdleCallback](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestIdleCallback)，为了兼容所有平台，facebook 单独实现了其功能，作为一个独立的 npm 包使用 react-schedule
+
+> 其作用是会在浏览器空闲时期依次调用函数， 这就可以在主事件循环中执行后台或低优先级的任务，而且不会对像动画和用户交互这样延迟触发而且关键的事件产生影响。函数一般会按先进先调用的顺序执行，除非函数在浏览器调用它之前就到了它的超时时间。
+
+**简化后的大致流程图如下：**
+
+
+  ![](../images/fiber_05.jpg)
+
+#### Fiber Node 及 Fiber Tree
+
+* 从流程图上看到会有 Fiber Node 节点，这个是在 react 生成的 Virtual Dom 基础上增加的一层数据结构，主要是为了将递归遍历转变成循环遍历，配合 requestIdleCallback API, 实现任务拆分、中断与恢复。为了实现循环遍历，Fiber Node 上携带了更多的信息。
+* 每一个 Fiber Node 节点与 Virtual Dom 一一对应，所有 Fiber Node 连接起来形成 Fiber tree, 是个单链表树结构
+
+#### 两个阶段：`reconciliation` 和 `commit`
+对于异步渲染，现在渲染有两个阶段：`reconciliation` 和 `commit` 。前者过程是可以打断的，后者不能暂停，会一直更新界面直到完成。
+
+**reconciliation 处理过程**
+* 当执行 setState() 或首次 render() 时，进入工作循环，循环体中处理的单元为 Fiber Node, 即是拆分任务的最小单位，从根节点开始，自顶向下逐节点构造 workInProgress tree（构建中的新 Fiber Tree）。
+>
+* 每个工作处理单元做的事情，由 beginWork(), completeUnitOfWork() 两部分构成。
+>
+* beginWork()主要做的事情是从顶向下生成所有的 Fiber Node，并标记 Diff, 不包括兄弟节点，每个 Fiber Node 的处理过程根据组件类型略有差异，以 ClassComponent 为例：
+1 如果当前节点不需要更新，直接把子节点clone过来，要更新的话标记更新类型
+2 更新当前节点状态（props, state, context等）
+3 调用shouldComponentUpdate()
+4 调用组件实例方法 render() 获得新的子节点，并为子节点创建 Fiber Node（创建过程会尽量复用现有 Fiber Node，子节点增删也发生在这里）
+5 如果没有产生 child fiber，进入下一阶段 completeUnitOfWork
+>
+* completeUnitOfWork() 当没有子节点，开始遍历兄弟节点作为下一个处理单元，处理完兄弟节点开始向上回溯，直到再次回去根节点为止，将收集向上回溯过程中的所有 diff，拿到 diff 后开始进入 commit 阶段。
+>
+* 构建 workInProgress tree 的过程就是 diff 的过程，通过 requestIdleCallback 来调度执行一组任务，每完成一个任务后回来看看有没有插队的（更紧急的），把时间控制权交还给主线程，直到下一次 requestIdleCallback 回调再继续构建workInProgress tree。
+#### 两个阶段涉及到的生命周期：
 
 **Reconciliation** 阶段 （*React算法，用来比较2颗树，以确定哪些部分需要重新渲染*）
 
@@ -145,7 +184,26 @@ class ExampleComponent extends React.Component {
   UNSAFE_componentWillReceiveProps(nextProps) {}
 }
 ```
+
+### 16 大版本主要更新还解决以下痛点：
+
+* 组件不能返回数组，最见的场合是UL元素下只能使用LI，TR元素下只能使用TD或TH，这时这里有一个组件循环生成LI或TD列表时，我们并不想再放一个DIV，这会破坏HTML的语义。
+* 弹窗问题，之前一直使用不稳定的unstable_renderSubtreeIntoContainer。弹窗是依赖原来DOM树的上下文，因此这个API第一个参数是组件实例，通过它得到对应虚拟DOM，然后一级级往上找，得到上下文。它的其他参数也很好用，但这个方法一直没有转正。。。
+* 异常处理，我们想知道哪个组件出错，虽然有了React DevTool，但是太深的组件树查找起来还是很吃力。希望有个方法告诉我出错位置，并且出错时能让我有机会进行一些修复工作
+* HOC的流行带来两个问题，毕竟是社区兴起的方案，没有考虑到ref与context的向下传递。
+* 组件的性能优化全凭人肉，并且主要集中在SCU，希望框架能干些事情，即使不用SCU，性能也能上去。
+
+####新特性：
+* render / 纯组件能够 return 任何数据结构
+* CreatePortal API，更好的处理 Dialog 这种场景组件
+* 新的 context api，尝试代替一部分 redux 的职责
+* 异步渲染/时间切片(time slicing)，成倍提高性能
+* componentDidCatch，错误边界，框架层面上提高用户 debug 的能力
+* 网络请求 IO(Suspense)，更好的处理异步网络 IO
+
 ___
+
+
 #### 参考资料：
  - [React Fiber架构](https://zhuanlan.zhihu.com/p/37095662)
  - [React Fiber Architecture](https://github.com/acdlite/react-fiber-architecture)
