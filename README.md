@@ -10,6 +10,7 @@
 #### 框架篇
 * [深入理解React Fiber 架构](./react-fiber/README.md)
 #### 技巧篇
+* [手写极简版 Promise](./MyPromise/MyPromise.js)
 * 深入理解 Javascript 之 JS的深浅拷贝
 * vue&react 渲染原理
 #### [leetcode](./leetcode)
