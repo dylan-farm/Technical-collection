@@ -48,10 +48,10 @@ MyPromise.prototype.then = function(onFulfilled, onRejected) {
       _this.rejectedCallBacks.push(onRejected);
       break;
     case RESOLVED:
-      onFulfilled(_this.value);
+      _this.value = onFulfilled(_this.value);
       break;
     case REJECTED:
-      onRejected(_this.value);
+      _this.value = onRejected(_this.value);
       break;
     default:
   }
