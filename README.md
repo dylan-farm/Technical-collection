@@ -19,7 +19,7 @@
 
 - [手写极简版 Promise](./MyPromise/MyPromise.js)
 - [深入理解 Javascript 之 JS 的深浅拷贝](./objCopy/objCopy.js)
-- vue&react 渲染原理
+- [react按需加载高阶组件](./AsyncComponent/AsyncComponent.js)
 
 #### [leetcode](./leetcode)
 
