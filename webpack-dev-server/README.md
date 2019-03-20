@@ -17,7 +17,21 @@
 5. webpack/hot部分监听到`webpackHotUpdate`事件，调用`check`方法进行hash值对比以及检查各modules是否需要更新。如需更新会调用`hotDownloadManifest`方法下载json（manifest）文件。
 6. `hotDownloadManifest`完成后调用`hotDownloadUpdateChunk`方法，通过jsonp的方式加载最新的chunk，之后分析对比文件进行文件的更新替换，完成整个热更新流程。
 
+**注：以下源码分析采用倒叙分析方式**
 #### 2. webpack/hot 源码解读
+在webpack构建项目时，webpack-dev-server会在编译后js文件加上两个依赖文件：
+```
+/***/ 
+(function(module, exports, __webpack_require__) {
+  // 建立socket连接，保持前后端实时通讯
+  __webpack_require__("./node_modules/webpack-dev-server/client/index.js?http://localhost:8080");
+    // dev-server client热更新的方法
+  __webpack_require__("./node_modules/webpack/hot/dev-server.js");
+  module.exports = __webpack_require__("./src/index.js");
+  /***/
+})
+
+```
   * [webpack/hot/dev-server.js](https://github.com/webpack/webpack/blob/master/hot/dev-server.js)的文件内容：
 
     ```
