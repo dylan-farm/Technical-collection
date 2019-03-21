@@ -22,7 +22,8 @@
 
 #### 技巧篇
 
-- [手写极简版 Promise](./MyPromise/MyPromise.js)
+- [手写极简版 Promise（function）](./MyPromise/MyPromise.js)
+- [手写 Promise （Class）增加静态方法resolve&reject](./MyPromiseClass/MyPromise.js)
 - [深入理解 Javascript 之 JS 的深浅拷贝](./objCopy/objCopy.js)
 - [react按需加载高阶组件](./AsyncComponent/AsyncComponent.js)
 
