@@ -24,7 +24,7 @@
 - [react按需加载高阶组件](./AsyncComponent/AsyncComponent.js)
 - [class&decorator](./class&decorator/class&decorator.md)
 - [Promise之深度探究&填坑](./Promise/README.md)
-
+- [函数式编程](./FP/README.md)
 #### 数据结构&算法篇
 - [leetcode](./leetcode)
 
