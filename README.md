@@ -3,28 +3,31 @@
 > 日常填坑总结
 > 前沿技术点调研学习总结
 
-### 文章目录
+### 博客集锦目录
 
-**Github 系列：**
+
+#### JS进阶篇
+- [JS进阶之手写极简版 Promise（function）](./MyPromise/MyPromise.js)
+- [JS进阶之手写 Promise （Class）增加静态方法resolve&reject](./MyPromiseClass/MyPromise.js)
+- [JS进阶之深浅拷贝](./objCopy/objCopy.js)
+- [JS进阶之封装react按需加载高阶组件](./AsyncComponent/AsyncComponent.js)
+- [JS进阶之深度总结class&decorator](./class&decorator/class&decorator.md)
+- [JS进阶之Promise应用的深度探究](./Promise/README.md)
+- [JS进阶之函数式编程](./FP/README.md)
+
 
 #### 框架篇
 
 - [深入理解 React Fiber 架构](./react-fiber/README.md)
 
 #### 前端工程化篇
-- [webpack-dev-server 原理解析 及 源码解析](./webpack-dev-server/README.md)
 - [脚手架模板](https://github.com/dylan-farm/cli-demo)
 
+#### 源码解读篇
+- [webpack-dev-server 源码解析](./webpack-dev-server/README.md)
+- [react-router 源码解析](./react-router/README.md)
 
-#### JS进阶篇
 
-- [手写极简版 Promise（function）](./MyPromise/MyPromise.js)
-- [手写 Promise （Class）增加静态方法resolve&reject](./MyPromiseClass/MyPromise.js)
-- [深入理解 Javascript 之 JS 的深浅拷贝](./objCopy/objCopy.js)
-- [react按需加载高阶组件](./AsyncComponent/AsyncComponent.js)
-- [class&decorator](./class&decorator/class&decorator.md)
-- [Promise之深度探究&填坑](./Promise/README.md)
-- [函数式编程](./FP/README.md)
 #### 数据结构&算法篇
 - [leetcode](./leetcode)
 
