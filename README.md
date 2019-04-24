@@ -26,6 +26,7 @@
 #### 源码解读篇
 - [webpack-dev-server 源码解析](./webpack-dev-server/README.md)
 - [react-router 源码解析](./react-router/README.md)
+- [require 源码解析](./require/README.md)
 
 
 #### 数据结构&算法篇
