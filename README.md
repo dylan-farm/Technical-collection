@@ -32,6 +32,7 @@
 #### 数据结构&算法篇
 - [leetcode](./leetcode)
 - [算法篇之快速排序](./quickSort2/README.md)
+- [算法篇之斐波那契数列](./fibonacci/README.md)
 
 **其他社区（博客）系列：**
 
