@@ -18,7 +18,8 @@
 
 #### 框架篇
 
-- [深入理解 React Fiber 架构](./react-fiber/README.md)
+- [框架篇之 深入理解 React Fiber 架构](./react-fiber/README.md)
+- [框架篇之 手写 React-Redux 高阶组件Connect](./react-redux-hoc-react/index.js)
 
 #### 前端工程化篇
 - [脚手架模板](https://github.com/dylan-farm/cli-demo)
