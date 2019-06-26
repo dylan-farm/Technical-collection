@@ -1,0 +1,786 @@
+<!DOCTYPE html><html><head>
+      <title>MultiplexDevelopmentUnify</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/mahongwei/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.4.1/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <style> 
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+ 
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="%E8%83%8C%E6%99%AF">&#x80CC;&#x666F;</h1>
+
+<ol>
+<li>
+<p>&#x8D8A;&#x6765;&#x8D8A;&#x591A;&#x7684;&#x4E1A;&#x5185;&#x4EBA;&#x58EB;&#x8868;&#x793A;: &#x300C;<strong>&#x5927;&#x524D;&#x7AEF;&#x300D;&#x6210;&#x4E3A;&#x79FB;&#x52A8;&#x5F00;&#x53D1;&#x4E0E; Web &#x524D;&#x7AEF;&#x7684;&#x53D1;&#x5C55;&#x8D8B;&#x52BF;&#xFF0C;&#x56E0;&#x4E3A;&#x7EC8;&#x7AEF;&#x788E;&#x7247;&#x5316;&#x548C; Serverless</strong> &#x8BA9;&#x8FD9;&#x4E00;&#x5207;&#x770B;&#x8D77;&#x6765;&#x66F4;&#x52A0;&#x53EF;&#x4FE1;&#x3002;</p>
+<ul>
+<li>
+<p><strong>&#x7EC8;&#x7AEF;&#x788E;&#x7247;&#x5316;</strong>&#x987E;&#x540D;&#x601D;&#x4E49;&#x5C31;&#x662F;&#x6307;&#x7EC8;&#x7AEF;&#x8D8A;&#x6765;&#x8D8A;&#x591A;&#x6837;&#xFF0C;&#x6BD4;&#x5982; Apple Watch &#x624B;&#x8868;&#x3001;&#x667A;&#x80FD; TV&#x3001;VR &#x773C;&#x955C;&#x7B49;&#x7B49;&#x3002;&#x8FD9;&#x4E9B;&#x7EC8;&#x7AEF;&#x5C31;&#x548C;&#x667A;&#x80FD;&#x624B;&#x673A;&#x4E00;&#x6837;&#xFF0C;&#x652F;&#x6301;&#x7B2C;&#x4E09;&#x65B9;&#x5E94;&#x7528;&#x7684;&#x5D4C;&#x5165;&#x3002;<strong>Serverless</strong> &#x5B57;&#x9762;&#x610F;&#x601D;&#x662F;&#x65E0;&#x670D;&#x52A1;&#x67B6;&#x6784;&#xFF0C;&#x5B9E;&#x9645;&#x5C31;&#x662F;&#x6307;&#x7528;&#x65B0;&#x7684;&#x67B6;&#x6784;&#x53BB;&#x4EE3;&#x66FF;&#x4F20;&#x7EDF;&#x670D;&#x52A1;&#x5668;&#x3002;</p>
+</li>
+<li>
+<p>&#x5728;&#x8FD9;&#x6837;&#x7684;&#x5927;&#x80CC;&#x666F;&#x4E0B;&#xFF0C;&#x524D;&#x7AEF;&#x5DE5;&#x7A0B;&#x5E08;&#x4E0D;&#x4EC5;&#x9700;&#x8981;<strong>&#x638C;&#x63E1; PC &#x7AEF;&#x548C; H5 &#x76F8;&#x5173;&#x7684;&#x5F00;&#x53D1;&#x80FD;&#x529B;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x5BF9; Android&#x3001;iOS</strong>&#x7B49;&#x5404;&#x79CD;&#x7EC8;&#x7AEF;&#x7684;&#x5F00;&#x53D1;&#x5177;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x4E86;&#x89E3;&#x3002;</p>
+</li>
+<li>
+<p>&#x603B;&#x4F53;&#x6765;&#x770B;&#xFF0C;&#x6211;&#x4EEC;&#x8BA4;&#x4E3A;&#x524D;&#x7AEF;&#x6846;&#x67B6;&#x3001;&#x6280;&#x672F;&#x6807;&#x51C6;&#x5728;&#x4E0D;&#x505C;&#x6F14;&#x53D8;&#xFF0C;&#x65B0;&#x7684;&#x4E1A;&#x52A1;&#x5F62;&#x6001;&#x3001;&#x7528;&#x6237;&#x7EC8;&#x7AEF;&#x4E5F;&#x5728;&#x4E0D;&#x65AD;&#x6D8C;&#x73B0;&#xFF0C;&#x8FD9;&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x884C;&#x4E1A;&#x7684;&#x53D1;&#x5C55;&#x6765;&#x8BF4;&#x6216;&#x8BB8;&#x662F;&#x4EF6;&#x597D;&#x4E8B;&#xFF1B;&#x4F46;&#x5BF9;&#x4E8E;&#x5F00;&#x53D1;&#x8005;&#x548C;&#x56E2;&#x961F;&#x6765;&#x8BF4;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x5C45;&#x9AD8;&#x4E0D;&#x4E0B;&#x7684;&#x5B66;&#x4E60;&#x548C;&#x8BD5;&#x9519;&#x6210;&#x672C;&#x3002;&#x4F34;&#x968F;&#x7740;&#x652F;&#x4ED8;&#x5B9D;&#x5C0F;&#x7A0B;&#x5E8F;&#x3001;&#x5FEB;&#x5E94;&#x7528;&#x3001;&#x767E;&#x5EA6;&#x667A;&#x80FD;&#x5C0F;&#x7A0B;&#x5E8F;&#x7B49;&#x7EC8;&#x7AEF;&#x7684;&#x9646;&#x7EED;&#x5165;&#x5C40;&#xFF0C;&#x7531;&#x4E8E;&#x6210;&#x672C;&#x548C;&#x6548;&#x7387;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4E1A;&#x52A1;&#x4EA7;&#x54C1;&#x4E5F;&#x4E0D;&#x592A;&#x53EF;&#x80FD;&#x4E3A;&#x6BCF;&#x4E2A;&#x7EC8;&#x7AEF;&#x90FD;&#x5355;&#x72EC;&#x7684;&#x8FDB;&#x884C;&#x5F00;&#x53D1;&#x5DE5;&#x4F5C;&#x3002;</p>
+</li>
+</ul>
+</li>
+<li>
+<p>&#x4E2D;&#x56FD;&#x4E92;&#x8054;&#x7F51;&#x7EDC;&#x4FE1;&#x606F;&#x4E2D;&#x5FC3;&#xFF08;CNNIC&#xFF09;&#x53D1;&#x5E03;&#x7684;&#x300A;&#x4E2D;&#x56FD;&#x4E92;&#x8054;&#x7F51;&#x7EDC;&#x53D1;&#x5C55;&#x72B6;&#x51B5;&#x7EDF;&#x8BA1;&#x62A5;&#x544A;&#x300B;&#x663E;&#x793A;&#xFF0C;&#x622A;&#x81F3; 2018 &#x5E74; 6 &#x6708;&#xFF0C;<strong>&#x6211;&#x56FD;&#x7F51;&#x6C11;&#x89C4;&#x6A21;&#x8FBE; 8.02 &#x4EBF;&#x4EBA;&#xFF0C;&#x5FAE;&#x4FE1;&#x6708;&#x6D3B; 10 &#x4EBF; &#x3001;&#x652F;&#x4ED8;&#x5B9D;&#x6708;&#x6D3B; 4 &#x4EBF;&#x3001;&#x767E;&#x5EA6;&#x6708;&#x6D3B; 3.3 &#x4EBF;</strong>&#xFF1B;&#x53E6;&#x4E00;&#x65B9;&#x9762;&#xFF0C;<strong>2018 Q3 &#x4E2D;&#x56FD; Android &#x624B;&#x673A;&#x5360;&#x667A;&#x80FD;&#x624B;&#x673A;&#x6574;&#x4F53;&#x7684;&#x6BD4;&#x4F8B;&#x8D85;&#x8FC7; 80%&#xFF0C;&#x6708;&#x6D3B;&#x7EA6; 6 &#x4EBF;</strong>&#x3002;</p>
+</li>
+<li>
+<p>BAT &#x4E0E; Android &#x6210;&#x4E3A;&#x4E86;&#x4E2D;&#x56FD;&#x4E92;&#x8054;&#x7F51;&#x771F;&#x6B63;&#x7684;&#x7528;&#x6237;&#x5165;&#x53E3;&#x3002;</p>
+<ul>
+<li><strong>&#x6D41;&#x91CF;&#x9AD8;&#x7684;&#x5165;&#x53E3;&#x7EA7;&#x522B; APP &#x90FD;&#x5E0C;&#x671B;&#x505A;&#x5E73;&#x53F0;&#xFF0C;&#x6210;&#x4E3A;&#x4E00;&#x4E2A;&#x751F;&#x6001;&#x5E73;&#x53F0;&#x548C;&#x4E92;&#x8054;&#x7F51;&#x6D41;&#x91CF;&#x5165;&#x53E3;&#xFF0C;&#x5927;&#x91CF;&#x7B2C;&#x4E09;&#x65B9;&#x5E94;&#x7528;&#x7684;&#x63A5;&#x5165;&#xFF0C;&#x4ECE;&#x4E1A;&#x52A1;&#x5C42;&#x8BA9;&#x516C;&#x53F8; APP &#x5173;&#x8054;&#x4E0A;&#x66F4;&#x591A;&#x4F01;&#x4E1A;&#x7684;&#x5229;&#x76CA;&#xFF0C;&#x5E76;&#x4E14;&#x62E5;&#x6709;&#x66F4;&#x5F3A;&#x7684;&#x751F;&#x547D;&#x529B;</strong>&#xFF1B;</li>
+<li><strong>&#x4ECE;&#x6280;&#x672F;&#x5C42;&#x9762;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x201C;&#x672C;&#x5730;&#x80FD;&#x529B;&#x63A5;&#x53E3;&#x5C42;&#x201D;&#x6536;&#x96C6;&#x5927;&#x91CF;&#x7528;&#x6237;&#x6570;&#x636E;&#xFF0C;&#x4ECE;&#x6D88;&#x8D39;&#x4E92;&#x8054;&#x7F51;&#x5230;&#x4EA7;&#x4E1A;&#x4E92;&#x8054;&#x7F51;&#x9700;&#x8981;&#x5927;&#x91CF;&#x5404;&#x884C;&#x5404;&#x4E1A;&#x57FA;&#x7840;&#x7528;&#x6237;&#x6570;&#x636E;&#x7EBF;&#x7D22;&#x8FDB;&#x884C;&#x9A71;&#x52A8;&#x548C;&#x51B3;&#x7B56;&#x3002;</strong></li>
+</ul>
+</li>
+<li>
+<p>&#x9762;&#x5BF9;&#x5165;&#x53E3;&#x6269;&#x5F20;&#xFF0C;&#x4E3B;&#x7AEF;&#x3001;&#x72EC;&#x7ACB;&#x7AEF;&#x3001;&#x5FAE;&#x4FE1;&#x5C0F;&#x7A0B;&#x5E8F;&#x3001;&#x652F;&#x4ED8;&#x5B9D;&#x5C0F;&#x7A0B;&#x5E8F;&#x3001;&#x767E;&#x5EA6;&#x5C0F;&#x7A0B;&#x5E8F;&#x3001;Android &#x5382;&#x5546;&#x8054;&#x76DF;&#x5FEB;&#x5E94;&#x7528;&#xFF0C;<strong>&#x5355;&#x4E00;&#x529F;&#x80FD;&#x5728;&#x5404;&#x5E73;&#x53F0;&#x90FD;&#x8981;&#x91CD;&#x590D;&#x5B9E;&#x73B0;&#xFF0C;&#x5F00;&#x53D1;&#x548C;&#x7EF4;&#x62A4;&#x6210;&#x672C;&#x6210;&#x500D;&#x589E;&#x52A0;&#x3002;&#x8FEB;&#x5207;&#x9700;&#x8981;&#x7EF4;&#x62A4;&#x4E00;&#x5957;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x6784;&#x5EFA;&#x591A;&#x5165;&#x53E3;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;</strong>&#x3002;</p>
+</li>
+<li>
+<p>&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x62B9;&#x5E73;&#x5C0F;&#x7A0B;&#x5E8F;&#x7AEF;&#x5F00;&#x53D1;&#x5DEE;&#x5F02;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;</p>
+</li>
+</ol>
+<h3 class="mume-header" id="serverless">Serverless</h3>
+
+<p>&#x6700;&#x8FD1;&#x770B;&#x4E86;&#x5F88;&#x591A;&#x524D;&#x7AEF;&#x524D;&#x8F88;&#x5199;&#x7684;&#x603B;&#x7ED3;&#x6587;&#xFF0C;&#x6700;&#x5927;&#x7684;&#x4F53;&#x4F1A;&#x5C31;&#x662F;&#x56DE;&#x5FC6; &#x201C;&#x524D;&#x7AEF;&#x5728;&#x8FD9;&#x51E0;&#x5E74;&#x5230;&#x5E95;&#x8D77;&#x5230;&#x4E86;&#x4EC0;&#x4E48;&#x4F5C;&#x7528;&#x201D;&#x3002;&#x6211;&#x4EEC;&#x5F80;&#x5F80;&#x4F1A;&#x5938;&#x5927;&#x81EA;&#x5DF1;&#x7684;&#x5B58;&#x5728;&#x611F;&#xFF0C;&#x5176;&#x5B9E;&#x524D;&#x7AEF;&#x5B58;&#x5728;&#x7684;&#x610F;&#x4E49;&#x5C31;&#x662F;&#x89E3;&#x51B3;&#x4EBA;&#x673A;&#x4EA4;&#x4E92;&#x95EE;&#x9898;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x573A;&#x666F;&#x4E0B;&#xFF0C;&#x90FD;&#x662F;&#x4E00;&#x79CD;&#x666F;&#x4E0A;&#x6DFB;&#x82B1;&#x7684;&#x4F5C;&#x7528;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5FC5;&#x987B;&#x3002;</p>
+<p>&#x56DE;&#x5FC6;&#x4F60;&#x6700;&#x81EA;&#x8C6A;&#x7684;&#x5DE5;&#x4F5C;&#x7ECF;&#x5386;&#xFF0C;&#x53EF;&#x80FD;&#x662F;&#x638C;&#x63E1;&#x4E86; Node &#x5E94;&#x7528;&#x7684;&#x8FD0;&#x7EF4;&#x77E5;&#x8BC6;&#x3001;&#x524D;&#x7AEF;&#x5DE5;&#x7A0B;&#x4F53;&#x7CFB;&#x5EFA;&#x8BBE;&#x3001;&#x7814;&#x53D1;&#x6548;&#x80FD;&#x4F18;&#x5316;&#x3001;&#x6807;&#x51C6;&#x89C4;&#x8303;&#x5236;&#x5B9A;&#x7B49;&#xFF0C;&#x4F46;&#x771F;&#x6B63;&#x5BF9;&#x4E1A;&#x52A1;&#x8D77;&#x6548;&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x6070;&#x6070;&#x662F;&#x4F60;&#x89C9;&#x5F97;&#x5199;&#x5F97;&#x6700;&#x4E0D;&#x503C;&#x5F97;&#x4E00;&#x63D0;&#x7684;&#x4E1A;&#x52A1;&#x4EE3;&#x7801;&#x3002;&#x524D;&#x7AEF;&#x82B1;&#x4E86;&#x592A;&#x591A;&#x7684;&#x65F6;&#x95F4;&#x5728;&#x5468;&#x8FB9;&#x6280;&#x672F;&#x4E0A;&#xFF0C;&#x800C;&#x51CF;&#x5C11;&#x4E86;&#x5F88;&#x591A;&#x5BF9;&#x4E1A;&#x52A1;&#x3001;&#x4EA4;&#x4E92;&#x7684;&#x601D;&#x8003;&#x3002;</p>
+<p>&#x5373;&#x4FBF;&#x662F;&#x5927;&#x516C;&#x53F8;&#xFF0C;&#x4E5F;&#x96BE;&#x4EE5;&#x62DB;&#x5230;&#x65E2;&#x719F;&#x7EC3;&#x4F7F;&#x7528; Nodejs&#xFF0C;&#x53C8;&#x5177;&#x5907;&#x4E30;&#x5BCC;&#x8FD0;&#x7EF4;&#x77E5;&#x8BC6;&#x7684;&#x4EBA;&#xFF0C;&#x540C;&#x65F6;&#x8FD8;&#x8981;&#x6C42;&#x4ED6;&#x524D;&#x7AEF;&#x6280;&#x672F;&#x7CBE;&#x6E5B;&#xFF0C;&#x5BF9;&#x4E1A;&#x52A1;&#x7406;&#x89E3;&#x6DF1;&#x523B;&#xFF0C;&#x9C7C;&#x548C;&#x718A;&#x638C;&#x51E0;&#x4E4E;&#x4E0D;&#x53EF;&#x517C;&#x5F97;&#x3002;</p>
+<p>Serverless &#x53EF;&#x4EE5;&#x6709;&#x6548;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x524D;&#x7AEF;&#x540C;&#x5B66;&#x53EA;&#x9700;&#x8981;&#x4F1A;&#x5199; JS &#x4EE3;&#x7801;&#x800C;&#x65E0;&#x9700;&#x638C;&#x63E1;&#x4EFB;&#x4F55;&#x8FD0;&#x7EF4;&#x77E5;&#x8BC6;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5FEB;&#x901F;&#x5B9E;&#x73B0;&#x81EA;&#x5DF1;&#x7684;&#x6574;&#x5957;&#x60F3;&#x6CD5;&#x3002;</p>
+<hr>
+<h1 class="mume-header" id="%E8%B6%8B%E5%8A%BF%E5%88%86%E6%9E%90">&#x8D8B;&#x52BF;&#x5206;&#x6790;</h1>
+
+<h3 class="mume-header" id="%E5%A4%9A%E7%AB%AF%E6%A1%86%E6%9E%B6%E5%8F%AF%E4%BB%A5%E5%A4%A7%E8%87%B4%E5%88%86%E4%B8%BA%E4%B8%89%E7%B1%BB">&#x591A;&#x7AEF;&#x6846;&#x67B6;&#x53EF;&#x4EE5;&#x5927;&#x81F4;&#x5206;&#x4E3A;&#x4E09;&#x7C7B;&#xFF1A;</h3>
+
+<ol>
+<li>
+<p>&#x5168;&#x5305;&#x578B;&#x3002;&#x4EE3;&#x8868;&#x6846;&#x67B6; Flutter&#xFF0C;DSL&#xFF08;Dart&#xFF09;&#xFF1A;</p>
+<ul>
+<li>&#x4F18;&#x70B9;&#x975E;&#x5E38;&#x660E;&#x663E;&#xFF1A;&#x6027;&#x80FD;&#xFF08;&#x7684;&#x4E0A;&#x9650;&#xFF09;&#x9AD8;&#xFF1B;&#x5404;&#x5E73;&#x53F0;&#x6E32;&#x67D3;&#x7ED3;&#x679C;&#x4E00;&#x81F4;&#x3002;</li>
+<li>&#x7F3A;&#x70B9;&#x4E5F;&#x975E;&#x5E38;&#x660E;&#x663E;&#xFF1A;&#x9700;&#x8981;&#x5B8C;&#x5168;&#x91CD;&#x65B0;&#x5B66;&#x4E60; DSL&#xFF08;Dart&#xFF09;&#xFF0C;&#x4EE5;&#x53CA;&#x96BE;&#x4EE5;&#x9002;&#x914D;&#x4E2D;&#x56FD;&#x7279;&#x8272;&#x7684;&#x7AEF;&#xFF1A;&#x5C0F;&#x7A0B;&#x5E8F;&#x3002;</li>
+</ul>
+</li>
+<li>
+<p>Web &#x6280;&#x672F;&#x578B;&#x3002;&#x4EE3;&#x8868;&#x6846;&#x67B6;&#x662F; React Native &#x548C; Weex&#xFF0C;DSL&#xFF08;&#x524D;&#x7AEF;&#x6846;&#x67B6;&#xFF1A;JavaScript&#xFF0C;CSS&#xFF09;&#xFF1A;</p>
+<ul>
+<li>
+<p>&#x8FD9;&#x7C7B;&#x6846;&#x67B6;&#x628A; Web &#x6280;&#x672F;&#xFF08;JavaScript&#xFF0C;CSS&#xFF09;&#x5E26;&#x5230;&#x79FB;&#x52A8;&#x5F00;&#x53D1;&#x4E2D;&#xFF0C;&#x81EA;&#x7814;&#x5E03;&#x5C40;&#x5F15;&#x64CE;&#x5904;&#x7406; CSS&#xFF0C;&#x4F7F;&#x7528; JavaScript &#x5199;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#xFF0C;&#x4F7F;&#x7528;&#x6D41;&#x884C;&#x7684;&#x524D;&#x7AEF;&#x6846;&#x67B6;&#x4F5C;&#x4E3A; DSL&#xFF0C;&#x5404;&#x7AEF;&#x5206;&#x522B;&#x4F7F;&#x7528;&#x5404;&#x81EA;&#x7684;&#x539F;&#x751F;&#x7EC4;&#x4EF6;&#x6E32;&#x67D3;&#x3002;</p>
+</li>
+<li>
+<p>&#x4F18;&#x70B9;&#xFF1A;<br>
+&#x5F00;&#x53D1;&#x8FC5;&#x901F;<br>
+&#x590D;&#x7528;&#x524D;&#x7AEF;&#x751F;&#x6001;<br>
+&#x6613;&#x4E8E;&#x5B66;&#x4E60;&#x4E0A;&#x624B;&#xFF0C;&#x4E0D;&#x7BA1;&#x524D;&#x7AEF;&#x540E;&#x7AEF;&#x79FB;&#x52A8;&#x7AEF;&#xFF0C;&#x591A;&#x591A;&#x5C11;&#x5C11;&#x90FD;&#x4F1A;&#x4E00;&#x70B9; JS&#x3001;CSS</p>
+</li>
+<li>
+<p>&#x7F3A;&#x70B9;&#x6709;&#xFF1A;<br>
+&#x4EA4;&#x4E92;&#x590D;&#x6742;&#x65F6;&#x96BE;&#x4EE5;&#x5199;&#x51FA;&#x9AD8;&#x6027;&#x80FD;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x8FD9;&#x7C7B;&#x6846;&#x67B6;&#x7684;&#x8BBE;&#x8BA1;&#x5C31;&#x5FC5;&#x7136;&#x5BFC;&#x81F4; JS &#x548C; Native &#x4E4B;&#x95F4;&#x9700;&#x8981;&#x901A;&#x4FE1;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x624B;&#x52BF;&#x64CD;&#x4F5C;&#x8FD9;&#x6837;&#x9891;&#x7E41;&#x5730;&#x89E6;&#x53D1;&#x901A;&#x4FE1;&#x5C31;&#x5F88;&#x53EF;&#x80FD;&#x4F7F;&#x5F97; UI &#x65E0;&#x6CD5;&#x5728; 16ms &#x5185;&#x53CA;&#x65F6;&#x7ED8;&#x5236;&#x3002;<br>
+&#x7531;&#x4E8E;&#x6CA1;&#x6709;&#x6E32;&#x67D3;&#x5F15;&#x64CE;&#xFF0C;&#x4F7F;&#x7528;&#x5404;&#x7AEF;&#x7684;&#x539F;&#x751F;&#x7EC4;&#x4EF6;&#x6E32;&#x67D3;&#xFF0C;&#x76F8;&#x540C;&#x4EE3;&#x7801;&#x6E32;&#x67D3;&#x7684;&#x4E00;&#x81F4;&#x6027;&#x6CA1;&#x6709;&#x7B2C;&#x4E00;&#x79CD;&#x9AD8;&#x3002;</p>
+</li>
+</ul>
+</li>
+<li>
+<p>JavaScript &#x7F16;&#x8BD1;&#x578B;&#x3002;&#x4EE3;&#x8868;&#x6846;&#x67B6; Taro&#x3001;WePY &#x3001;uni-app &#x3001; mpvue &#x3001; chameleon&#xFF0C;DSL&#xFF08;JavaScript&#xFF09;&#xFF1A;</p>
+<ul>
+<li>&#x4EE5;&#x8FD9;&#x4E2A; DSL &#x6846;&#x67B6;&#x4E3A;&#x6807;&#x51C6;&#x5728;&#x5404;&#x7AEF;&#x5206;&#x522B;&#x7F16;&#x8BD1;&#x4E3A;&#x4E0D;&#x540C;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x5404;&#x7AEF;&#x5206;&#x522B;&#x6709;&#x4E00;&#x4E2A;&#x8FD0;&#x884C;&#x65F6;&#x6846;&#x67B6;&#x6216;&#x517C;&#x5BB9;&#x7EC4;&#x4EF6;&#x5E93;&#x4FDD;&#x8BC1;&#x4EE3;&#x7801;&#x6B63;&#x786E;&#x8FD0;&#x884C;&#x3002;</li>
+<li>&#x4F18;&#x70B9;&#xFF1A;&#x5C31;&#x662F;&#x5C0F;&#x7A0B;&#x5E8F;&#xFF0C;&#x56E0;&#x4E3A;&#x7B2C;&#x4E00;&#x7B2C;&#x4E8C;&#x79CD;&#x6846;&#x67B6;&#x5176;&#x5B9E;&#x9664;&#x4E86;&#x53EF;&#x4EE5;&#x8DE8;&#x7CFB;&#x7EDF;&#x5E73;&#x53F0;&#x4E4B;&#x5916;&#xFF0C;&#x4E5F;&#x90FD;&#x80FD;&#x7F16;&#x8BD1;&#x8FD0;&#x884C;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x3002;</li>
+</ul>
+</li>
+</ol>
+<h3 class="mume-header" id="%E7%94%9F%E6%80%81%E6%AF%94%E6%8B%BC">&#x751F;&#x6001;&#x6BD4;&#x62FC;</h3>
+
+<h4 class="mume-header" id="%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7">&#x5F00;&#x53D1;&#x5DE5;&#x5177;</h4>
+
+<p>&#x7ED3;&#x679C;&#xFF1A;<code>uni-app &gt; Taro &gt; chameleon &gt; WePY&#x3001;mpvue</code><br>
+<img src="https://user-gold-cdn.xitu.io/2019/3/19/169961705a7e2345?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p>
+<h4 class="mume-header" id="%E5%A4%9A%E7%AB%AF%E6%94%AF%E6%8C%81%E5%BA%A6">&#x591A;&#x7AEF;&#x652F;&#x6301;&#x5EA6;</h4>
+
+<p>&#x7ED3;&#x679C;&#xFF1A;<code>chameleon &gt; Taro&#x3001;uni-app &gt; mpvue&#x3001;WePY</code><br>
+<img src="https://user-gold-cdn.xitu.io/2019/3/19/169961705a6b3689?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p>
+<h4 class="mume-header" id="%E7%BB%84%E4%BB%B6%E5%BA%93%E5%B7%A5%E5%85%B7%E5%BA%93demo">&#x7EC4;&#x4EF6;&#x5E93;/&#x5DE5;&#x5177;&#x5E93;/demo</h4>
+
+<p>&#x7ED3;&#x679C;&#xFF1A;<code>WePY &gt; uni-app &#x3001;taro &gt; mpvue &gt; chameleon</code><br>
+<img src="https://user-gold-cdn.xitu.io/2019/3/19/169961705bc26a1f?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p>
+<h4 class="mume-header" id="%E6%8E%A5%E5%85%A5%E6%88%90%E6%9C%AC">&#x63A5;&#x5165;&#x6210;&#x672C;</h4>
+
+<p>&#x7ED3;&#x679C;&#xFF1A;<code>Taro &gt; mpvue &#x3001; uni-app &gt; WePY &gt; chameleon</code><br>
+<img src="https://user-gold-cdn.xitu.io/2019/3/19/169961705a6b3689?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p>
+<h4 class="mume-header" id="%E6%B5%81%E8%A1%8C%E5%BA%A6">&#x6D41;&#x884C;&#x5EA6;</h4>
+
+<p>&#x7ED3;&#x679C;&#xFF1A;<code>uni-app &gt; Taro&#x3001;WePY&#x3001;mpvue &gt; chameleon</code><br>
+<img src="https://user-gold-cdn.xitu.io/2019/3/19/169961705be6cde9?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p>
+<h4 class="mume-header" id="%E7%94%9F%E6%80%81%E5%AF%B9%E6%AF%94%E5%9B%BE%E8%A1%A8">&#x751F;&#x6001;&#x5BF9;&#x6BD4;&#x56FE;&#x8868;</h4>
+
+<p><img src="https://user-gold-cdn.xitu.io/2019/3/19/169961705d52e376?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p>
+<h1 class="mume-header" id="%E6%BC%94%E7%A4%BAtaro-%E6%A1%86%E6%9E%B6%E5%BA%94%E7%94%A8%E5%8F%8A%E8%84%9A%E6%89%8B%E6%9E%B6">&#x6F14;&#x793A;&#xFF1A;Taro &#x6846;&#x67B6;&#x5E94;&#x7528;&#x53CA;&#x811A;&#x624B;&#x67B6;</h1>
+
+<h1 class="mume-header" id="taro-%E6%A1%86%E6%9E%B6%E5%BA%94%E7%94%A8%E5%8F%8A%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90">Taro &#x6846;&#x67B6;&#x5E94;&#x7528;&#x53CA;&#x539F;&#x7406;&#x5206;&#x6790;</h1>
+
+<h3 class="mume-header" id="%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86">&#x7F16;&#x8BD1;&#x539F;&#x7406;</h3>
+
+<h4 class="mume-header" id="%E4%BB%A3%E7%A0%81%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88">&#x4EE3;&#x7801;&#x5230;&#x5E95;&#x662F;&#x4EC0;&#x4E48;</h4>
+
+<p>&#x5176;&#x5B9E;&#x4EE3;&#x7801;&#x8DDF; JSON &#x4E00;&#x6837;&#xFF0C;&#x662F;&#x4E00;&#x79CD;&#x7ED3;&#x6784;&#x5316;&#x7684;&#x6587;&#x672C;&#x6570;&#x636E;&#x683C;&#x5F0F;&#x3002;&#x5728;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x8981;&#x4EC5;&#x4EC5;&#x6293;&#x7740;&#x4E24;&#x4E2A;&#x7279;&#x70B9;&#x2014;&#x2014;&#x201C;&#x6587;&#x672C;&#x201D;&#x548C;&#x201C;&#x7ED3;&#x6784;&#x5316;&#x201D;&#x3002;</p>
+<ul>
+<li>
+<p>&#x4EE3;&#x7801;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x7279;&#x70B9;&#x662F;&#x6587;&#x672C;&#xFF0C;&#x90A3;&#x610F;&#x5473;&#x7740;&#x6211;&#x4EEC;&#x6240;&#x6709;&#x5BF9;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x62FC;&#x63A5;&#x3001;&#x622A;&#x53D6;&#x6216;&#x8005;&#x66FF;&#x6362;&#x7B49;&#x6240;&#x6709;&#x64CD;&#x4F5C;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x5E94;&#x7528;&#x5728;&#x4EE3;&#x7801;&#x4E0A;&#x9762;&#x3002;&#x5F88;&#x591A;&#x7A0B;&#x5E8F;&#x5458;&#x867D;&#x7136;&#x90FD;&#x80FD;&#x5BF9;&#x5404;&#x7C7B;&#x6587;&#x672C;&#x7684;&#x8BFB;&#x5199;&#x4E86;&#x5982;&#x6307;&#x638C;&#xFF0C;&#x4F46;&#x5927;&#x5BB6;&#x597D;&#x50CF;&#x90FD;&#x6CA1;&#x6709;&#x610F;&#x8BC6;&#x5230;&#x4EE3;&#x7801;&#x6587;&#x4EF6;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x90A3;&#x4E2A;&#x53EF;&#x4EE5;&#x8BFB;&#x5199;&#x3001;&#x4FEE;&#x6539;&#x7684;&#x6587;&#x4EF6;&#x4E4B;&#x4E00;&#x3002;</p>
+</li>
+<li>
+<p>&#x4EE3;&#x7801;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x7279;&#x70B9;&#x5219;&#x662F;&#x7ED3;&#x6784;&#x5316;&#x3002;&#x4E0D;&#x77E5;&#x9053;&#x5927;&#x5BB6;&#x80FD;&#x4E0D;&#x80FD;&#x7406;&#x89E3;&#xFF0C;&#x4EE3;&#x7801;&#x91CC;&#x9762;&#x9664;&#x4E86;&#x5B57;&#x9762;&#x91CF;&#x610F;&#x5916;&#xFF0C;&#x5176;&#x4ED6;&#x90E8;&#x5206;&#x90FD;&#x53EA;&#x662F;&#x6807;&#x8BC6;&#x7ED3;&#x6784;&#x800C;&#x5E76;&#x4E0D;&#x5177;&#x6709;&#x5B9E;&#x9645;&#x610F;&#x4E49;&#xFF0C;&#x8D4B;&#x4E88;&#x8FD9;&#x4E9B;&#x7ED3;&#x6784;&#x610F;&#x4E49;&#x662F;&#x89E3;&#x91CA;&#x5668;&#x5982;&#x4F55;&#x548C;&#x6267;&#x884C;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x3002;&#x8FD9;&#x4E2A;&#x7279;&#x70B9;&#x5C31;&#x662F;&#x8981;&#x6C42;&#x6211;&#x4EEC;&#x5728;&#x770B;&#x5F85;&#x4EE3;&#x7801;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8981;&#x5728;&#x8111;&#x4E2D;&#x5F62;&#x6210;&#x4E00;&#x79CD;&#x7ED3;&#x6784;&#xFF0C;&#x800C;&#x4E0D;&#x518D;&#x662F;&#x4E00;&#x884C;&#x4E00;&#x884C;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
+</li>
+</ul>
+<p>&#x771F;&#x6B63;&#x6709;&#x610F;&#x8BC6;&#x5730;&#x628A;&#x4EE3;&#x7801;&#x6587;&#x4EF6;&#x5F53;&#x6210;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x4EE5;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x80FD;&#x628A;&#x4EE3;&#x7801;&#x4ECE;&#x6B64;&#x62C9;&#x4E0B;&#x201C;&#x795E;&#x575B;&#x201D;&#xFF0C;&#x53EF;&#x4EE5;&#x8BA9;&#x5927;&#x5BB6;&#x80FD;&#x591F;&#x50CF;&#x601D;&#x8003;&#x6587;&#x672C;&#x4E00;&#x6837;&#x601D;&#x8003;&#x4EE3;&#x7801;&#x3002;</p>
+<p>&#x4E0D;&#x7BA1;&#x662F;&#x4EFB;&#x610F;&#x8BED;&#x8A00;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x5176;&#x5B9E;&#x5B83;&#x4EEC;&#x90FD;&#x6709;&#x4E24;&#x4E2A;&#x5171;&#x540C;&#x70B9;&#xFF1A;</p>
+<ol>
+<li>&#x5B83;&#x4EEC;&#x90FD;&#x662F;&#x7531;&#x5B57;&#x7B26;&#x4E32;&#x6784;&#x6210;&#x7684;&#x6587;&#x672C;</li>
+<li>&#x5B83;&#x4EEC;&#x90FD;&#x8981;&#x9075;&#x5FAA;&#x81EA;&#x5DF1;&#x7684;&#x8BED;&#x8A00;&#x89C4;&#x8303;</li>
+</ol>
+<h4 class="mume-header" id="%E7%BC%96%E8%AF%91%E5%99%A8%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF-parser">&#x7F16;&#x8BD1;&#x5668;&#x524D;&#x7AEF;&#x6280;&#x672F; &#x2014;&#x2014; Parser&#x3002;</h4>
+
+<ul>
+<li>&#x7F16;&#x8BD1;&#x5668;&#x524D;&#x6BB5;&#x5C31;&#x5728;&#x5E72;&#x4E00;&#x4EF6;&#x4E8B;&#xFF0C;&#x628A;&#x4EE3;&#x7801;&#x8FD9;&#x4E2A;&#x7ED3;&#x6784;&#x5316;&#x7684;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x89E3;&#x6790;&#x6210;&#x6211;&#x4EEC;&#x8BA1;&#x7B97;&#x673A;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784; &#x2014;&#x2014; &#x62BD;&#x8C61;&#x8BED;&#x6CD5;&#x6811;&#xFF08;AST&#xFF09;&#x3002;</li>
+<li>&#x89E3;&#x6790;&#x4EE3;&#x7801;&#x4E00;&#x822C;&#x5206;&#x6210;&#x4E24;&#x4E2A;&#x6B65;&#x9AA4;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x6B65;&#x9AA4;&#x662F;&#x8BCD;&#x6CD5;&#x5206;&#x6790;&#xFF0C;&#x5C06;&#x6587;&#x672C;&#x7684;&#x4EE3;&#x7801;&#x8F6C;&#x5316;&#x6210;&#x4E00;&#x4E2A;&#x4E2A; Token&#x3002;&#x770B;&#x5230;&#x8FD9;&#x91CC;&#x7684;&#x5927;&#x5BB6;&#x5E94;&#x8BE5;&#x90FD;&#x6709;&#x4E00;&#x4E9B;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x57FA;&#x7840;&#x5427;&#xFF0C;&#x5728;&#x89E3;&#x6790;&#x4EE3;&#x7801;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7528;&#x6B63;&#x5219;&#x6765;&#x5206;&#x8BCD;&#x505A;&#x8BCD;&#x6CD5;&#x5206;&#x6790;&#x3002;</li>
+<li>&#x89E3;&#x6790;&#x4EE3;&#x7801;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x6B65;&#x9AA4;&#x662F;&#x8BED;&#x6CD5;&#x5206;&#x6790;&#xFF0C;&#x8BED;&#x6CD5;&#x5206;&#x6790;&#x662F;&#x5C06;&#x6211;&#x4EEC;&#x4E0A;&#x9762;&#x8BCD;&#x6CD5;&#x5206;&#x6790;&#x51FA;&#x7684; Token &#x8F6C;&#x5316;&#x6210; AST&#x3002;&#x8BED;&#x6CD5;&#x5206;&#x6790;&#x6211;&#x4EEC;&#x8981;&#x5B66;&#x4E60;&#x4E0A;&#x4E0B;&#x6587;&#x65E0;&#x5173;&#x6587;&#x6CD5;&#xFF08;CFG&#xFF09;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x7528; BNF &#x8FD9;&#x4E2A;&#x8868;&#x793A;&#x3002;CFG &#x6BD4;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x80FD;&#x529B;&#x66F4;&#x5F3A;&#xFF0C;&#x5F3A;&#x5728; CFG &#x80FD;&#x8868;&#x8FBE;&#x9012;&#x5F52;&#x7ED3;&#x6784;&#xFF0C;&#x5E38;&#x89C1;&#x7684;&#x9012;&#x5F52;&#x7ED3;&#x6784;&#x6709;&#x8868;&#x8FBE;&#x5F0F;&#x548C;&#x4EE3;&#x7801;&#x5757;&#x3002;</li>
+<li>Parser &#x5728;&#x7F16;&#x8BD1;&#x539F;&#x7406;&#x91CC;&#x9762;&#x662F;&#x96BE;&#x70B9;&#x4F46;&#x5374;&#x4E0D;&#x662F;&#x91CD;&#x70B9;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x8FD9;&#x4E00;&#x90E8;&#x5206;&#x5927;&#x5BB6;&#x89C9;&#x5F97;&#x590D;&#x6742;&#x7684;&#x7B97;&#x6CD5;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x8DF3;&#x8FC7;&#xFF0C;&#x4E0D;&#x5EFA;&#x8BAE;&#x6D6A;&#x8D39;&#x592A;&#x591A;&#x65F6;&#x95F4;&#x3002;Parser &#x90FD;&#x662F;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x6B63;&#x5219;&#x548C; CFG &#x81EA;&#x52A8;&#x751F;&#x6210;&#x7684;&#xFF0C;&#x5E76;&#x4E0D;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x624B;&#x5199;&#x3002;&#x6240;&#x4EE5;&#x8FD9;&#x90E8;&#x5206;&#x4E3B;&#x8981;&#x76EE;&#x7684;&#x662F;&#x5B66;&#x597D;&#x7684;&#x662F;&#x6B63;&#x5219;&#x548C; CFG&#xFF0C;&#x90A3;&#x4E9B;&#x590D;&#x6742;&#x7684;&#x7B97;&#x6CD5;&#x5B66;&#x8D77;&#x6765;&#x610F;&#x4E49;&#x5F88;&#x5C0F;&#x3002;</li>
+<li>parser &#x5E76;&#x4E0D;&#x662F;&#x7F16;&#x8BD1;&#x5668;&#xFF0C;&#x5B83;&#x751A;&#x81F3;&#x4E0D;&#x5C5E;&#x4E8E;&#x7F16;&#x8BD1;&#x91CC;&#x5F88;&#x91CD;&#x8981;&#x7684;&#x4E1C;&#x897F;&#x3002;</li>
+</ul>
+<h4 class="mume-header" id="%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90">&#x7F16;&#x8BD1;&#x539F;&#x7406;&#x5206;&#x6790;</h4>
+
+<p><img src="https://img-blog.csdn.net/20180524195001852?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI4MDk4NDAz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
+<p><a href="http://www.doc88.com/p-3971550434706.html">http://www.doc88.com/p-3971550434706.html</a><br>
+<a href="https://max.book118.com/html/2017/0620/116914353.shtm">https://max.book118.com/html/2017/0620/116914353.shtm</a></p>
+<h3 class="mume-header" id="babel-%E6%A8%A1%E5%9D%97">Babel &#x6A21;&#x5757;</h3>
+
+<p>&#x9009;&#x62E9;&#x4F7F;&#x7528; Babel&#xFF0C;&#x4E3B;&#x8981;&#x6709;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x539F;&#x56E0;&#xFF1A;</p>
+<ul>
+<li>Babel &#x53EF;&#x4EE5;&#x89E3;&#x6790;&#x8FD8;&#x6CA1;&#x6709;&#x8FDB;&#x5165; ECMAScript &#x89C4;&#x8303;&#x7684;&#x8BED;&#x6CD5;&#x3002;&#x4F8B;&#x5982;&#x88C5;&#x9970;&#x5668;&#x8FD9;&#x6837;&#x7684;&#x63D0;&#x6848;&#xFF0C;&#x867D;&#x7136;&#x73B0;&#x5728;&#x6CA1;&#x6709;&#x8FDB;&#x5165;&#x6807;&#x51C6;&#x4F46;&#x662F;&#x5DF2;&#x7ECF;&#x5E7F;&#x6CDB;&#x4F7F;&#x7528;&#x6709;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x4E86;&#xFF1B;</li>
+<li>Babel &#x63D0;&#x4F9B;&#x63D2;&#x4EF6;&#x673A;&#x5236;&#x89E3;&#x6790; TypeScript&#x3001;Flow&#x3001;JSX &#x8FD9;&#x6837;&#x7684; JavaScript &#x8D85;&#x96C6;&#xFF0C;&#x4E0D;&#x5FC5;&#x5355;&#x72EC;&#x5904;&#x7406;&#x8FD9;&#x4E9B;&#x8BED;&#x8A00;&#xFF1B;</li>
+<li>Babel &#x62E5;&#x6709;&#x5E9E;&#x5927;&#x7684;&#x751F;&#x6001;&#xFF0C;&#x6709;&#x975E;&#x5E38;&#x591A;&#x7684;&#x6587;&#x6863;&#x548C;&#x6837;&#x4F8B;&#x4EE3;&#x7801;&#x53EF;&#x4F9B;&#x53C2;&#x8003;&#xFF1B;</li>
+<li>&#x9664;&#x53BB; parser &#x672C;&#x8EAB;&#xFF0C;Babel &#x8FD8;&#x63D0;&#x4F9B;&#x5404;&#x79CD;&#x65B9;&#x4FBF;&#x7684;&#x5DE5;&#x5177;&#x5E93;&#x53EF;&#x4EE5;&#x4F18;&#x5316;&#x3001;&#x751F;&#x6210;&#x3001;&#x8C03;&#x8BD5;&#x4EE3;&#x7801;&#x3002;</li>
+</ul>
+<p>Babel &#x662F;&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x7684;&#x591A;&#x529F;&#x80FD;&#x7684; JavaScript &#x7F16;&#x8BD1;&#x5668;&#xFF0C;&#x66F4;&#x786E;&#x5207;&#x5730;&#x8BF4;&#x662F;&#x6E90;&#x7801;&#x5230;&#x6E90;&#x7801;&#x7684;&#x7F16;&#x8BD1;&#x5668;&#xFF0C;&#x901A;&#x5E38;&#x4E5F;&#x53EB;&#x505A;&#x8F6C;&#x6362;&#x7F16;&#x8BD1;&#x5668;&#xFF08;transpiler&#xFF09;&#x3002; &#x610F;&#x601D;&#x662F;&#x8BF4;&#x4F60;&#x4E3A; Babel &#x63D0;&#x4F9B;&#x4E00;&#x4E9B; JavaScript &#x4EE3;&#x7801;&#xFF0C;Babel &#x66F4;&#x6539;&#x8FD9;&#x4E9B;&#x4EE3;&#x7801;&#xFF0C;&#x7136;&#x540E;&#x8FD4;&#x56DE;&#x7ED9;&#x4F60;&#x65B0;&#x751F;&#x6210;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
+<blockquote>
+<p>&#x9759;&#x6001;&#x5206;&#x6790;&#x662F;&#x5728;&#x4E0D;&#x9700;&#x8981;&#x6267;&#x884C;&#x4EE3;&#x7801;&#x7684;&#x524D;&#x63D0;&#x4E0B;&#x5BF9;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x5206;&#x6790;&#x7684;&#x5904;&#x7406;&#x8FC7;&#x7A0B;&#xFF08;&#x6267;&#x884C;&#x4EE3;&#x7801;&#x7684;&#x540C;&#x65F6;&#x8FDB;&#x884C;&#x4EE3;&#x7801;&#x5206;&#x6790;&#x5373;&#x662F;&#x52A8;&#x6001;&#x5206;&#x6790;&#xFF09;&#x3002; &#x9759;&#x6001;&#x5206;&#x6790;&#x7684;&#x76EE;&#x7684;&#x662F;&#x591A;&#x79CD;&#x591A;&#x6837;&#x7684;&#xFF0C; &#x5B83;&#x53EF;&#x7528;&#x4E8E;&#x8BED;&#x6CD5;&#x68C0;&#x67E5;&#x3001;&#x7F16;&#x8BD1;&#x3001;&#x4EE3;&#x7801;&#x9AD8;&#x4EAE;&#x3001;&#x4EE3;&#x7801;&#x8F6C;&#x6362;&#x3001;&#x4F18;&#x5316;&#x548C;&#x538B;&#x7F29;&#x7B49;&#x7B49;&#x573A;&#x666F;&#x3002;</p>
+</blockquote>
+<p>Babel &#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x4E00;&#x7EC4;&#x6A21;&#x5757;&#x7684;&#x96C6;&#x5408;&#xFF0C;&#x62E5;&#x6709;&#x5E9E;&#x5927;&#x7684;&#x751F;&#x6001;&#x3002;Taro &#x9879;&#x76EE;&#x7684;&#x4EE3;&#x7801;&#x7F16;&#x8BD1;&#x90E8;&#x5206;&#x5C31;&#x662F;&#x57FA;&#x4E8E; Babel &#x7684;&#x4EE5;&#x4E0B;&#x6A21;&#x5757;&#x5B9E;&#x73B0;&#x7684;&#xFF1A;</p>
+<ol>
+<li>Babylon - Babel &#x7684;&#x89E3;&#x6790;&#x5668;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x628A;&#x4E00;&#x6BB5;&#x7B26;&#x5408;&#x89C4;&#x8303;&#x7684; JavaScript &#x4EE3;&#x7801;&#x8F93;&#x51FA;&#x6210;&#x4E00;&#x4E2A;&#x7B26;&#x5408; Esprima &#x89C4;&#x8303;&#x7684; AST&#x3002; &#x5927;&#x90E8;&#x5206; parser &#x751F;&#x6210;&#x7684; AST &#x6570;&#x636E;&#x7ED3;&#x6784;&#x90FD;&#x9075;&#x5FAA; Esprima &#x89C4;&#x8303;&#xFF0C;&#x5305;&#x62EC; ESLint &#x7684; parser ESTree&#x3002;&#x8FD9;&#x5C31;&#x610F;&#x5473;&#x7740;&#x6211;&#x4EEC;&#x719F;&#x6089;&#x4E86; Esprima &#x89C4;&#x8303;&#x7684; AST &#x6570;&#x636E;&#x7ED3;&#x6784;&#x8FD8;&#x80FD;&#x53BB;&#x5199; ESLint &#x63D2;&#x4EF6;&#x3002;</li>
+</ol>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> babylon <span class="token keyword">from</span> <span class="token string">&quot;babylon&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> code <span class="token operator">=</span> <span class="token template-string"><span class="token string">`n * n`</span></span><span class="token punctuation">;</span>
+
+babylon<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>code<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p><img src="https://ask.qcloudimg.com/http-save/1000046/2hyazema3g.png" alt></p>
+<ol start="2">
+<li>Babel-traverse - babel-traverse &#x53EF;&#x4EE5;&#x904D;&#x5386;&#x7531; Babylon &#x751F;&#x6210;&#x7684;&#x62BD;&#x8C61;&#x8BED;&#x6CD5;&#x6811;&#xFF0C;&#x5E76;&#x628A;&#x62BD;&#x8C61;&#x8BED;&#x6CD5;&#x6811;&#x7684;&#x5404;&#x4E2A;&#x8282;&#x70B9;&#x4ECE;&#x62D3;&#x6251;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x8F6C;&#x5316;&#x6210;&#x4E00;&#x9897;&#x8DEF;&#x5F84;&#xFF08;Path&#xFF09;&#x6811;&#xFF0C;Path &#x8868;&#x793A;&#x4E24;&#x4E2A;&#x8282;&#x70B9;&#x4E4B;&#x95F4;&#x8FDE;&#x63A5;&#x7684;&#x54CD;&#x5E94;&#x5F0F;&#xFF08;Reactive&#xFF09;&#x5BF9;&#x8C61;&#xFF0C;&#x5B83;&#x62E5;&#x6709;&#x6DFB;&#x52A0;&#x3001;&#x5220;&#x9664;&#x3001;&#x66FF;&#x6362;&#x8282;&#x70B9;&#x7B49;&#x65B9;&#x6CD5;&#x3002;&#x5F53;&#x4F60;&#x8C03;&#x7528;&#x8FD9;&#x4E9B;&#x4FEE;&#x6539;&#x6811;&#x7684;&#x65B9;&#x6CD5;&#x4E4B;&#x540E;&#xFF0C;&#x8DEF;&#x5F84;&#x4FE1;&#x606F;&#x4E5F;&#x4F1A;&#x88AB;&#x66F4;&#x65B0;&#x3002;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;Path &#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;&#x4F5C;&#x7528;&#x57DF;&#xFF08;Scope&#xFF09; &#x548C;&#x6807;&#x8BC6;&#x7B26;&#x7ED1;&#x5B9A;&#xFF08;Identifier Binding&#xFF09; &#x7684;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x53BB;&#x505A;&#x5904;&#x7406;&#x4E00;&#x4E9B;&#x66F4;&#x7CBE;&#x7EC6;&#x590D;&#x6742;&#x7684;&#x9700;&#x6C42;&#x3002;&#x53EF;&#x4EE5;&#x8BF4; babel-traverse &#x662F;&#x4F7F;&#x7528; Babel &#x4F5C;&#x4E3A;&#x7F16;&#x8BD1;&#x5668;&#x6700;&#x6838;&#x5FC3;&#x7684;&#x6A21;&#x5757;&#x3002;</li>
+</ol>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> babylon <span class="token keyword">from</span> <span class="token string">&quot;@babel/parser&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> traverse <span class="token keyword">from</span> <span class="token string">&quot;babel-traverse&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> code <span class="token operator">=</span> <span class="token template-string"><span class="token string">`function square(n) {
+  return n * n;
+}`</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> ast <span class="token operator">=</span> babylon<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>code<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">traverse</span><span class="token punctuation">(</span>ast<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token function">enter</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>path<span class="token punctuation">.</span>node<span class="token punctuation">.</span>type <span class="token operator">===</span> <span class="token string">&quot;Identifier&quot;</span> <span class="token operator">&amp;&amp;</span> path<span class="token punctuation">.</span>node<span class="token punctuation">.</span>name <span class="token operator">===</span> <span class="token string">&quot;n&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      path<span class="token punctuation">.</span>node<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;x&quot;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><ol start="3">
+<li>Babel-types - &#x4E00;&#x4E2A;&#x7528;&#x4E8E; AST &#x8282;&#x70B9;&#x7684; Lodash &#x5F0F;&#x5DE5;&#x5177;&#x5E93;&#xFF0C; &#x5B83;&#x5305;&#x542B;&#x4E86;&#x6784;&#x9020;&#x3001;&#x9A8C;&#x8BC1;&#x4EE5;&#x53CA;&#x53D8;&#x6362; AST &#x8282;&#x70B9;&#x7684;&#x65B9;&#x6CD5;&#x3002; &#x8BE5;&#x5DE5;&#x5177;&#x5E93;&#x5305;&#x542B;&#x8003;&#x8651;&#x5468;&#x5230;&#x7684;&#x5DE5;&#x5177;&#x65B9;&#x6CD5;&#xFF0C;&#x5BF9;&#x7F16;&#x5199;&#x5904;&#x7406; AST &#x903B;&#x8F91;&#x975E;&#x5E38;&#x6709;&#x7528;&#x3002;</li>
+</ol>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token keyword">import</span> traverse <span class="token keyword">from</span> <span class="token string">&quot;babel-traverse&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> t <span class="token keyword">from</span> <span class="token string">&quot;babel-types&quot;</span><span class="token punctuation">;</span>
+
+<span class="token function">traverse</span><span class="token punctuation">(</span>ast<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token function">enter</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>t<span class="token punctuation">.</span><span class="token function">isIdentifier</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span>node<span class="token punctuation">,</span> <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&quot;n&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      path<span class="token punctuation">.</span>node<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;x&quot;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><ol start="4">
+<li>Babel-generator - Babel &#x7684;&#x4EE3;&#x7801;&#x751F;&#x6210;&#x5668;&#xFF0C;&#x5B83;&#x8BFB;&#x53D6; AST &#x5E76;&#x5C06;&#x5176;&#x8F6C;&#x6362;&#x4E3A;&#x4EE3;&#x7801;&#x548C;&#x6E90;&#x7801;&#x6620;&#x5C04;&#xFF08;sourcemaps&#xFF09;&#x3002;</li>
+<li>Babel-template - &#x53E6;&#x4E00;&#x4E2A;&#x867D;&#x7136;&#x5F88;&#x5C0F;&#x4F46;&#x5374;&#x975E;&#x5E38;&#x6709;&#x7528;&#x7684;&#x6A21;&#x5757;&#x3002; &#x5B83;&#x80FD;&#x8BA9;&#x4F60;&#x7F16;&#x5199;&#x5B57;&#x7B26;&#x4E32;&#x5F62;&#x5F0F;&#x4E14;&#x5E26;&#x6709;&#x5360;&#x4F4D;&#x7B26;&#x7684;&#x4EE3;&#x7801;&#x6765;&#x4EE3;&#x66FF;&#x624B;&#x52A8;&#x7F16;&#x7801;&#xFF0C; &#x5C24;&#x5176;&#x662F;&#x751F;&#x6210;&#x5927;&#x89C4;&#x6A21; AST &#x7684;&#x65F6;&#x5019;&#x3002; &#x5728;&#x8BA1;&#x7B97;&#x673A;&#x79D1;&#x5B66;&#x4E2D;&#xFF0C;&#x8FD9;&#x79CD;&#x80FD;&#x529B;&#x88AB;&#x79F0;&#x4E3A;&#x51C6;&#x5F15;&#x7528;&#xFF08;quasiquotes&#xFF09;&#x3002;</li>
+</ol>
+<h3 class="mume-header" id="%E8%A7%A3%E6%9E%90%E9%A1%B5%E9%9D%A2-config-%E9%85%8D%E7%BD%AE%E6%BA%90%E7%A0%81">&#x89E3;&#x6790;&#x9875;&#x9762; Config &#x914D;&#x7F6E;&#x6E90;&#x7801;</h3>
+
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token comment">// 1. babel-traverse&#x65B9;&#x6CD5;&#xFF0C; &#x904D;&#x5386;&#x548C;&#x66F4;&#x65B0;&#x8282;&#x70B9;</span>
+<span class="token function">traverse</span><span class="token punctuation">(</span>ast<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token function">ClassProperty</span><span class="token punctuation">(</span>astPath<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x904D;&#x5386;&#x7C7B;&#x7684;&#x5C5E;&#x6027;&#x58F0;&#x660E;</span>
+    <span class="token keyword">const</span> node <span class="token operator">=</span> astPath<span class="token punctuation">.</span>node<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">.</span>key<span class="token punctuation">.</span>name <span class="token operator">===</span> <span class="token string">&quot;config&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// &#x7C7B;&#x7684;&#x5C5E;&#x6027;&#x540D;&#x4E3A; config</span>
+      configObj <span class="token operator">=</span> <span class="token function">traverseObjectNode</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      astPath<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#x5C06;&#x8BE5;&#x65B9;&#x6CD5;&#x79FB;&#x9664;&#x6389;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 2. &#x904D;&#x5386;&#xFF0C;&#x89E3;&#x6790;&#x4E3A; JSON &#x5BF9;&#x8C61;</span>
+<span class="token keyword">function</span> <span class="token function">traverseObjectNode</span><span class="token punctuation">(</span>node<span class="token punctuation">,</span> obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">.</span>type <span class="token operator">===</span> <span class="token string">&quot;ClassProperty&quot;</span> <span class="token operator">||</span> node<span class="token punctuation">.</span>type <span class="token operator">===</span> <span class="token string">&quot;ObjectProperty&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> properties <span class="token operator">=</span> node<span class="token punctuation">.</span>value<span class="token punctuation">.</span>properties<span class="token punctuation">;</span>
+    obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    properties<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span> index<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      obj<span class="token punctuation">[</span>p<span class="token punctuation">.</span>key<span class="token punctuation">.</span>name<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">traverseObjectNode</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> obj<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">.</span>type <span class="token operator">===</span> <span class="token string">&quot;ObjectExpression&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> properties <span class="token operator">=</span> node<span class="token punctuation">.</span>properties<span class="token punctuation">;</span>
+    obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    properties<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span> index<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token comment">// const t = require(&apos;babel-types&apos;)  AST &#x8282;&#x70B9;&#x7684; Lodash &#x5F0F;&#x5DE5;&#x5177;&#x5E93;</span>
+      <span class="token keyword">const</span> key <span class="token operator">=</span> t<span class="token punctuation">.</span><span class="token function">isIdentifier</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>key<span class="token punctuation">)</span> <span class="token operator">?</span> p<span class="token punctuation">.</span>key<span class="token punctuation">.</span>name <span class="token punctuation">:</span> p<span class="token punctuation">.</span>key<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+      obj<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">traverseObjectNode</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> obj<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">.</span>type <span class="token operator">===</span> <span class="token string">&quot;ArrayExpression&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> node<span class="token punctuation">.</span>elements<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>item <span class="token operator">=&gt;</span> <span class="token function">traverseObjectNode</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">.</span>type <span class="token operator">===</span> <span class="token string">&quot;NullLiteral&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> node<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 3. &#x5199;&#x5165;&#x5BF9;&#x5E94;&#x76EE;&#x5F55;&#x7684; *.json &#x6587;&#x4EF6;</span>
+fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span>outputPageJSONPath<span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>configObj<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><h3 class="mume-header" id="taro-%E5%8E%9F%E7%90%86">Taro &#x539F;&#x7406;</h3>
+
+<h4 class="mume-header" id="%E7%BC%96%E8%AF%91%E5%B7%A5%E4%BD%9C%E6%B5%81%E4%B8%8E%E6%8A%BD%E8%B1%A1%E8%AF%AD%E6%B3%95%E6%A0%91ast">&#x7F16;&#x8BD1;&#x5DE5;&#x4F5C;&#x6D41;&#x4E0E;&#x62BD;&#x8C61;&#x8BED;&#x6CD5;&#x6811;&#xFF08;AST&#xFF09;</h4>
+
+<p>Taro &#x7684;&#x6838;&#x5FC3;&#x90E8;&#x5206;&#x5C31;&#x662F;&#x5C06;&#x4EE3;&#x7801;&#x7F16;&#x8BD1;&#x6210;&#x5176;&#x4ED6;&#x7AEF;&#xFF08;H5&#x3001;&#x5C0F;&#x7A0B;&#x5E8F;&#x3001;React Native &#x7B49;&#xFF09;&#x4EE3;&#x7801;&#x3002;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x5C06;&#x4E00;&#x79CD;&#x7ED3;&#x6784;&#x5316;&#x8BED;&#x8A00;&#x7684;&#x4EE3;&#x7801;&#x7F16;&#x8BD1;&#x6210;&#x53E6;&#x4E00;&#x79CD;&#x7C7B;&#x4F3C;&#x7684;&#x7ED3;&#x6784;&#x5316;&#x8BED;&#x8A00;&#x7684;&#x4EE3;&#x7801;&#x5305;&#x62EC;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x6B65;&#x9AA4;&#xFF1A;</p>
+<p><img src="https://ask.qcloudimg.com/http-save/1000046/gfri1w468v.png" alt></p>
+<p>&#x9996;&#x5148;&#x662F; Parse&#xFF0C;&#x5C06;&#x4EE3;&#x7801;&#x89E3;&#x6790;&#xFF08;Parse&#xFF09;&#x6210;&#x62BD;&#x8C61;&#x8BED;&#x6CD5;&#x6811;&#xFF08;Abstract Syntex Tree&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x5BF9; AST &#x8FDB;&#x884C;&#x904D;&#x5386;&#xFF08;traverse&#xFF09;&#x548C;&#x66FF;&#x6362;(replace)&#xFF08;&#x8FD9;&#x5BF9;&#x4E8E;&#x524D;&#x7AEF;&#x6765;&#x8BF4;&#x5176;&#x5B9E;&#x5E76;&#x4E0D;&#x964C;&#x751F;&#xFF0C;&#x53EF;&#x4EE5;&#x7C7B;&#x6BD4; DOM &#x6811;&#x7684;&#x64CD;&#x4F5C;&#xFF09;&#xFF0C;&#x6700;&#x540E;&#x662F;&#x751F;&#x6210;&#xFF08;generate&#xFF09;&#xFF0C;&#x6839;&#x636E;&#x65B0;&#x7684; AST &#x751F;&#x6210;&#x7F16;&#x8BD1;&#x540E;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
+<p><a href="https://juejin.im/post/5ba346a7f265da0ad13b78bd">https://juejin.im/post/5ba346a7f265da0ad13b78bd</a></p>
+<h4 class="mume-header" id="demo">demo&#xFF1A;</h4>
+
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token keyword">import</span> Taro<span class="token punctuation">,</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;@tarojs/taro&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> View<span class="token punctuation">,</span> Text <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;@tarojs/components&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Home</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+  config <span class="token operator">=</span> <span class="token punctuation">{</span>
+    navigationBarTitleText<span class="token punctuation">:</span> <span class="token string">&quot;&#x9996;&#x9875;&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  state <span class="token operator">=</span> <span class="token punctuation">{</span>
+    numbers<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token function-variable function">handleClick</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span><span class="token function">onTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> oddNumbers <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>numbers<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>number <span class="token operator">=&gt;</span> number <span class="token operator">&amp;</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token operator">&lt;</span>ScrollView className<span class="token operator">=</span><span class="token string">&quot;home&quot;</span> scrollTop<span class="token operator">=</span><span class="token punctuation">{</span><span class="token boolean">false</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+        &#x5947;&#x6570;&#xFF1A;
+        <span class="token punctuation">{</span>oddNumbers<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>number <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+          <span class="token operator">&lt;</span>Text onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>handleClick<span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">{</span>number<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>Text<span class="token operator">&gt;</span>
+        <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+        &#x5076;&#x6570;&#xFF1A;
+        <span class="token punctuation">{</span>numbers<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>
+          number <span class="token operator">=&gt;</span>
+            number <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">===</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">&lt;</span>Text onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>handleClick<span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">{</span>number<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>Text<span class="token operator">&gt;</span>
+        <span class="token punctuation">)</span><span class="token punctuation">}</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>ScrollView<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><p>&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;<br>
+Taro &#x7684;&#x7ED3;&#x6784;&#x4E3B;&#x8981;&#x5206;&#x4E24;&#x4E2A;&#x65B9;&#x9762;&#xFF1A;&#x8FD0;&#x884C;&#x65F6;&#x548C;&#x7F16;&#x8BD1;&#x65F6;&#x3002;&#x8FD0;&#x884C;&#x65F6;&#x8D1F;&#x8D23;&#x628A;&#x7F16;&#x8BD1;&#x540E;&#x5230;&#x4EE3;&#x7801;&#x8FD0;&#x884C;&#x5728;&#x672C;&#x4E0D;&#x80FD;&#x8FD0;&#x884C;&#x7684;&#x5BF9;&#x5E94;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x628A; Taro &#x8FD0;&#x884C;&#x65F6;&#x7406;&#x89E3;&#x4E3A;&#x524D;&#x7AEF;&#x5F00;&#x53D1;&#x5F53;&#x4E2D; polyfill(Polyfill &#x4F60;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x201C;&#x817B;&#x5B50;&#x201D;&#xFF0C;&#x5C31;&#x662F;&#x88C5;&#x4FEE;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x7F3A;&#x635F;&#x7684;&#x5730;&#x65B9;&#x586B;&#x5145;&#x62B9;&#x5E73;)&#x3002;</p>
+<p><img src="https://ask.qcloudimg.com/http-save/1000046/4m25f8k7ls.jpeg" alt></p>
+<h5 class="mume-header" id="taro%E7%BC%96%E8%AF%91%E6%97%B6">taro&#x7F16;&#x8BD1;&#x65F6;</h5>
+
+<ol>
+<li>
+<p>config =&gt; JSON&#x3002;</p>
+</li>
+<li>
+<p>state =&gt; data&#x3002;</p>
+</li>
+<li>
+<p>&#x51FD;&#x6570; handleClick &#x6211;&#x4EEC;&#x4EA4;&#x7ED9;&#x8FD0;&#x884C;&#x65F6;&#x5904;&#x7406;&#x3002;</p>
+</li>
+<li>
+<p>&#x548C; React &#x4E00;&#x6837;&#xFF0C;Taro &#x6BCF;&#x6B21;&#x66F4;&#x65B0;&#x90FD;&#x4F1A;&#x8C03;&#x7528; render &#x51FD;&#x6570;&#xFF0C;&#x4F46;&#x548C; React &#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF1A;</p>
+<ul>
+<li>
+<p>React &#x7684; render &#x662F;&#x4E00;&#x4E2A;&#x521B;&#x5EFA;&#x865A;&#x62DF; DOM &#x7684;&#x65B9;&#x6CD5;</p>
+</li>
+<li>
+<p>Taro &#x7684; render &#x4F1A;&#x88AB;&#x91CD;&#x547D;&#x540D;&#x4E3A; _createData&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x521B;&#x5EFA;&#x6570;&#x636E;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;&#x5728; JSX &#x4F7F;&#x7528;&#x8FC7;&#x7684;&#x6570;&#x636E;&#x90FD;&#x5728;&#x8FD9;&#x91CC;&#x88AB;&#x521B;&#x5EFA;&#x6700;&#x540E;&#x653E;&#x5230;&#x5C0F;&#x7A0B;&#x5E8F; Page &#x6216; Component &#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x4E2D;&#x7684; data &#x3002;&#x6700;&#x7EC8;&#x6211;&#x4EEC;&#x7684; render &#x65B9;&#x6CD5;&#x4F1A;&#x88AB;&#x7F16;&#x8BD1;&#x4E3A;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token function">_createData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>__state <span class="token operator">=</span> arguments<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">||</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>__props <span class="token operator">=</span> arguments<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props <span class="token operator">||</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> oddNumbers <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>__state<span class="token punctuation">.</span>numbers<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>number <span class="token operator">=&gt;</span> number <span class="token operator">&amp;</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>__state<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    oddNumbers<span class="token punctuation">:</span> oddNumbers
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>__state<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre></li>
+</ul>
+</li>
+<li>
+<p>WXML &#x548C; JSX<br>
+&#x5728; Taro &#x91CC; render &#x7684;&#x6240;&#x6709; JSX &#x5143;&#x7D20;&#x90FD;&#x4F1A;&#x5728; JavaScript &#x6587;&#x4EF6;&#x4E2D;&#x88AB;&#x79FB;&#x9664;&#xFF0C;&#x5B83;&#x4EEC;&#x6700;&#x7EC8;&#x5C06;&#x4F1A;&#x7F16;&#x8BD1;&#x6210;&#x5C0F;&#x7A0B;&#x5E8F;&#x7684; WXML&#xFF1A;</p>
+<ul>
+<li>
+<p>&#x9996;&#x5148;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5148;&#x770B; <code>&lt;View className=&apos;home&apos;&gt;</code>&#xFF0C;&#x5B83;&#x5728; AST &#x4E2D;&#x662F;&#x4E00;&#x4E2A; JSXElement&#xFF0C;&#x5B83;&#x7684;&#x7ED3;&#x6784;&#x548C;&#x6211;&#x4EEC;&#x5B9A;&#x4E49; Element &#x7C7B;&#x578B;&#x5DEE;&#x4E0D;&#x591A;&#x3002;&#x6211;&#x4EEC;&#x5148;&#x5C06; JSXElement &#x7684; ScrollView &#x4ECE;&#x9A7C;&#x5CF0;&#x5F0F;&#x7684; JSX &#x547D;&#x540D;&#x8F6C;&#x5316;&#x4E3A;&#x77ED;&#x6A2A;&#x7EBF;&#xFF08;kebab case&#xFF09;&#x98CE;&#x683C;&#xFF0C;className &#x548C; scrollTop &#x7684;&#x503C;&#x5206;&#x522B;&#x4EE3;&#x8868;&#x4E86; JSXAttribute &#x503C;&#x7684;&#x4E24;&#x79CD;&#x7C7B;&#x578B;&#xFF1A;StringLiteral &#x548C; JSXExpressionContainer&#xFF0C;className &#x662F;&#x7B80;&#x5355;&#x7684; StringLiteral &#x5904;&#x7406;&#x8D77;&#x6765;&#x5F88;&#x65B9;&#x4FBF;&#xFF0C;scrollTop &#x5904;&#x7406;&#x8D77;&#x6765;&#x7A0D;&#x5FAE;&#x9EBB;&#x70E6;&#x70B9;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7528;&#x4E24;&#x4E2A;&#x82B1;&#x62EC;&#x53F7; {} &#x628A;&#x5185;&#x5BB9;&#x5305;&#x8D77;&#x6765;&#x3002;<br>
+&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x518D;&#x601D;&#x8003;&#x4E00;&#x4E0B;&#x6BCF;&#x4E00;&#x4E2A; JSXElement &#x51FA;&#x73B0;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#x5176;&#x5B9E;&#x5B83;&#x7684;&#x7236;&#x5143;&#x7D20;&#x53EA;&#x6709;&#x51E0;&#x79CD;&#x53EF;&#x80FD;&#x6027;&#xFF1A;return&#x3001;&#x5FAA;&#x73AF;&#x3001;&#x6761;&#x4EF6;&#xFF08;&#x903B;&#x8F91;&#xFF09;&#x8868;&#x8FBE;&#x5F0F;&#x3002;&#x800C;&#x5728;&#x4E0A;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x4E2D;&#x6211;&#x4EEC;&#x63D0;&#x5230;&#xFF0C;babel-traverse &#x904D;&#x5386;&#x7684; AST &#x7C7B;&#x578B;&#x662F;&#x54CD;&#x5E94;&#x5F0F;&#x7684;&#x2014;&#x2014;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x53EA;&#x8981;&#x6211;&#x4EEC;&#x6309;&#x7167; JSXElement &#x7236;&#x5143;&#x7D20;&#x7C7B;&#x578B;&#x7684;&#x987A;&#x5E8F;&#x7A77;&#x4E3E;&#x5904;&#x7406;&#x8FD9;&#x51E0;&#x79CD;&#x53EF;&#x80FD;&#x6027;&#xFF0C;&#x628A;&#x5404;&#x79CD;&#x53EF;&#x80FD;&#x6027;&#x5927;&#x7ED3;&#x679C;&#x5E94;&#x7528;&#x5230; JSX &#x5143;&#x7D20;&#x4E4B;&#x540E;&#x5220;&#x9664;&#x6389;&#x539F;&#x6765;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x6700;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x628A;&#x4E00;&#x4E2A;&#x590D;&#x6742;&#x7684; JSX &#x8868;&#x8FBE;&#x5F0F;&#x8F6C;&#x6362;&#x4E3A;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684; WXML &#x6570;&#x636E;&#x7ED3;&#x6784;&#x3002;</p>
+</li>
+<li>
+<p><code>oddNumbers.map(number =&gt; &lt;Text onClick={this.handleClick}&gt;{number}&lt;/Text&gt;)</code><br>
+Text &#x7684;&#x7236;&#x5143;&#x7D20;&#x662F;&#x4E00;&#x4E2A; map &#x51FD;&#x6570;&#xFF08;CallExpression&#xFF09;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x628A;&#x51FD;&#x6570;&#x7684; callee: oddNumbers &#x4F5C;&#x4E3A; wx:for &#x7684;&#x503C;&#xFF0C;&#x5E76;&#x628A;&#x5B83;&#x653E;&#x5230; state &#x4E2D;&#xFF0C;&#x533F;&#x540D;&#x51FD;&#x6570;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F; wx:for-item &#x7684;&#x503C;&#xFF0C;&#x51FD;&#x6570;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x5E94;&#x8BE5;&#x662F; wx:for-index &#x7684;&#x503C;&#x3002;<br>
+&#x5BF9;&#x4E8E; onClick &#x800C;&#x8A00;&#xFF0C;&#x5728; Taro &#x4E2D; on &#x5F00;&#x5934;&#x7684;&#x5143;&#x7D20;&#x53C2;&#x6570;&#x90FD;&#x662F;&#x4E8B;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53EA;&#x8981;&#x628A; this. &#x53BB;&#x6389;&#x5373;&#x53EF;&#x3002;Text &#x5143;&#x7D20;&#x7684; children &#x662F;&#x4E00;&#x4E2A; JSXExpressionContainer&#xFF0C;&#x6211;&#x4EEC;&#x6309;&#x7167;&#x4E4B;&#x524D;&#x7684;&#x5904;&#x7406;&#x65B9;&#x5F0F;&#x5904;&#x7406;&#x5373;&#x53EF;&#x3002;&#x6700;&#x540E;&#x8FD9;&#x884C;&#x6211;&#x4EEC;&#x751F;&#x6210;&#x51FA;&#x6765;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5E94;&#x8BE5;&#x662F;&#x8FD9;&#x6837;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="json" class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;element&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;tagName&quot;</span><span class="token operator">:</span> <span class="token string">&quot;text&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;attributes&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span> <span class="token property">&quot;bindtap&quot;</span><span class="token operator">:</span> <span class="token string">&quot;handleClick&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token property">&quot;wx:for&quot;</span><span class="token operator">:</span> <span class="token string">&quot;{{oddNumbers}}&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token property">&quot;wx:for-item&quot;</span><span class="token operator">:</span> <span class="token string">&quot;number&quot;</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;children&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;text&quot;</span><span class="token punctuation">,</span> <span class="token property">&quot;content&quot;</span><span class="token operator">:</span> <span class="token string">&quot;{{number}}&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</pre></li>
+<li>
+<p><code>numbers.map(number =&gt; number % 2 === 0 &amp;&amp; &lt;Text onClick={this.handleClick}&gt;{number}&lt;/Text&gt;)</code><br>
+&#x7531;&#x4E8E; wx:if &#x548C; wx:for &#x540C;&#x65F6;&#x4F5C;&#x7528;&#x4E8E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#x95EE;&#x9898;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5E94;&#x8BE5;&#x751F;&#x6210;&#x4E00;&#x4E2A; block &#x5143;&#x7D20;&#xFF0C;&#x628A; wx:if &#x6302;&#x8F7D;&#x5230; block &#x5143;&#x7D20;&#xFF0C;&#x539F;&#x5143;&#x7D20;&#x5219;&#x5168;&#x90E8;&#x4F5C;&#x4E3A; children &#x4F20;&#x5165; block &#x5143;&#x7D20;&#x4E2D;&#x3002;&#x8FD9;&#x65F6; babel-traverse &#x4F1A;&#x68C0;&#x6D4B;&#x5230;&#x65B0;&#x7684;&#x5143;&#x7D20; block&#xFF0C;&#x5B83;&#x7684;&#x7236;&#x5143;&#x7D20;&#x662F;&#x4E00;&#x4E2A; map &#x5FAA;&#x73AF;&#x51FD;&#x6570;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x7B2C;&#x4E00;&#x4E2A;&#x5FAA;&#x73AF;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x5904;&#x7406;&#x65B9;&#x6CD5;&#x6765;&#x5904;&#x7406;&#x8FD9;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x3002;</p>
+</li>
+</ul>
+</li>
+</ol>
+<h5 class="mume-header" id="taro-%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E6%97%B6">taro &#x5C0F;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x65F6;</h5>
+
+<p>&#x7F16;&#x8BD1;&#x751F;&#x6210;&#x597D;&#x7684;&#x4EE3;&#x7801;&#x4ECD;&#x7136;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x8FD0;&#x884C;&#x5728;&#x5C0F;&#x7A0B;&#x5E8F;&#x73AF;&#x5883;&#x91CC;&#x3002;</p>
+<blockquote>
+<p>&#x5728;&#x5C0F;&#x7A0B;&#x5E8F;&#x91CC;&#xFF0C;&#x7A0B;&#x5E8F;&#x7684;&#x529F;&#x80FD;&#x53CA;&#x914D;&#x7F6E;&#x4E0E;&#x9875;&#x9762;&#x548C;&#x7EC4;&#x4EF6;&#x5DEE;&#x5F02;&#x8F83;&#x5927;&#xFF0C;&#x56E0;&#x6B64;&#x8FD0;&#x884C;&#x65F6;&#x63D0;&#x4F9B;&#x4E86;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5; createApp &#x548C; createComponent &#x6765;&#x5206;&#x522B;&#x521B;&#x5EFA;&#x7A0B;&#x5E8F;&#x548C;&#x7EC4;&#x4EF6;&#xFF08;&#x9875;&#x9762;&#xFF09;&#x3002;createApp &#x7684;&#x5B9E;&#x73B0;&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C;&#x672C;&#x7AE0;&#x6211;&#x4EEC;&#x4E3B;&#x8981;&#x4ECB;&#x7ECD; createComponent &#x505A;&#x7684;&#x5DE5;&#x4F5C;&#x3002;</p>
+</blockquote>
+<p>createComponent &#x65B9;&#x6CD5;&#x4E3B;&#x8981;&#x505A;&#x4E86;&#x8FD9;&#x6837;&#x51E0;&#x4EF6;&#x4E8B;&#x60C5;&#xFF1A;</p>
+<ul>
+<li>&#x5C06;&#x7EC4;&#x4EF6;&#x7684; state &#x8F6C;&#x6362;&#x6210;&#x5C0F;&#x7A0B;&#x5E8F;&#x7EC4;&#x4EF6;&#x914D;&#x7F6E;&#x5BF9;&#x8C61;&#x7684; data</li>
+<li>&#x5C06;&#x7EC4;&#x4EF6;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x5BF9;&#x5E94;&#x5230;&#x5C0F;&#x7A0B;&#x5E8F;&#x7EC4;&#x4EF6;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;</li>
+<li>&#x5C06;&#x7EC4;&#x4EF6;&#x7684;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x51FD;&#x6570;&#x5BF9;&#x5E94;&#x5230;&#x5C0F;&#x7A0B;&#x5E8F;&#x7684;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x51FD;&#x6570;</li>
+</ul>
+<p><strong>&#x7EC4;&#x4EF6; state &#x8F6C;&#x6362;</strong><br>
+&#x5176;&#x5B9E;&#x5728; Taro&#xFF08;React&#xFF09; &#x7EC4;&#x4EF6;&#x91CC;&#xFF0C;&#x9664;&#x4E86;&#x7EC4;&#x4EF6;&#x7684; state&#xFF0C;JSX &#x91CC;&#x8FD8;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE; props &#x3001;render &#x51FD;&#x6570;&#x91CC;&#x5B9A;&#x4E49;&#x7684;&#x503C;&#x3001;&#x4EE5;&#x53CA;&#x4EFB;&#x4F55;&#x4F5C;&#x7528;&#x57DF;&#x4E0A;&#x7684;&#x6210;&#x5458;&#x3002;&#x800C;&#x5728;&#x5C0F;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x4E0E;&#x6A21;&#x677F;&#x7ED1;&#x5B9A;&#x7684;&#x6570;&#x636E;&#x5747;&#x6765;&#x81EA;&#x5BF9;&#x5E94;&#x9875;&#x9762;&#xFF08;&#x6216;&#x7EC4;&#x4EF6;&#xFF09;&#x7684; data &#x3002;&#x56E0;&#x6B64; JSX &#x6A21;&#x677F;&#x91CC;&#x8BBF;&#x95EE;&#x5230;&#x7684;&#x6570;&#x636E;&#x90FD;&#x4F1A;&#x5BF9;&#x5E94;&#x5230;&#x5C0F;&#x7A0B;&#x5E8F;&#x7EC4;&#x4EF6;&#x7684; data &#x4E0A;&#x3002;</p>
+<p><strong>&#x751F;&#x547D;&#x5468;&#x671F;</strong></p>
+<blockquote>
+<p>&#x5C0F;&#x7A0B;&#x5E8F;&#x7684;&#x9875;&#x9762;&#x9664;&#x4E86;&#x6E32;&#x67D3;&#x8FC7;&#x7A0B;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x5916;&#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x4E9B;&#x7C7B;&#x4F3C;&#x4E8E; onPullDownRefresh &#x3001; onReachBottom &#x7B49;&#x529F;&#x80FD;&#x6027;&#x7684;&#x56DE;&#x8C03;&#x65B9;&#x6CD5;&#x4E5F;&#x653E;&#x5230;&#x4E86;&#x751F;&#x547D;&#x5468;&#x671F;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x91CC;&#x3002;&#x8FD9;&#x4E9B;&#x529F;&#x80FD;&#x6027;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;Taro &#x672A;&#x505A;&#x5904;&#x7406;&#xFF0C;&#x76F4;&#x63A5;&#x4FDD;&#x7559;&#x4E86;&#x4E0B;&#x6765;&#x3002;</p>
+</blockquote>
+<p>componentWillMount<br>
+&#x5728;&#x5FAE;&#x4FE1;&#x5C0F;&#x7A0B;&#x5E8F;&#x4E2D;&#x8FD9;&#x4E00;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x5BF9;&#x5E94;&#x9875;&#x9762;&#x7684;onLoad&#x6216;&#x5165;&#x53E3;&#x6587;&#x4EF6;app&#x4E2D;&#x7684;onLaunch</p>
+<p>componentDidMount<br>
+&#x5728;&#x5FAE;&#x4FE1;&#x5C0F;&#x7A0B;&#x5E8F;&#x4E2D;&#x8FD9;&#x4E00;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x5BF9;&#x5E94;&#x9875;&#x9762;&#x7684;onReady&#x6216;&#x5165;&#x53E3;&#x6587;&#x4EF6;app&#x4E2D;&#x7684;onLaunch&#xFF0C;&#x5728; componentWillMount&#x540E;&#x6267;&#x884C;</p>
+<p>componentDidShow<br>
+&#x5728;&#x5FAE;&#x4FE1;&#x5C0F;&#x7A0B;&#x5E8F;&#x4E2D;&#x8FD9;&#x4E00;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x5BF9;&#x5E94; onShow</p>
+<p>componentDidHide<br>
+&#x5728;&#x5FAE;&#x4FE1;&#x5C0F;&#x7A0B;&#x5E8F;&#x4E2D;&#x8FD9;&#x4E00;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x5BF9;&#x5E94; onHide</p>
+<p>componentDidCatchError<br>
+&#x9519;&#x8BEF;&#x76D1;&#x542C;&#x51FD;&#x6570;&#xFF0C;&#x5728;&#x5FAE;&#x4FE1;&#x5C0F;&#x7A0B;&#x5E8F;&#x4E2D;&#x8FD9;&#x4E00;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x5BF9;&#x5E94; onError</p>
+<p>componentDidNotFound<br>
+&#x9875;&#x9762;&#x4E0D;&#x5B58;&#x5728;&#x76D1;&#x542C;&#x51FD;&#x6570;&#xFF0C;&#x5728;&#x5FAE;&#x4FE1;&#x5C0F;&#x7A0B;&#x5E8F;&#x4E2D;&#x8FD9;&#x4E00;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x5BF9;&#x5E94; onPageNotFound</p>
+<p>shouldComponentUpdate<br>
+&#x9875;&#x9762;&#x662F;&#x5426;&#x9700;&#x8981;&#x66F4;&#x65B0;</p>
+<p>componentWillUpdate<br>
+&#x9875;&#x9762;&#x5373;&#x5C06;&#x66F4;&#x65B0;</p>
+<p>componentDidUpdate<br>
+&#x9875;&#x9762;&#x66F4;&#x65B0;&#x5B8C;&#x6BD5;</p>
+<p>componentWillUnmount<br>
+&#x9875;&#x9762;&#x9000;&#x51FA;&#xFF0C;&#x5728;&#x5FAE;&#x4FE1;&#x5C0F;&#x7A0B;&#x5E8F;&#x4E2D;&#x8FD9;&#x4E00;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x5BF9;&#x5E94; onUnload</p>
+<p>&#x5728;&#x5C0F;&#x7A0B;&#x5E8F;&#x4E2D; &#xFF0C;&#x9875;&#x9762;&#x8FD8;&#x6709;&#x4E00;&#x4E9B;&#x4E13;&#x5C5E;&#x7684;&#x65B9;&#x6CD5;&#x6210;&#x5458;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ol>
+<li>
+<p>onPullDownRefresh&#xFF1A; &#x9875;&#x9762;&#x76F8;&#x5173;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x51FD;&#x6570;&#x2013;&#x76D1;&#x542C;&#x7528;&#x6237;&#x4E0B;&#x62C9;&#x52A8;&#x4F5C;</p>
+</li>
+<li>
+<p>onReachBottom&#xFF1A; &#x9875;&#x9762;&#x4E0A;&#x62C9;&#x89E6;&#x5E95;&#x4E8B;&#x4EF6;&#x7684;&#x5904;&#x7406;&#x51FD;&#x6570;</p>
+</li>
+<li>
+<p>onShareAppMessage&#xFF1A; &#x7528;&#x6237;&#x70B9;&#x51FB;&#x53F3;&#x4E0A;&#x89D2;&#x8F6C;&#x53D1;</p>
+</li>
+<li>
+<p>onPageScroll&#xFF1A; &#x9875;&#x9762;&#x6EDA;&#x52A8;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#x7684;&#x5904;&#x7406;&#x51FD;&#x6570;</p>
+</li>
+<li>
+<p>onTabItemTap&#xFF1A; &#x5F53;&#x524D;&#x662F; tab &#x9875;&#x65F6;&#xFF0C;&#x70B9;&#x51FB; tab &#x65F6;&#x89E6;&#x53D1;</p>
+</li>
+<li>
+<p>componentWillPreload&#xFF1A; &#x9884;&#x52A0;&#x8F7D;&#xFF0C;&#x53EA;&#x5728;&#x5FAE;&#x4FE1;&#x5C0F;&#x7A0B;&#x5E8F;&#x4E2D;&#x53EF;&#x7528;</p>
+</li>
+</ol>
+<p>Taro &#x7EC4;&#x4EF6;&#x7684; setState &#x884C;&#x4E3A;&#x6700;&#x7EC8;&#x4F1A;&#x5BF9;&#x5E94;&#x5230;&#x5C0F;&#x7A0B;&#x5E8F;&#x7684; setData&#x3002;Taro &#x5F15;&#x5165;&#x4E86;&#x5982; nextTick &#xFF0C;&#x7F16;&#x8BD1;&#x65F6;&#x8BC6;&#x522B;&#x6A21;&#x677F;&#x4E2D;&#x7528;&#x5230;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5728; setData &#x524D;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x5DEE;&#x5F02;&#x6BD4;&#x8F83;&#x7B49;&#x65B9;&#x5F0F;&#x6765;&#x63D0;&#x9AD8; setState &#x7684;&#x6027;&#x80FD;&#x3002;</p>
+<p>&#x5982;&#x4E0A;&#x56FE;&#xFF0C;&#x7EC4;&#x4EF6;&#x8C03;&#x7528; setState &#x65B9;&#x6CD5;&#x4E4B;&#x540E;&#xFF0C;&#x5E76;&#x4E0D;&#x4F1A;&#x7ACB;&#x523B;&#x6267;&#x884C;&#x7EC4;&#x4EF6;&#x66F4;&#x65B0;&#x903B;&#x8F91;&#xFF0C;&#x800C;&#x662F;&#x4F1A;&#x5C06;&#x6700;&#x65B0;&#x7684; state &#x6682;&#x5B58;&#x5165;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x4E2D;&#xFF0C;&#x7B49; nextTick &#x56DE;&#x8C03;&#x65F6;&#x624D;&#x4F1A;&#x8BA1;&#x7B97;&#x6700;&#x65B0;&#x7684; state &#x8FDB;&#x884C;&#x7EC4;&#x4EF6;&#x66F4;&#x65B0;&#x3002;&#x8FD9;&#x6837;&#x5373;&#x4F7F;&#x8FDE;&#x7EED;&#x591A;&#x6B21;&#x7684;&#x8C03;&#x7528; setState  &#x5E76;&#x4E0D;&#x4F1A;&#x89E6;&#x53D1;&#x591A;&#x6B21;&#x7684;&#x89C6;&#x56FE;&#x66F4;&#x65B0;&#x3002;&#x5728;&#x5C0F;&#x7A0B;&#x5E8F;&#x4E2D; nextTick &#x662F;&#x8FD9;&#x4E48;&#x5B9E;&#x73B0;&#x7684;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">nextTick</span> <span class="token operator">=</span> <span class="token punctuation">(</span>fn<span class="token punctuation">,</span> <span class="token operator">...</span>args<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  fn <span class="token operator">=</span> <span class="token keyword">typeof</span> fn <span class="token operator">===</span> <span class="token string">&apos;function&apos;</span> <span class="token operator">?</span> fn<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token operator">...</span>args<span class="token punctuation">)</span> <span class="token punctuation">:</span> fn
+  <span class="token keyword">const</span> timerFunc <span class="token operator">=</span> wx<span class="token punctuation">.</span>nextTick <span class="token operator">?</span> wx<span class="token punctuation">.</span>nextTick <span class="token punctuation">:</span> setTimeout
+  <span class="token function">timerFunc</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</pre><p>&#x9664;&#x4E86;&#x8BA1;&#x7B97;&#x51FA;&#x6700;&#x65B0;&#x7684;&#x7EC4;&#x4EF6; state &#xFF0C;&#x5728;&#x7EC4;&#x4EF6;&#x72B6;&#x6001;&#x66F4;&#x65B0;&#x8FC7;&#x7A0B;&#x91CC;&#x8FD8;&#x4F1A;&#x8C03;&#x7528;&#x524D;&#x9762;&#x63D0;&#x5230;&#x8FC7;&#x7684; _createData &#x65B9;&#x6CD5;&#xFF0C;&#x5F97;&#x5230;&#x6700;&#x7EC8;&#x5C0F;&#x7A0B;&#x5E8F;&#x7EC4;&#x4EF6;&#x7684; data&#xFF0C;&#x5E76;&#x8C03;&#x7528;&#x5C0F;&#x7A0B;&#x5E8F;&#x7684; setData &#x65B9;&#x6CD5;&#x6765;&#x8FDB;&#x884C;&#x7EC4;&#x4EF6;&#x7684;&#x66F4;&#x65B0;&#x3002;</p>
+<p><strong>&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x51FD;&#x6570;&#x5BF9;&#x5E94;</strong><br>
+&#x5728;&#x5C0F;&#x7A0B;&#x5E8F;&#x7684;&#x7EC4;&#x4EF6;&#x91CC;&#xFF0C;&#x4E8B;&#x4EF6;&#x54CD;&#x5E94;&#x51FD;&#x6570;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x5728; methods &#x5B57;&#x6BB5;&#x91CC;&#x3002;&#x800C;&#x5728; JSX &#x91CC;&#xFF0C;&#x4E8B;&#x4EF6;&#x662F;&#x8FD9;&#x6837;&#x7ED1;&#x5B9A;&#x7684;&#xFF1A;</p>
+<p><code>&lt;View onClick={this.handleClick}&gt;&lt;/View&gt;</code>&#x7F16;&#x8BD1;&#x7684;&#x8FC7;&#x7A0B;&#x4F1A;&#x5C06; JSX &#x8F6C;&#x6362;&#x6210;&#x5C0F;&#x7A0B;&#x5E8F;&#x6A21;&#x677F;&#xFF1A;<code>&lt;view bindclick=&quot;handleClick&quot;&gt;&lt;/view&gt;</code></p>
+<p>&#x5728; createComponent &#x65B9;&#x6CD5;&#x91CC;&#xFF0C;&#x4F1A;&#x5C06;&#x4E8B;&#x4EF6;&#x54CD;&#x5E94;&#x51FD;&#x6570; handleClick &#x6DFB;&#x52A0;&#x5230; methods &#x5B57;&#x6BB5;&#x4E2D;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x54CD;&#x5E94;&#x51FD;&#x6570;&#x91CC;&#x8C03;&#x7528;&#x771F;&#x6B63;&#x7684; this.handleClick &#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x5728;&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x4F1A;&#x63D0;&#x53D6;&#x6A21;&#x677F;&#x4E2D;&#x7ED1;&#x5B9A;&#x8FC7;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x5B58;&#x5230;&#x7EC4;&#x4EF6;&#x7684; $events &#x5B57;&#x6BB5;&#x91CC;&#xFF0C;&#x8FD9;&#x6837;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x5C31;&#x53EF;&#x4EE5;&#x53EA;&#x5C06;&#x7528;&#x5230;&#x7684;&#x4E8B;&#x4EF6;&#x54CD;&#x5E94;&#x51FD;&#x6570;&#x914D;&#x7F6E;&#x5230;&#x5C0F;&#x7A0B;&#x5E8F;&#x7EC4;&#x4EF6;&#x7684; methods &#x5B57;&#x6BB5;&#x4E2D;&#x3002;</p>
+<p>&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x901A;&#x8FC7; processEvent &#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x6765;&#x5904;&#x7406;&#x4E8B;&#x4EF6;&#x7684;&#x5BF9;&#x5E94;&#xFF0C;&#x7701;&#x7565;&#x6389;&#x5904;&#x7406;&#x8FC7;&#x7A0B;&#xFF0C;&#x5C31;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>function processEvent (eventHandlerName, obj) {
+  obj[eventHandlerName] = function (event) {
+    // ...
+	scope[eventHandlerName].apply(callScope, realArgs)
+  }
+}
+</code></pre><p>&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x6838;&#x5FC3;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x89E3;&#x6790;&#x51FA;&#x4E8B;&#x4EF6;&#x54CD;&#x5E94;&#x51FD;&#x6570;&#x6267;&#x884C;&#x65F6;&#x771F;&#x6B63;&#x7684;&#x4F5C;&#x7528;&#x57DF; callScope &#x4EE5;&#x53CA;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x3002;&#x5728; JSX &#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x50CF;&#x4E0B;&#x9762;&#x8FD9;&#x6837;&#x901A;&#x8FC7; bind &#x4F20;&#x5165;&#x53C2;&#x6570;&#xFF1A;</p>
+<p><code>&lt;View onClick={this.handleClick.bind(this, arga, argb)}&gt;&lt;/View&gt;</code></p>
+<p><strong>&#x5BF9; API &#x8FDB;&#x884C; Promise &#x5316;&#x7684;&#x5904;&#x7406;</strong><br>
+Taro &#x5BF9;&#x5C0F;&#x7A0B;&#x5E8F;&#x7684;&#x6240;&#x6709; API &#x8FDB;&#x884C;&#x4E86;&#x4E00;&#x4E2A;&#x5206;&#x7C7B;&#x6574;&#x7406;&#xFF0C;&#x5C06;&#x5176;&#x4E2D;&#x7684;&#x5F02;&#x6B65; API &#x505A;&#x4E86;&#x4E00;&#x5C42; Promise &#x5316;&#x7684;&#x5C01;&#x88C5;&#x3002;&#x4F8B;&#x5982;&#xFF0C;wx.getStorage&#x7ECF;&#x8FC7;&#x4E0B;&#x9762;&#x7684;&#x5904;&#x7406;&#x5BF9;&#x5E94;&#x5230;Taro.getStorage(&#x6B64;&#x5904;&#x4EE3;&#x7801;&#x4F5C;&#x793A;&#x4F8B;&#x7528;&#xFF0C;&#x4E0E;&#x5B9E;&#x9645;&#x6E90;&#x4EE3;&#x7801;&#x4E0D;&#x5C3D;&#x76F8;&#x540C;)&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">Taro<span class="token punctuation">[</span><span class="token string">&apos;getStorage&apos;</span><span class="token punctuation">]</span> <span class="token operator">=</span> options <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> obj <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> options<span class="token punctuation">)</span>
+  <span class="token keyword">const</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+	<span class="token punctuation">[</span><span class="token string">&apos;fail&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;success&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;complete&apos;</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+	  obj<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+	    options<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> options<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+	    <span class="token keyword">if</span> <span class="token punctuation">(</span>k <span class="token operator">===</span> <span class="token string">&apos;success&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		  <span class="token function">resolve</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+	    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>k <span class="token operator">===</span> <span class="token string">&apos;fail&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		  <span class="token function">reject</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+	    <span class="token punctuation">}</span>
+	  <span class="token punctuation">}</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span>
+	wx<span class="token punctuation">[</span><span class="token string">&apos;getStorage&apos;</span><span class="token punctuation">]</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> p
+<span class="token punctuation">}</span>
+</pre><p>&#x5C31;&#x53EF;&#x4EE5;&#x8FD9;&#x4E48;&#x8C03;&#x7528;&#x4E86;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token comment">// &#x5C0F;&#x7A0B;&#x5E8F;&#x7684;&#x8C03;&#x7528;&#x65B9;&#x5F0F;</span>
+Taro<span class="token punctuation">.</span><span class="token function">getStorage</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  key<span class="token punctuation">:</span> <span class="token string">&apos;test&apos;</span><span class="token punctuation">,</span>
+  <span class="token function">success</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">// &#x5728; Taro &#x91CC;&#x4E5F;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x8C03;&#x7528;</span>
+Taro<span class="token punctuation">.</span><span class="token function">getStorage</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  key<span class="token punctuation">:</span> <span class="token string">&apos;test&apos;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// success</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</pre><ul>
+<li>Taro &#x5C0F;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x65F6;&#x662F;&#x5982;&#x4F55;&#x914D;&#x5408;&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;&#xFF0C;&#x62B9;&#x5E73;&#x4E86;&#x72B6;&#x6001;&#x3001;&#x4E8B;&#x4EF6;&#x7ED1;&#x5B9A;&#x4EE5;&#x53CA;&#x751F;&#x547D;&#x5468;&#x671F;&#x7684;&#x5DEE;&#x5F02;&#xFF0C;&#x4F7F;&#x5F97; Taro &#x7EC4;&#x4EF6;&#x8FD0;&#x884C;&#x5728;&#x5C0F;&#x7A0B;&#x5E8F;&#x73AF;&#x5883;&#x4E2D;&#x3002;</li>
+<li>&#x901A;&#x8FC7;&#x8FD0;&#x884C;&#x65F6;&#x5BF9;&#x539F;&#x751F; API &#x8FDB;&#x884C;&#x6269;&#x5C55;&#xFF0C;&#x5B9E;&#x73B0;&#x4E86;&#x8BF8;&#x5982;&#x4E8B;&#x4EF6;&#x7ED1;&#x5B9A;&#x65F6;&#x901A;&#x8FC7; bind &#x4F20;&#x9012;&#x53C2;&#x6570;&#x3001;&#x901A;&#x8FC7; Promise &#x7684;&#x65B9;&#x5F0F;&#x8C03;&#x7528;&#x539F;&#x751F; API &#x7B49;&#x7279;&#x6027;&#x3002;</li>
+<li>&#x672C;&#x7AE0;&#x8282;&#x53C2;&#x8003; Taro &#x6E90;&#x7801;<br>
+@tarojs/taro-weapp&#xFF0C;&#x5FAE;&#x4FE1;&#x5C0F;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x65F6;<br>
+@tarojs/taro-swan&#xFF0C;&#x767E;&#x5EA6;&#x5C0F;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x65F6;<br>
+@tarojs/taro-alipay&#xFF0C;&#x652F;&#x4ED8;&#x5B9D;&#x5C0F;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x65F6;</li>
+</ul>
+<h5 class="mume-header" id="taro-h5%E8%BF%90%E8%A1%8C%E6%97%B6">taro H5&#x8FD0;&#x884C;&#x65F6;</h5>
+
+<p><strong>&#x7EC4;&#x4EF6;&#x5B9E;&#x73B0;</strong><br>
+&#x6211;&#x4EEC;&#x4E0D;&#x59A8;&#x634B;&#x4E00;&#x634B;&#x5C0F;&#x7A0B;&#x5E8F;&#x548C; Web &#x5F00;&#x53D1;&#x5728;&#x8FD9;&#x4E9B;&#x7EC4;&#x4EF6;&#x4E0A;&#x7684;&#x5DEE;&#x5F02;&#xFF1A;<br>
+image-20180903170556961<br>
+&#x4F5C;&#x4E3A;&#x5F00;&#x53D1;&#x8005;&#xFF0C;&#x4F60;&#x7B2C;&#x4E00;&#x53CD;&#x5E94;&#x6216;&#x8BB8;&#x4F1A;&#x5C1D;&#x8BD5;&#x5728;&#x7F16;&#x8BD1;&#x9636;&#x6BB5;&#x4E0B;&#x529F;&#x592B;&#xFF0C;&#x5C1D;&#x8BD5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x6548;&#x679C;&#x7C7B;&#x4F3C;&#x7684; Web &#x7EC4;&#x4EF6;&#x66FF;&#x4EE3;&#xFF1A;&#x7528;div&#x66FF;&#x4EE3;view&#xFF0C;&#x7528;img&#x66FF;&#x4EE3;image&#xFF0C;&#x4EE5;&#x6B64;&#x7C7B;&#x63A8;&#x3002;</p>
+<p><strong>API &#x9002;&#x914D;</strong><br>
+&#x9664;&#x4E86;&#x7EC4;&#x4EF6;&#xFF0C;&#x5C0F;&#x7A0B;&#x5E8F;&#x4E0B;&#x6709;&#x4E00;&#x4E9B; API &#x4E5F;&#x662F; Web &#x5F00;&#x53D1;&#x4E2D;&#x6240;&#x4E0D;&#x5177;&#x5907;&#x7684;&#x3002;&#x6BD4;&#x5982;&#x5C0F;&#x7A0B;&#x5E8F;&#x6846;&#x67B6;&#x5185;&#x7F6E;&#x7684;wx.request/wx.getStorage&#x7B49; API&#xFF1B;&#x4F46;&#x5728; Web &#x5F00;&#x53D1;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x7684;&#x662F;fetch/localStorage&#x7B49;&#x5185;&#x7F6E;&#x7684;&#x51FD;&#x6570;&#x6216;&#x8005;&#x5BF9;&#x8C61;&#x3002;<br>
+image-20180903170610928<br>
+&#x5C0F;&#x7A0B;&#x5E8F;&#x7684; API &#x5B9E;&#x73B0;&#x662F;&#x4E2A;&#x5DE8;&#x5927;&#x7684;&#x9ED1;&#x76D2;&#xFF0C;&#x6211;&#x4EEC;&#x4EC5;&#x4EC5;&#x77E5;&#x9053;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x5B83;&#xFF0C;&#x4F7F;&#x7528;&#x5B83;&#x4F1A;&#x5F97;&#x5230;&#x4EC0;&#x4E48;&#x7ED3;&#x679C;&#xFF0C;&#x4F46;&#x5BF9;&#x5B83;&#x5185;&#x90E8;&#x7684;&#x5B9E;&#x73B0;&#x4E00;&#x65E0;&#x6240;&#x77E5;&#x3002;<br>
+&#x5982;&#x4F55;&#x8BA9; Web &#x7AEF;&#x4E5F;&#x80FD;&#x4F7F;&#x7528;&#x5C0F;&#x7A0B;&#x5E8F;&#x6846;&#x67B6;&#x4E2D;&#x63D0;&#x4F9B;&#x7684;&#x8FD9;&#x4E9B;&#x529F;&#x80FD;&#xFF1F;&#x65E2;&#x7136;&#x5DF2;&#x7ECF;&#x77E5;&#x9053;&#x8FD9;&#x4E2A;&#x9ED1;&#x76D2;&#x7684;&#x5165;&#x53C2;&#x51FA;&#x53C2;&#x60C5;&#x51B5;&#xFF0C;&#x90A3;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x6253;&#x9020;&#x4E00;&#x4E2A;&#x9ED1;&#x76D2;&#x5C31;&#x597D;&#x4E86;&#x3002;<br>
+&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;&#x6211;&#x4EEC;&#x4F9D;&#x7136;&#x901A;&#x8FC7;&#x8FD0;&#x884C;&#x65F6;&#x6846;&#x67B6;&#x6765;&#x5B9E;&#x73B0;&#x8FD9;&#x4E9B; Web &#x7AEF;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x80FD;&#x529B;&#x3002;</p>
+<p><strong>&#x8DEF;&#x7531;</strong><br>
+&#x4F5C;&#x4E3A;&#x5C0F;&#x7A0B;&#x5E8F;&#x7684;&#x4E00;&#x5927;&#x80FD;&#x529B;&#xFF0C;&#x5C0F;&#x7A0B;&#x5E8F;&#x6846;&#x67B6;&#x4E2D;&#x4EE5;&#x6808;&#x7684;&#x5F62;&#x5F0F;&#x7EF4;&#x62A4;&#x4E86;&#x5F53;&#x524D;&#x6240;&#x6709;&#x7684;&#x9875;&#x9762;&#xFF0C;&#x7531;&#x6846;&#x67B6;&#x7EDF;&#x4E00;&#x7BA1;&#x7406;&#x3002;<br>
+&#x5B9E;&#x73B0;&#x5F62;&#x5F0F;&#x4E0A;&#xFF0C;&#x6211;&#x4EEC;&#x53C2;&#x8003;react-router&#xFF1A;&#x76D1;&#x542C;&#x9875;&#x9762;&#x8DEF;&#x5F84;&#x53D8;&#x5316;&#xFF0C;&#x518D;&#x89E6;&#x53D1; UI &#x66F4;&#x65B0;&#x3002;&#x8FD9;&#x662F;React&#x7684;&#x7CBE;&#x9AD3;&#x4E4B;&#x4E00;&#xFF0C;&#x5355;&#x5411;&#x6570;&#x636E;&#x6D41;&#x3002;<br>
+@tarojs/router&#x5305;&#x4E2D;&#x5305;&#x542B;&#x4E86;&#x4E00;&#x4E2A;&#x8F7B;&#x91CF;&#x7684;history&#x5B9E;&#x73B0;&#x3002;history&#x4E2D;&#x7EF4;&#x62A4;&#x4E86;&#x4E00;&#x4E2A;&#x6808;&#xFF0C;&#x7528;&#x6765;&#x8BB0;&#x5F55;&#x9875;&#x9762;&#x5386;&#x53F2;&#x7684;&#x53D8;&#x5316;&#x3002;&#x5BF9;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#x7684;&#x76D1;&#x542C;&#xFF0C;&#x4F9D;&#x8D56;&#x4E24;&#x4E2A;&#x4E8B;&#x4EF6;&#xFF1A;hashchange&#x548C;popstate&#x3002;<br>
+/* &#x793A;&#x4F8B;&#x4EE3;&#x7801; */</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">&apos;hashchange&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">&apos;popstate&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+</pre><p>&#x5BF9;&#x4E8E;&#x4F7F;&#x7528; Hash &#x6A21;&#x5F0F;&#x7684;&#x9875;&#x9762;&#x8DEF;&#x7531;&#xFF0C;&#x6BCF;&#x6B21;&#x9875;&#x9762;&#x8DF3;&#x8F6C;&#x90FD;&#x4F1A;&#x4F9D;&#x6B21;&#x89E6;&#x53D1;popstate&#x548C;hashchange&#x4E8B;&#x4EF6;&#x3002;&#x7531;&#x4E8E;&#x5728;popstate&#x7684;&#x56DE;&#x8C03;&#x4E2D;&#x53EF;&#x4EE5;&#x53D6;&#x5230;&#x5F53;&#x524D;&#x9875;&#x9762;&#x7684; state&#xFF0C;&#x6211;&#x4EEC;&#x9009;&#x62E9;&#x5B83;&#x4F5C;&#x4E3A;&#x4E3B;&#x8981;&#x8DF3;&#x8F6C;&#x903B;&#x8F91;&#x7684;&#x5BB9;&#x5668;&#x3002;<br>
+&#x4E09;&#x79CD;&#x64CD;&#x4F5C;&#xFF1A;push, pop&#xFF0C;&#x8FD8;&#x6709;replace&#x3002;</p>
+<p><strong>H5 &#x8F6C;&#x6362;&#x4E0E;&#x4F18;&#x5316;&#x5347;&#x7EA7;</strong></p>
+<p>Taro H5 &#x7AEF;&#x5728;&#x6784;&#x5EFA;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528; webpack &#x4F5C;&#x4E3A;&#x6784;&#x5EFA;&#x7684;&#x6838;&#x5FC3;&#x3002;&#x5728; webpack &#x4E2D;&#x4F7F;&#x7528; treeshaking &#x529F;&#x80FD;&#x6709;&#x51E0;&#x4E2A;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x5730;&#x65B9;&#xFF1A;</p>
+<p>&#x5982;&#x679C;&#x662F; npm &#x6A21;&#x5757;&#xFF0C;&#x9700;&#x8981;package.json&#x4E2D;&#x5B58;&#x5728;sideEffects&#x5B57;&#x6BB5;&#xFF0C;&#x5E76;&#x4E14;&#x51C6;&#x786E;&#x914D;&#x7F6E;&#x4E86;&#x5B58;&#x5728;&#x526F;&#x4F5C;&#x7528;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#x3002;<br>
+&#x5FC5;&#x987B;&#x4F7F;&#x7528; ES6 &#x6A21;&#x5757;&#x8BED;&#x6CD5;&#x3002;&#x7531;&#x4E8E;&#x8BF8;&#x5982;babel-preset-env&#x4E4B;&#x7C7B;&#x7684; babel &#x9884;&#x914D;&#x7F6E;&#x5305;&#x9ED8;&#x8BA4;&#x4F1A;&#x5BF9;&#x4EE3;&#x7801;&#x7684;&#x6A21;&#x5757;&#x673A;&#x5236;&#x8FDB;&#x884C;&#x6539;&#x5199;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x5C06;modules&#x8BBE;&#x7F6E;&#x4E3A;false&#xFF0C;&#x5C06;&#x6A21;&#x5757;&#x89E3;&#x6790;&#x7684;&#x5DE5;&#x4F5C;&#x76F4;&#x63A5;&#x4EA4;&#x7ED9; webpack&#x3002;<br>
+&#x9700;&#x8981;&#x5DE5;&#x4F5C;&#x5728; webpack &#x7684;production&#x6A21;&#x5F0F;&#x4E0B;&#x3002;<br>
+<a href="https://juejin.im/post/5c7dec9cf265da2ddc3c9a7d#heading-10">https://juejin.im/post/5c7dec9cf265da2ddc3c9a7d#heading-10</a></p>
+<h1 class="mume-header" id="%E8%B8%A9%E5%9D%91">&#x8E29;&#x5751;</h1>
+
+<p>&#x4E00;&#x6B21;&#x7F16;&#x5199;,&#x5230;&#x5904;&#x8FD0;&#x884C;&#x7EC8;&#x662F;&#x68A6;,&#x4E00;&#x6B21;&#x8FD0;&#x884C;,&#x5404;&#x79CD;&#x586B;&#x5751;&#x624D;&#x662F;&#x771F;&#x3002;</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
