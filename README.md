@@ -20,6 +20,7 @@
 
 - [框架篇之 深入理解 React Fiber 架构](./react-fiber/README.md)
 - [框架篇之 手写 React-Redux 高阶组件Connect](./react-redux-hoc-react/index.js)
+- [框架篇之探究多端统一开发方案（分享会调研数据汇总）](./MultiplexDevelopmentUnify/MultiplexDevelopmentUnify.md)
 
 #### 前端工程化篇
 - [脚手架模板](https://github.com/dylan-farm/cli-demo)
